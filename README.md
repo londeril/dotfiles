@@ -21,3 +21,5 @@ This repo is not ment to work for other people out of the box - if you find a co
 ### Gnome 44
 
 ### Kitty
+
+### zsh with oh-my-zsh
