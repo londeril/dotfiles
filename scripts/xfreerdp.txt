@@ -1,0 +1,5 @@
+xfreerdp /u:mueller /v:192.168.251.20 /network:auto /rfx /gfx:avc444 /f +clipboard +bitmap-cache
+
+
+
+https://fedorapeople.org/groups/virt/virtio-win/direct-downloads
