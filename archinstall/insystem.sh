@@ -27,6 +27,9 @@ ln -s ~/.dotfiles/neofetch ~/.config/
 ln -s ~/.dotfiles/ranger ~/.config/
 ln -s ~/.dotfiles/dunst ~/.config/
 
+echo "enabling mdns"
+cp ~/.dotfiles/archinstall/nsswitch.conf /etc/
+
 echo "copy fonts"
 # cp fonts
 fc-cache -fv
