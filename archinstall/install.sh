@@ -14,4 +14,6 @@ pacstrap -K /mnt base linux linux-firmware cups cups-pdf nss-mdns evince powerli
 echo "generating fstab from current mounts"
 genfstab -U /mnt >> /mnt/etc/fstab
 
+cp /root/chroot.sh /mnt/root/
+
 echo "run arch-chroot /mnt now - this can't be scripted"
