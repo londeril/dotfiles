@@ -19,6 +19,8 @@ ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/.dotfiles/kitty ~/.config/
 ln -s ~/.dotfiles/waybar ~/.config/
 ln -s ~/.dotfiles/fuzzel ~/.config/
+ln -s ~/.dotfiles/icons ~/.icons
+ln -s ~/.dotfiles/themes ~/.themes
 
 echo "copy fonts"
 # cp fonts
