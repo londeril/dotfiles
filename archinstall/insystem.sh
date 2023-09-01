@@ -128,4 +128,4 @@ gsettings set org.gnome.desktop.wm.preferences resize-with-right-button "true"
 
 
 echo "don't forget the following items:"
-echo "printer - nsswitch.conf"
+echo "Gradience - set blueish Theme"
