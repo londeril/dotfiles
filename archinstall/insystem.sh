@@ -53,7 +53,11 @@ cp ~/archinstall/vmrc/* ~/.cache/yay/vmware-vmrc/
 yay -S vmware-vmrc
 
 echo "getting neede packages from the AUR"
-yay -S sublime-text-4 1password anydesk-bin pcloud insync typora
+yay -S sublime-text-4 1password anydesk-bin pcloud insync typora input-remapper-git nccm-git
+
+echo "deploying nccm wrapper"
+sudo mv /usr/bin/nccm /usr/bin/nccm-bin
+sudo ln -s ~/.dotfiles/scripts/nccmwrapper.sh /usr/bin/nccm
 
 echo "installing flatpaks"
 flatpak install \
