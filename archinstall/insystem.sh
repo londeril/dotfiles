@@ -30,7 +30,7 @@ fc-cache -fv
 echo "installing yay"
 cd ~/Downloads
 git clone https://aur.archlinux.org/yay-bin
-cd yay
+cd yay-bin
 makepkg -si
 
 echo "adding 1password keys"
