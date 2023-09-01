@@ -28,6 +28,8 @@ passwd
 echo "enabling services for next boot"
 systemctl enable NetworkManager
 systemctl enable sshd
+systemctl enable cups.socket
+systemctl enable avahi-daemon
 
 echo "configuring grub"
 #grub-install --target=i386-pc /dev/vda # BIOS
