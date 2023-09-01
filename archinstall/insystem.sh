@@ -21,6 +21,7 @@ ln -s ~/.dotfiles/waybar ~/.config/
 ln -s ~/.dotfiles/fuzzel ~/.config/
 ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
+ln -s ~/.dotfiles/gtk-3.0 ~/.config/
 
 echo "copy fonts"
 # cp fonts
