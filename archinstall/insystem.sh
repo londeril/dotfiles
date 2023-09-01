@@ -22,10 +22,16 @@ ln -s ~/.dotfiles/fuzzel ~/.config/
 ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
 ln -s ~/.dotfiles/gtk-3.0 ~/.config/
+ln -s ~/.dotfiles/gtk-3.0 ~/.config/gtk-4.0
 ln -s ~/.dotfiles/btop ~/.config/
 ln -s ~/.dotfiles/neofetch ~/.config/
 ln -s ~/.dotfiles/ranger ~/.config/
 ln -s ~/.dotfiles/dunst ~/.config/
+
+echo "copy Gradience themes"
+cp ~/.dotfiles/Gradience/blueish.json ~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/
+
+sudo ln -s ~/.dotfiles/hypr/hyprlaunch.sh /usr/bin/hyprlaunch
 
 echo "enabling mdns"
 cp ~/.dotfiles/archinstall/nsswitch.conf /etc/
