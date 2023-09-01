@@ -1,0 +1,111 @@
+#! /bin/sh
+# launch compositor with custom settings. kill it if it's already up
+if pgrep -x picom > /dev/null
+ 	then killall -15 picom
+ 	picom --config /home/daniel/.config/picom/picom.conf &
+else 
+	picom --config /home/daniel/.config/picom/picom.conf &
+fi
+
+# launch notification-helper . kill it if it's already up
+if pgrep -x dunst > /dev/null
+ 	then killall -15 dunst
+ 	dunst  &
+else 
+	dunst &
+fi
+
+# launch polkit-agent . kill it if it's already up
+if pgrep -x lxpolkit > /dev/null
+ 	then killall -15 lxpolkit
+ 	lxpolkit  &
+else 
+	lxpolkit &
+fi
+
+# launch barrier. kill it if it's already up
+if pgrep -x barrier > /dev/null
+ 	then killall -15 barrier
+ 	barrier  &
+else 
+	barrier &
+fi
+
+# lauch keyboard shortcut deamon. kill it if it's already up
+if pgrep -x sxhkd > /dev/null
+ 	then killall -15 sxhkd
+ 	sxhkd &
+else 
+	sxhkd &
+fi
+
+# launch polybar. kill it if it's already up
+if pgrep -x polybar > /dev/null
+ 	then killall -15 polybar
+ 	polybar &
+else 
+	polybar &
+fi
+
+# set cursor to arrow if no windo is open
+xsetroot -cursor_name arrow
+
+# start ssh-agent
+eval "$(ssh-agent)"
+
+# set numlock to always on - this will disable / disregard the numlock key... it's just always ON!
+setxkbmap -option numpad:mac
+
+# pull up a wallpaper
+feh --bg-fill /home/daniel/Pictures/Wallpaper/wp4469542-7680x4320-wallpapers.jpg
+
+# spawn 5 desktops on monitor one
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+bspc config merge_overlapping_monitors true
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+
+# nvidia problems with openGL apps...
+#bspc config pointer_motion_interval 10
+
+# set mouse modifier to Alt
+bspc config pointer_modifier mod1
+
+# define a small yellow border
+bspc config border_width         2
+#bspc config focused_border_color "#eabf58"
+bspc config focused_border_color "#F0C674"
+
+# define a small gap between windows
+bspc config window_gap          5
+
+# use mouse following focus mode
+bspc config focus_follows_pointer true
+
+# split the tiles 50-50 by default
+bspc config split_ratio          0.5
+#bspc config borderless_monocle   true
+#bspc config gapless_monocle      true
+
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+
+# autoload programs which will be used all the time...
+# start pcloud
+/home/daniel/Apps/pcloud &
+
+# start insync
+insync start
+
+# launch networkmanager applet
+nm-applet &
+
+# start flameshot
+flatpak run org.flameshot.Flameshot &
+
+# launch screensaver - to display pictures and to be able to lock the screen
+xscreensaver --no-splash &
