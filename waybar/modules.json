@@ -43,6 +43,20 @@
         "tooltip": false
     },
 
+    "network": {
+        "interface": "wlp0s20f3",
+        "format": "{ifname}",
+        "on-click": "nm-connection-editor", 
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ifname}  ",
+        "format-disconnected": " ",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}  ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+
     // Rofi Power Menu
     "custom/exit": {
         "format": "  ",
@@ -70,13 +84,15 @@
 
     // CPU
     "cpu": {
-        "format": "  {usage}%",
-        "tooltip": false
+        "format": "  {usage}%",
+        "tooltip": true,
+        "on-click": "kitty btop"
     },
 
     // Memory
-    "memory": {
-        "format": "{}%"
+    "memory":  {
+        "format":"  {percentage}%",
+        "on-click": "kitty btop"
     },
 
     // Pulseaudio

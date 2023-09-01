@@ -22,10 +22,17 @@ ln -s ~/.dotfiles/fuzzel ~/.config/
 ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
 ln -s ~/.dotfiles/gtk-3.0 ~/.config/
+ln -s ~/.dotfiles/btop ~/.config/
+ln -s ~/.dotfiles/neofetch ~/.config/
+ln -s ~/.dotfiles/ranger ~/.config/
 
 echo "copy fonts"
 # cp fonts
 fc-cache -fv
+
+echo "setting global git username"
+git config --global user.email "daniel@dashwood.ch"
+git config --global user.name "Daniel"
 
 echo "installing yay"
 cd ~/Downloads
