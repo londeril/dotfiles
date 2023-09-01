@@ -1,0 +1,15 @@
+# ZSHrc by Daniel Mueller (2023)
+#
+# a word on oh-my-zsh:
+# pulling in hundrets or thousands of files just to have a nice prompt and some plugins
+# seams like a little on the overethusiastic side... so here is my own attempt on creating a prompt 
+# 
+# source my awesome theme (which is inspired by oh-my-zsh's agnoster)
+source ~/.config/zsh/themes/londeroster.zsh-theme
+
+# respect LS_COLORS for autocompletion - uncomment when needed
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 
+
+# source my alias list
+source ~/.config/zsh/aliases
+

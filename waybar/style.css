@@ -1,0 +1,47 @@
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+
+* {
+    font-family: "Iosevka Nerd Font";
+    font-size: 14px;
+    color: #a0b3c5;
+}
+
+window#waybar {
+    background-color: rgba(29, 37, 44, 0.5); 
+    padding: 0px 0px;
+}
+
+/* screen module edge background color */
+#custom-appmenu,
+#custom-exit {
+    background-color: #074642;
+}
+
+/* set padding for all modules */
+#custom-appmenu,
+#window, 
+#clock,
+#cpu,
+#memory,
+#custom-exit {
+    
+    padding: 0px 10px 0px 10px;
+}
+
+/* border radius left and right for screen edge modules */
+#custom-appmenu {
+    border-radius: 0 100% 100% 0;
+}
+
+#custom-exit {
+    border-radius: 100% 0 0 100%;
+}
+
+#workspaces button {
+    padding: 5px;
+    color: #a0b3c5;
+}
+
+
