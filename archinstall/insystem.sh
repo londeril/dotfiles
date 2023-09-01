@@ -25,6 +25,7 @@ ln -s ~/.dotfiles/gtk-3.0 ~/.config/
 ln -s ~/.dotfiles/btop ~/.config/
 ln -s ~/.dotfiles/neofetch ~/.config/
 ln -s ~/.dotfiles/ranger ~/.config/
+ln -s ~/.dotfiles/dunst ~/.config/
 
 echo "copy fonts"
 # cp fonts
