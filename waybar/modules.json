@@ -47,7 +47,7 @@
         "interface": "wlp0s20f3",
         "format": "{ifname}",
         "on-click": "nm-connection-editor", 
-        "format-wifi": "  {essid}",
+        "format-wifi": "   {essid}",
         "format-ethernet": "{ifname}  ",
         "format-disconnected": " ",
         "tooltip-format": "{ifname}",
@@ -79,7 +79,8 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+        "format": ""
     },
 
     // CPU
@@ -98,7 +99,7 @@
     // Pulseaudio
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+        "format": " {icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",

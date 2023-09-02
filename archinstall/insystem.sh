@@ -126,6 +126,9 @@ gsettings set org.gnome.desktop.wm.preferences resize-with-right-button "true"
 #gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding "'<Shift><Control>space'"
 #gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command "'1password --quick-access'"
 
+echo "enabling and starting user services"
+systemctl --user --now enable pipewire-pulse
+systemctl --user --now enable wireplumber
 
 echo "don't forget the following items:"
 echo "Gradience - set blueish Theme"
