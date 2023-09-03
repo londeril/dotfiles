@@ -12,5 +12,9 @@ git add ./*
 
 # ask the user for a sensible git commit
 read -p "what are you commiting? " commitstatement
+
+# commiting changes using user input as comment
 git commit -m "$commitstatement"
 
+# push changes to repo
+git push
