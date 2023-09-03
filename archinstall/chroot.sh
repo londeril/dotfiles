@@ -32,6 +32,7 @@ systemctl enable sshd
 systemctl enable cups.socket
 systemctl enable avahi-daemon
 systemctl enable seatd
+systemctl enable libvirtd
 
 echo "configuring grub"
 #grub-install --target=i386-pc /dev/vda # BIOS
