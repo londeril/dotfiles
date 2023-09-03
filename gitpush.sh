@@ -10,6 +10,9 @@ git pull
 # add everything since the last git commit
 git add ./*
 
+# display status
+git status
+
 # ask the user for a sensible git commit
 read -p "what are you commiting? " commitstatement
 
