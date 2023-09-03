@@ -59,7 +59,7 @@ cp ~/archinstall/vmrc/* ~/.cache/yay/vmware-vmrc/
 yay -S vmware-vmrc
 
 echo "getting neede packages from the AUR"
-yay -S sublime-text-4 1password anydesk-bin pcloud insync typora input-remapper-git nccm-git
+yay -S sublime-text-4 1password anydesk-bin pcloud insync typora input-remapper-git nccm-git swaylock-effects-git 
 
 echo "deploying nccm wrapper"
 sudo mv /usr/bin/nccm /usr/bin/nccm-bin

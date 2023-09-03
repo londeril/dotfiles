@@ -57,10 +57,10 @@
         "max-length": 50
     },
 
-    // Rofi Power Menu
+    //  Power Menu
     "custom/exit": {
         "format": "  ",
-        "on-click": "~/dotfiles/scripts/powermenu-hypr.sh",
+        "on-click": "~/.dotfiles/scripts/powermenu.sh",
         "tooltip": false
     },
 
@@ -80,7 +80,7 @@
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}",
-        "format": "{:%H:%m}"
+        "format": "{:%d. %B %H:%M}"
     },
 
     // CPU
