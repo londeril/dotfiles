@@ -9,6 +9,7 @@ git pull
 
 # add everything since the last git commit
 git add ./*
+git add ~/.dotfiles/.X*
 
 # display status
 git status

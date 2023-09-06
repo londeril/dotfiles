@@ -5,7 +5,7 @@
 # for every host we run BSWPWM on.
 
 # check if we are running an external monitor
-if [ xrandr -q | grep "3440x1440" ]; then
+if [ "xrandr -q | grep '3440x1440'" ]; then
 	# the office monitor is connected - we are most likely runnig docked at the office
 	# disabling the internal display
 	xrandr --output eDP-1 --off
