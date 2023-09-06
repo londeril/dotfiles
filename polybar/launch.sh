@@ -3,6 +3,11 @@
 dir="$HOME/.config/polybar"
 themes=(`ls --hide="launch.sh" $dir`)
 
+OFFICE="false"
+if [  `xrandr -q | grep '3440x1440'` ]; then
+	OFFICE="true"
+fi
+
 launch_bar() {
 	# Terminate already running bar instances
 	killall -q polybar
@@ -17,7 +22,12 @@ launch_bar() {
 	elif [[ "$style" == "pwidgets" ]]; then
 		bash "$dir"/pwidgets/launch.sh --main
 	else
-		polybar -q main -c "$dir/$style/config.ini" &	
+		if [ $OFFICE == "true" ]; then
+			polybar -q main -c "$dir/$style/config.ini" &	
+		else 
+			polybar -q main -c "$dir/$style/config-road-warrior.ini" &
+
+		fi
 	fi
 }
 
