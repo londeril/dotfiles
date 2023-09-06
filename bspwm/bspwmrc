@@ -4,13 +4,20 @@
 # This script if host-aware - so that we only need one script with all settings 
 # for every host we run BSWPWM on.
 
+# check if we are running an external monitor
+if [ xrandr -q | grep "3440x1440" ]; then
+	# the office monitor is connected - we are most likely runnig docked at the office
+	# disabling the internal display
+	xrandr --output eDP-1 --off
+fi
+
 
 # let's check on which host we are
 HOSTNAME=`cat /etc/hostname`
 
 # launch compositor with custom settings. kill it if it's already up
 if pgrep -x picom > /dev/null
- 	then killall -15 picom
+	then killall -15 picom
  	picom --config /home/daniel/.config/picom/picom.conf --experimental-backends -b &
 else 
 	picom --config /home/daniel/.config/picom/picom.conf --experimental-backends -b &
