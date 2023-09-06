@@ -1,10 +1,30 @@
 #! /bin/sh
+# BSPWM Launch Script
+# This script is run when bspwm starts
+# This script if host-aware - so that we only need one script with all settings 
+# for every host we run BSWPWM on.
+
+
+# let's check on which host we are
+HOSTNAME=`cat /etc/hostname`
+
 # launch compositor with custom settings. kill it if it's already up
 if pgrep -x picom > /dev/null
  	then killall -15 picom
- 	picom --config /home/daniel/.config/picom/picom.conf &
+ 	picom --config /home/daniel/.config/picom/picom.conf --experimental-backends -b &
 else 
-	picom --config /home/daniel/.config/picom/picom.conf &
+	picom --config /home/daniel/.config/picom/picom.conf --experimental-backends -b &
+fi
+
+# launch touchegg. kill it if it's already uo
+# only run touchegg if we are on Nova
+if [ "$HOSTNAME" = "nova" ]; then
+	if pgrep -x touchegg > /dev/null
+ 		then killall -15 touchegg
+ 		touchegg &
+	else 
+		touchegg &
+	fi
 fi
 
 # launch notification-helper . kill it if it's already up
@@ -24,12 +44,12 @@ else
 fi
 
 # launch barrier. kill it if it's already up
-if pgrep -x barrier > /dev/null
- 	then killall -15 barrier
- 	barrier  &
-else 
-	barrier &
-fi
+#if pgrep -x barrier > /dev/null
+# 	then killall -15 barrier
+# 	barrier  &
+#else 
+#	barrier &
+#fi
 
 # lauch keyboard shortcut deamon. kill it if it's already up
 if pgrep -x sxhkd > /dev/null
@@ -42,9 +62,11 @@ fi
 # launch polybar. kill it if it's already up
 if pgrep -x polybar > /dev/null
  	then killall -15 polybar
- 	polybar &
+ 	#polybar &
+ 	~/.config/polybar/launch.sh --shapes
 else 
-	polybar &
+	#polybar &
+	~/.config/polybar/launch.sh --shapes
 fi
 
 # set cursor to arrow if no windo is open
