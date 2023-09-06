@@ -23,6 +23,7 @@ super + space
 	rofi -show combi -show-icons
 super + r
 	rofi -show combi -show-icons
+	rofi -show-icons -no-lazy-grab -show combi -theme ~/.config/polybar/shapes/scripts/rofi/launcher.rasi
 @Super_L
 #	rofi -show combi -show-icons
 #~Super_L
@@ -83,6 +84,14 @@ shift + ctrl + space
 @XF86AudioLowerVolume
 	amixer -q sset Master 1%-
 
+
+# increase monitor backlight
+@XF86MonBrightnessUp
+	xbacklight -inc 10
+
+# decrease monitor backlight
+@XF86MonBrightnessDown
+	xbacklight -dec 10
 
 #
 # bspwm hotkeys
