@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 # BSPWM Launch Script
 # This script is run when bspwm starts
 # This script if host-aware - so that we only need one script with all settings 
