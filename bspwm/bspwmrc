@@ -5,13 +5,18 @@
 # for every host we run BSWPWM on.
 
 # # the office monitor is connected - we are most likely runnig docked at the office
-if [ `xrandr -q | grep '3440x1440'` ]; then
+if xrandr -q | grep '3440x1440'
+then
+	echo "office"
 	OFFICE="true"
 fi
 
-if [ $OFFICE == "true" ]; then
+if $OFFICE == "true"
+then 
 	# disabling the internal display
 	xrandr --output eDP-1 --off
+	# if we are in the office, chances are that we are running the G815 keyboard - fix the rainbow wave...
+	g815-led -a 0080ff
 fi
 
 
@@ -28,7 +33,8 @@ fi
 
 # launch touchegg. kill it if it's already uo
 # only run touchegg if we are on Nova
-if [ "$HOSTNAME" = "nova" ]; then
+if "$HOSTNAME" = "nova"
+then
 	if pgrep -x touchegg > /dev/null
  		then killall -15 touchegg
  		touchegg &
@@ -96,7 +102,8 @@ bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 bspc config merge_overlapping_monitors true
 
-if [ $OFFICE ]; then
+if $OFFICE == "true"
+then
 	bspc monitor DP-1-2 -d A
 	bspc monitor DP-1-3 -d 1 2 3 4 5 6 7 8 9 10
 else 
