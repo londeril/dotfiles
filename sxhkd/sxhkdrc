@@ -87,11 +87,11 @@ shift + ctrl + space
 
 # increase monitor backlight
 @XF86MonBrightnessUp
-	xbacklight -inc 10
+	brightnessctl set +10%
 
 # decrease monitor backlight
 @XF86MonBrightnessDown
-	xbacklight -dec 10
+	brightnessctl set 10%-
 
 #
 # bspwm hotkeys
