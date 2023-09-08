@@ -49,8 +49,10 @@ shift + ctrl + space
 	1password --quick-access
 
 
-# launch Calculator on Calculator key
+# launch Calculator on Calculator key or Pause key if there is no dedicated key
 @XF86Calculator
+	gnome-calculator
+@Pause
 	gnome-calculator
 
 # 
