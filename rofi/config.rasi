@@ -4,8 +4,5 @@ configuration {
  combi-modi: "window,drun,ssh";
  }
 
-//@theme "/home/daniel/.local/share/rofi/themes/rounded-blue-dark.rasi"
-//@theme "/home/daniel/.local/share/rofi/themes/rounded-blue-dark.rasi"
-//@theme "/home/daniel/.local/share/rofi/themes/launchpad.rasi"
-//@theme "/home/daniel/.local/share/rofi/themes/rounded-blue-dark.rasi"
-@theme "/home/daniel/.local/share/rofi/themes/rounded-purple-dark.rasi"
+@theme "/home/daniel/.config/rofi/rounded-blue-dark.rasi"
+//@theme "/home/daniel/.local/share/rofi/themes/rounded-purple-dark.rasi"

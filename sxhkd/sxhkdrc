@@ -37,6 +37,18 @@ super + f
 super + Escape
 	pkill -USR1 -x sxhkd; notify-send "Reloading SXHKD config"
 
+# reload polybar - usefull when pluggin in USB-Net
+super + alt + p
+	pkill -USR1 polybar
+
+# make bspwm reload it's config - useful when changing stuff or hardware - monitors spring to mind
+super + alt + Escape
+	bspc wm -r
+
+# launch rofi-network-manager
+super + w
+	~/.dotfiles/scripts/rofi-network-manager.sh
+
 # launch flameshot gui
 super + shift + s
 	flatpak run org.flameshot.Flameshot gui

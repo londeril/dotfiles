@@ -4,15 +4,22 @@
 # This script if host-aware - so that we only need one script with all settings 
 # for every host we run BSWPWM on.
 
-# # the office monitor is connected - we are most likely runnig docked at the office
-if xrandr -q | grep '3440x1440'
-then
-	echo "office"
+# define the run funtion to check if a program is already running - start it if not
+
+_run() {
+    if ! pgrep -x "${1}" &>/dev/null; then
+        "$@" &
+    fi
+}
+
+
+# Check for external screens if the office monitor is connected - we are most likely runnig docked at the office
+if xrandr -q | grep '3440x1440'; then
 	OFFICE="true"
 fi
 
-if $OFFICE == "true"
-then 
+# disable internal screen if we run docked
+if $OFFICE == "true"; then 
 	# disabling the internal display
 	xrandr --output eDP-1 --off
 	# if we are in the office, chances are that we are running the G815 keyboard - fix the rainbow wave...
@@ -23,73 +30,13 @@ fi
 # let's check on which host we are
 HOSTNAME=`cat /etc/hostname`
 
-# launch compositor with custom settings. kill it if it's already up
-if pgrep -x picom > /dev/null
-	then killall -15 picom
- 	picom --config /home/daniel/.config/picom/picom.conf --experimental-backends -b &
-else 
-	picom --config /home/daniel/.config/picom/picom.conf --experimental-backends -b &
-fi
-
-# launch touchegg. kill it if it's already uo
-# only run touchegg if we are on Nova
-if "$HOSTNAME" = "nova"
-then
-	if pgrep -x touchegg > /dev/null
- 		then killall -15 touchegg
- 		touchegg &
-	else 
-		touchegg &
-	fi
-fi
-
-# launch notification-helper . kill it if it's already up
-if pgrep -x dunst > /dev/null
- 	then killall -15 dunst
- 	dunst  &
-else 
-	dunst &
-fi
-
-# launch polkit-agent . kill it if it's already up
-if pgrep -x lxpolkit > /dev/null
- 	then killall -15 lxpolkit
- 	lxpolkit  &
-else 
-	lxpolkit &
-fi
-
-# launch barrier. kill it if it's already up
-#if pgrep -x barrier > /dev/null
-# 	then killall -15 barrier
-# 	barrier  &
-#else 
-#	barrier &
-#fi
-
-# lauch keyboard shortcut deamon. kill it if it's already up
-if pgrep -x sxhkd > /dev/null
- 	then killall -15 sxhkd
- 	sxhkd &
-else 
-	sxhkd &
-fi
-
-# launch polybar. kill it if it's already up
-if pgrep -x polybar > /dev/null
- 	then killall -15 polybar
- 	#polybar &
- 	~/.config/polybar/launch.sh --shapes
-else 
-	#polybar &
-	~/.config/polybar/launch.sh --shapes
-fi
-
 # set cursor to arrow if no windo is open
 xsetroot -cursor_name arrow
 
-# start ssh-agent
-eval "$(ssh-agent)"
+# start ssh-agent - but check if it's running first... running multiple ssh-agents will cause all sorts of headaches
+if ! pgrep -x "ssh-agent" &>/dev/null; then
+        eval "$(ssh-agent)"
+fi
 
 # set numlock to always on - this will disable / disregard the numlock key... it's just always ON!
 setxkbmap -option numpad:mac
@@ -97,17 +44,19 @@ setxkbmap -option numpad:mac
 # pull up a wallpaper
 feh --bg-fill /home/daniel/Pictures/Wallpaper/wp4469542-7680x4320-wallpapers.jpg
 
-# spawn 5 desktops on monitor one
+# remove unused and unplugged monitors - maybe this needs some work?
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 bspc config merge_overlapping_monitors true
 
-if $OFFICE == "true"
-then
-	bspc monitor DP-1-2 -d A
-	bspc monitor DP-1-3 -d 1 2 3 4 5 6 7 8 9 10
-else 
-	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+# place desktops on monitors - but only if we are running bspwm for the first time
+if [[ "$1" = 0 ]]; then
+	if $OFFICE == "true"; then
+		bspc monitor DP-1-2 -d A
+		bspc monitor DP-1-3 -d 1 2 3 4 5 6 7 8 9 10
+	else 
+		bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+	fi
 fi
 
 # nvidia problems with openGL apps...
@@ -118,6 +67,7 @@ bspc config pointer_modifier mod1
 
 # define a small yellow border
 bspc config border_width         2
+
 #bspc config focused_border_color "#eabf58"
 bspc config focused_border_color "#F0C674"
 
@@ -129,6 +79,47 @@ bspc config focus_follows_pointer true
 
 # split the tiles 50-50 by default
 bspc config split_ratio          0.5
+
+# autoload programs which will be used all the time...
+# start pcloud
+
+_run pcloud
+
+# start insync
+_run insync start
+
+# launch networkmanager applet
+#_run nm-applet 
+
+# start flameshot
+flatpak run org.flameshot.Flameshot &
+
+# launch screensaver - to display pictures and to be able to lock the screen
+_run xscreensaver --no-splash
+
+# launch compositor with custom settings. 
+_run picom --config /home/daniel/.config/picom/picom.conf --experimental-backends -b &
+
+# launch touchegg. 
+# only run touchegg if we are on Nova
+if [ $HOSTNAME = "nova" ]; then
+	_run touchegg
+fi
+
+# launch notification-helper 
+_run dunst
+
+# launch polkit-agent . 
+_run lxpolkit
+
+# lauch keyboard shortcut deamon. kill it if it's already up
+_run sxhkd
+
+# launch polybar. kill it if it's already up
+_run ~/.config/polybar/launch.sh --shapes
+
+
+# some defaults that may come in handy later
 #bspc config borderless_monocle   true
 #bspc config gapless_monocle      true
 
@@ -137,20 +128,3 @@ bspc config split_ratio          0.5
 #bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off
-
-
-# autoload programs which will be used all the time...
-# start pcloud
-/home/daniel/Apps/pcloud &
-
-# start insync
-insync start
-
-# launch networkmanager applet
-nm-applet &
-
-# start flameshot
-flatpak run org.flameshot.Flameshot &
-
-# launch screensaver - to display pictures and to be able to lock the screen
-xscreensaver --no-splash &
