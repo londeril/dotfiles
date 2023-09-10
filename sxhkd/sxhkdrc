@@ -17,6 +17,9 @@ super + q
 super + e
 	nautilus --new-window
 
+# powermenu
+super + alt + p
+	~/.config/polybar/shapes/scripts/powermenu.sh &
 
 # program launcher
 super + space
