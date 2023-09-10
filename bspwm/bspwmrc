@@ -43,7 +43,7 @@ setxkbmap -option numpad:mac
 
 # pull up a wallpaper
 #feh --bg-fill /home/daniel/Pictures/Wallpaper/wp4469542-7680x4320-wallpapers.jpg
-feh --bg-fill ~/Pictures/Wallpapers/1213388.jpge
+feh --bg-fill ~/Pictures/Wallpaper/1213388.jpg
 
 # remove unused and unplugged monitors - maybe this needs some work?
 bspc config remove_disabled_monitors true
@@ -103,10 +103,7 @@ _run xscreensaver --no-splash
 _run picom --config /home/daniel/.config/picom/picom.conf --experimental-backends -b &
 
 # launch touchegg. 
-# only run touchegg if we are on Nova
-if [ $HOSTNAME = "nova" ]; then
-	_run touchegg
-fi
+_run touchegg
 
 # launch notification-helper 
 _run dunst

@@ -182,6 +182,9 @@ super + bracket{left,right}
 ctrl + alt + {Left,Right}
 	bspc desktop -f {prev,next}.local
 
+super + {udiaeresis,dead_diaeresis}
+	bspc desktop -f {prev,next}.local
+
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {desktop,node} -f last
