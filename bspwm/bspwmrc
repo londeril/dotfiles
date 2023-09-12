@@ -14,19 +14,23 @@ _run() {
 
 
 # Check for external screens if the office monitor is connected - we are most likely runnig docked at the office
+# run this every time bspwm is (re)loaded - this variable might come in handy
 if xrandr -q | grep '3440x1440'; then
 	OFFICE="true"
 fi
 
-# disable internal screen if we run docked
-if $OFFICE == "true"; then 
-	# disabling the internal display
-	xrandr --output DP-1-3 --auto --right-of DP-1-2 --output DP-1-2 --auto --rotate left --output eDP-1 --off
-	# if we are in the office, chances are that we are running the G815 keyboard - fix the rainbow wave...
-	g815-led -a 0080ff
-else 
-	# the external displays are not present or where removed (undocked) enable the internal one
-	xrandr --output eDP-1 --auto
+# disable internal screen if we run docked - but only on the first run - we are using the dock-script to handle 
+# docking/undocking at runtime
+if [[ "$1" = 0 ]]; then
+	if $OFFICE == "true"; then 
+		# disabling the internal display
+		xrandr --output eDP-1 --off
+		# if we are in the office, chances are that we are running the G815 keyboard - fix the rainbow wave...
+		g815-led -a 0080ff
+	else 
+		# the external displays are not present enable the internal one
+		xrandr --output eDP-1 --auto
+	fi
 fi
 
 
@@ -54,12 +58,16 @@ bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 bspc config merge_overlapping_monitors true
 
-# place desktops on monitors
-if $OFFICE == "true"; then
-	bspc monitor DP-1-2 -d A
-	bspc monitor DP-1-3 -d 1 2 3 4 5 6 7 8 9 10
-else 
-	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+# place desktops on monitors - but only if we are running bspwm for the first time
+if [[ "$1" = 0 ]]; then
+	# if we are running docked we wan't to display 10 Desktops on the big screen and only one on the side pannel
+	if [ $OFFICE == "true" ]; then
+		bspc monitor DP-1-2 -d A
+		bspc monitor DP-1-3 -d 1 2 3 4 5 6 7 8 9 10
+	# if we are not docked we are most likely running without an external display - spawn all desktops on te internal one
+	else 
+		bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
+	fi
 fi
 
 # nvidia problems with openGL apps...

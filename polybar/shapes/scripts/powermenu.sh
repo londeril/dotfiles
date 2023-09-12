@@ -11,11 +11,13 @@ uptime=$(uptime -p | sed -e 's/up //g')
 rofi_command="rofi -no-config -theme $dir/powermenu.rasi"
 
 # Options
-shutdown=" Shutdown"
-reboot=" Restart"
-lock=" Lock"
-suspend=" Sleep"
-logout=" Logout"
+shutdown="	Shutdown"
+reboot="	Restart"
+dock="󱂬	Dock"
+undock="	Undock"
+lock="	Lock"
+suspend="	Sleep"
+logout="	Logout"
 
 # Confirmation
 confirm_exit() {
@@ -33,7 +35,7 @@ msg() {
 }
 
 # Variable passed to rofi
-options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+options="$suspend\n$dock\n$undock\n$lock\n$logout\n$reboot\n$shutdown"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -dmenu -selected-row 0)"
 case $chosen in
@@ -67,4 +69,10 @@ case $chosen in
     $logout)
 		bspc quit
 	    ;;
+	$dock)
+		~/.dotfiles/scripts/docker-helper.sh --dock
+		;;
+	$undock)
+		~/.dotfiles/scripts/docker-helper.sh --undock
+		;;
 esac
