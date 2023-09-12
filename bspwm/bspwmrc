@@ -46,7 +46,8 @@ setxkbmap -option numpad:mac
 
 # pull up a wallpaper
 #feh --bg-fill /home/daniel/Pictures/Wallpaper/wp4469542-7680x4320-wallpapers.jpg
-feh --bg-fill ~/Pictures/Wallpaper/1213388.jpg
+#feh --bg-fill ~/Pictures/Wallpaper/1213388.jpg
+feh --bg-fill ~/Pictures/Wallpaper/autumn-door-1920x1080-v0-n73atvppx1nb1.jpg
 
 # remove unused and unplugged monitors - maybe this needs some work?
 bspc config remove_disabled_monitors true
