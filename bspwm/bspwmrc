@@ -12,6 +12,8 @@ _run() {
     fi
 }
 
+# use input remapper to make desktop switching possible with mouse keys
+bash -c "input-remapper-control --command stop-all && input-remapper-control --command autoload"
 
 # Check for external screens if the office monitor is connected - we are most likely runnig docked at the office
 # run this every time bspwm is (re)loaded - this variable might come in handy
@@ -32,7 +34,6 @@ if [[ "$1" = 0 ]]; then
 		xrandr --output eDP-1 --auto
 	fi
 fi
-
 
 # let's check on which host we are
 HOSTNAME=`cat /etc/hostname`
