@@ -74,6 +74,11 @@ case $1 in
     		bspc desktop "$desktop" --to-monitor eDP-1
   		done
 
+  		# move all windows from desktop A (sidepanel) to desktop 9
+  		for node in $(bspc query -N -d A); do
+  			bspc node $node -d 9
+  		done
+
   		# Remove default desktop created by bspwm
   		bspc desktop Desktop --remove
 
