@@ -30,17 +30,29 @@ case $1 in
     		bspc desktop "$desktop" --to-monitor DP-1-3
   		done
 
-  		# Remove default desktop created by bspwm
+  		# Remove default desktop created by bspwm on DP-1-3
   		bspc desktop Desktop --remove
 
   		# create a desktop on the sidepanel
 		bspc monitor DP-1-2 -d A
+
+		# Remove default desktop created by bspwm on DP-1-2
+  		bspc desktop Desktop --remove
+
+		# if we are in the office, chances are that we are running the G815 keyboard - fix the rainbow wave...
+		g815-led -a 0080ff
 		
 		# all is setup - disbale the internal display
 		xrandr --output eDP-1 --off
 
 		# reload polybar
 		~/.dotfiles/polybar/launch.sh --shapes
+
+		# make sure we don't have "Deskop" desktops
+  		#bspc monitor DP-1-3 -d 1 2 3 4 5 6 7 8 9 10 
+
+  		# make bspwm reload it's config
+  		bspc wm -r
 		;;
 	--undock)
 		# the system is currently docked but we want to unplug the dock.
@@ -70,6 +82,20 @@ case $1 in
 
 		# disable external screens
 		xrandr --output DP-1-2 --off --output DP-1-3 --off
+
+		# notify the user that it's now time to unplug the monitor
+		notify-send "Unplug the monitor within the next 10 seconds"
+		sleep 10
+
+		# reload polybar
+		~/.dotfiles/polybar/launch.sh --shapes
+
+		# make sure we don't have "Deskop" desktops
+  		#bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10 
+
+  		# make bspwm reload it's config
+  		bspc wm -r
+
 		;;
 	*)
 		echo "usage: --dock --undock"
