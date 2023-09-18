@@ -18,7 +18,7 @@ case $1 in
 		# bail before everything breaks
 
 		if [ $OFFICE == "false" ]; then
-			echo "wanted to dock without being docked... silly..."
+			echo -u critical -t 0 "Not at the Office?" "wanted to dock without being anywhere near a dock... which is... silly..."
 			exit 1
 		fi
 
@@ -53,18 +53,32 @@ case $1 in
 
   		# make bspwm reload it's config
   		bspc wm -r
+
+  		# since we are docked and we no longer rely on microsoft share point B$, we want to mount the local file share
+  		# this will take a while... and listen...
+  		#pkexec mount -t cifs -o credentials=/home/daniel/.smbcreds_ecm,uid=1000,gid=1000,dir_mode=0755,file_mode=0755 //int.ecmacom.ch/data /mnt/ecm-data
+
 		;;
 	--undock)
 		# the system is currently docked but we want to unplug the dock.
 		# move desktops to internal display, disable and remove monitors und reload polybar
-		
+			
 		# first let's compensate for our own supidity - if there is no external monitor and we where called to undock... well...
 		# there's nothing to do really... 
 
 		if [ $OFFICE == "false" ]; then
-			echo "wanted to undock without being docked first... silly..."
+			notify-send -u critical -t 0 "Silly me" "wanted to undock without being docked first... silly..."
 			exit 1
 		fi
+
+		# and while we are at it... we are most likely editing some file stored on a network share... OnlyOffice is the proccess to be concerned about here...
+		#if pidof editors_helper; then
+		#	notify-send -u critical -t 0 "Are you sure?" "Only Office is open - you most likely have files open on a network share... Close it and try again"
+		#	exit 1
+		#fi
+
+		# unmount network share
+		#pkexec umount /mnt/ecm-data
 
 		# enable internal screen
 		xrandr --output eDP-1 --auto
@@ -89,7 +103,7 @@ case $1 in
 		xrandr --output DP-1-2 --off --output DP-1-3 --off
 
 		# notify the user that it's now time to unplug the monitor
-		notify-send "Unplug the monitor within the next 10 seconds"
+		notify-send -u critical -t 0 "Unplug the monitor within the next 10 seconds"
 		sleep 10
 
 		# reload polybar
