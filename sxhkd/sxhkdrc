@@ -15,10 +15,9 @@ super + q
 
 # nautilus new window
 super + e
-	/usr/bin/distrobox-enter  -n archi -- nautilus --new-window
-
-# #nautilus --new-window
-
+	thunar
+# nautilus --new-window
+# /usr/bin/distrobox-enter  -n archi -- nautilus --new-window
 
 # powermenu
 super + alt + p
