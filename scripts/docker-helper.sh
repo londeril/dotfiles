@@ -9,6 +9,8 @@ else
 	OFFICE="false"
 fi
 
+echo $OFFICE
+
 # let's check why we where called
 case $1 in
 	--dock)
@@ -80,6 +82,11 @@ case $1 in
 		# unmount network share
 		pkexec umount /mnt/ecm-data
 
+		# check if network drives are still mounted - if they are abort
+		if mount | grep 'ecm-data'; then
+			notify-send -u critical -t 0 "Netshare Mounted" "will not undock with mounted network shares - unmount them!"
+		fi
+		
 		# enable internal screen
 		xrandr --output eDP-1 --auto
 
