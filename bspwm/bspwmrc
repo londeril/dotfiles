@@ -114,7 +114,7 @@ _run xscreensaver --no-splash
 _run picom --config /home/daniel/.config/picom/picom.conf --experimental-backends -b &
 
 # launch touchegg. 
-_run touchegg
+#_run touchegg
 
 # launch notification-helper 
 _run dunst
