@@ -58,7 +58,7 @@ case $1 in
 
   		# since we are docked and we no longer rely on microsoft share point B$, we want to mount the local file share
   		# this will take a while... and listen...
-  		pkexec mount -t cifs -o credentials=/home/daniel/.smbcreds_ecm,uid=1000,gid=1000,dir_mode=0755,file_mode=0755,noserverino //int.ecmacom.ch/data /mnt/ecm-data
+  		#pkexec mount -t cifs -o credentials=/home/daniel/.smbcreds_ecm,uid=1000,gid=1000,dir_mode=0755,file_mode=0755,noserverino //int.ecmacom.ch/data /mnt/ecm-data
 
 		;;
 	--undock)
@@ -74,13 +74,13 @@ case $1 in
 		fi
 
 		# and while we are at it... we are most likely editing some file stored on a network share... OnlyOffice is the proccess to be concerned about here...
-		if pidof soffice.bin; then
-			notify-send -u critical -t 0 "Are you sure?" "LibreOffice is open - you most likely have files open on a network share... Close it and try again"
-			exit 1
-		fi
+		#if pidof soffice.bin; then
+		#	notify-send -u critical -t 0 "Are you sure?" "LibreOffice is open - you most likely have files open on a network share... Close it and try again"
+		#	exit 1
+		#fi
 
 		# unmount network share
-		pkexec umount /mnt/ecm-data
+		#pkexec umount /mnt/ecm-data
 
 		# check if network drives are still mounted - if they are abort
 		if mount | grep 'ecm-data'; then
