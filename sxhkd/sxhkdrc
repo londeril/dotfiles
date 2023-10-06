@@ -15,10 +15,10 @@ super + q
 
 # file manager new window
 super + e
-	thunar
+	nautilus --new-window
 
 super + alt + e
-	nautilus --new-window
+	thunar
 
 
 # powermenu
