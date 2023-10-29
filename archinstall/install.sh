@@ -10,6 +10,11 @@ echo "Setting Keyboard Layout to Swiss German and updating mirrors"
 loadkeys de_CH-latin1
 reflector --verbose --protocol https --latest 5 --sort rate --country Switzerland --save /etc/pacman.d/mirrorlist
 
+echo "formating"
+mkfs.vfat -F32 /dev/nvmw0n1p1
+mkswap /dev/nvme0n1p2
+mkfs.btrfs -L arch /dev/nvme0n1p3 -f
+
 echo "creating btrfs subvolumes and remounting accordingly"
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
@@ -27,6 +32,9 @@ mount -o ${sv_opts},subvol=@cache /dev/mapper/cryptdev /mnt/var/cache
 mount -o ${sv_opts},subvol=@libvirt /dev/mapper/cryptdev /mnt/var/lib/libvirt
 mount -o ${sv_opts},subvol=@log /dev/mapper/cryptdev /mnt/var/log
 mount -o ${sv_opts},subvol=@tmp /dev/mapper/cryptdev /mnt/var/tmp
+
+mkdir /mnt/efi
+mount /dev/nvme0n1p1 /mnt/efi
 
 
 # bootstrappig
