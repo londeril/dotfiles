@@ -37,6 +37,7 @@ systemctl enable sddm
 systemctl enable cups.socket
 systemctl enable avahi-daemon
 systemctl enable libvirtd
+systemctl enable fstrim.timer
 
 echo "configuring grub"
 #grub-install --target=i386-pc /dev/vda # BIOS
