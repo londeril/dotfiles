@@ -24,16 +24,18 @@ btrfs subvolume create /mnt/@cache
 btrfs subvolume create /mnt/@libvirt
 btrfs subvolume create /mnt/@log
 btrfs subvolume create /mnt/@tmp
+btrfs subvolume create /mnt/@snapshots
 
 umount /mnt
 sv_opts="rw,noatime,compress-force=zstd:1,space_cache=v2"
 mount -o ${sv_opts},subvol=@ /dev/nvme0n1p3 /mnt
-mkdir -p /mnt/{home,var/cache,var/lib/libvirt,var/log,var/tmp}
+mkdir -p /mnt/{home,var/cache,var/lib/libvirt,var/log,var/tmp,.snapshots}
 mount -o ${sv_opts},subvol=@home /dev/nvme0n1p3 /mnt/home
 mount -o ${sv_opts},subvol=@cache /dev/nvme0n1p3 /mnt/var/cache
 mount -o ${sv_opts},subvol=@libvirt /dev/nvme0n1p3 /mnt/var/lib/libvirt
 mount -o ${sv_opts},subvol=@log /dev/nvme0n1p3 /mnt/var/log
 mount -o ${sv_opts},subvol=@tmp /dev/nvme0n1p3 /mnt/var/tmp
+mount -o ${sv_opts},subvol=@snapshots /dev/nvme0n1p3 /mnt/.snapshots
 
 mkdir /mnt/efi
 mount /dev/nvme0n1p1 /mnt/efi
@@ -43,7 +45,7 @@ mount /dev/nvme0n1p1 /mnt/efi
 echo "Starting Bootstrap"
 #pacstrap -K /mnt base linux linux-firmware freerdp swayidle libvirt iptables-nft dnsmasq qemnu-full wireplumber pipewire-audio pipewire-alsa pipewire-pulse sof-firmware lxsession seatd fuzzel nm-connection-editor network-manager-applet neofetch ranger python-pillow libnotify bind cups cups-pdf nss-mdns evince powerline-fonts vi vim git curl wget zsh openssh man-db flatpak nerd-fonts aspell-de thunderbird flameshot obsidian sudo base-devel networkmanager grub efibootmgr less amd-ucode hyprland waybar wofi dunst lxappearance breeze breeze-gtk pavucontrol grim hyprpaper kitty remmina xdg-desktop-portal-hyprland firefox btop flatpak nautilus virt-manager
 
-pacstrap -K /mnt base linux linux-lts krita linux-firmware libvirt iptables-nft dnsmasq qemu-full wireplumber pipewire-audio pipewire-alsa pipewire-pulse sof-firmware nm-connection-editor network-manager-applet neofetch ranger python-pillow bind cups cups-pdf nss-mdns evince powerline-fonts vi vim git curl wget zsh openssh man-db flatpak nerd-fonts aspell-de thunderbird obsidian sudo base-devel networkmanager grub efibootmgr less amd-ucode remmina firefox btop virt-manager btrfs-progs cryptsetup htop pacman-contrib pkgfile reflector terminus-font tmux pipewire-jack alsa-utils sddm xorg plasma plasma-wayland-session kde-applications
+pacstrap -K /mnt base linux snapper snap-pac linux-lts krita linux-firmware libvirt iptables-nft dnsmasq qemu-full wireplumber pipewire-audio pipewire-alsa pipewire-pulse sof-firmware nm-connection-editor network-manager-applet neofetch ranger python-pillow bind cups cups-pdf nss-mdns evince powerline-fonts vi vim git curl wget zsh openssh man-db flatpak nerd-fonts aspell-de thunderbird obsidian sudo base-devel networkmanager grub efibootmgr less amd-ucode remmina firefox btop virt-manager btrfs-progs cryptsetup htop pacman-contrib pkgfile reflector terminus-font tmux pipewire-jack alsa-utils sddm xorg plasma plasma-wayland-session kde-applications
 
 #pacstrap /mnt base base-devel ${microcode} btrfs-progs linux linux-firmware bash-completion cryptsetup htop man-db mlocate neovim networkmanager openssh pacman-contrib pkgfile reflector sudo terminus-font tmux pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils
 
