@@ -15,6 +15,8 @@ mkfs.vfat -F32 /dev/nvmw0n1p1
 mkswap /dev/nvme0n1p2
 mkfs.btrfs -L arch /dev/nvme0n1p3 -f
 
+mount /dev/nvme0n1p3 /mnt
+
 echo "creating btrfs subvolumes and remounting accordingly"
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
