@@ -13,12 +13,18 @@ echo "generating adjtime"
 hwclock --systohc
 
 echo "setting hostname"
-echo "VArchi" > /etc/hostname
+echo "Nova" > /etc/hostname
+
+echo "adding hosts entries"
+echo "127.0.0.1   localhost" >> /etc/hosts
+echo "::1         localhost" >> /etc/hosts
+echo "127.0.1.1   nova.localdomain nova" >> /etc/hosts
 
 echo "Adding user"
 useradd -m -s /bin/zsh -g users daniel
 usermod -aG wheel daniel
-sudoedit /etc/sudoers
+sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers
+
 
 echo "user password?"
 passwd daniel
@@ -34,7 +40,7 @@ systemctl enable libvirtd
 
 echo "configuring grub"
 #grub-install --target=i386-pc /dev/vda # BIOS
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # UEFI
-grub-mkconfig -o /boot/grub/grub.cfg
+#grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # UEFI
+#grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "exit and reboot"
