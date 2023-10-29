@@ -18,7 +18,6 @@ echo "VArchi" > /etc/hostname
 echo "Adding user"
 useradd -m -s /bin/zsh -g users daniel
 usermod -aG wheel daniel
-usermod -aG seat daniel
 sudoedit /etc/sudoers
 
 echo "user password?"
@@ -28,10 +27,9 @@ passwd
 
 echo "enabling services for next boot"
 systemctl enable NetworkManager
-systemctl enable sshd
+systemctl enable sddm
 systemctl enable cups.socket
 systemctl enable avahi-daemon
-systemctl enable seatd
 systemctl enable libvirtd
 
 echo "configuring grub"
