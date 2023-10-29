@@ -41,7 +41,7 @@ systemctl enable fstrim.timer
 
 echo "configuring grub"
 #grub-install --target=i386-pc /dev/vda # BIOS
-#grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # UEFI
-#grub-mkconfig -o /boot/grub/grub.cfg
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # UEFI
+grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "exit and reboot"
