@@ -27,13 +27,13 @@ btrfs subvolume create /mnt/@tmp
 
 umount /mnt
 sv_opts="rw,noatime,compress-force=zstd:1,space_cache=v2"
-mount -o ${sv_opts},subvol=@ /dev/mapper/cryptdev /mnt
+mount -o ${sv_opts},subvol=@ /dev/mapper/nvme0n1p3 /mnt
 mkdir -p /mnt/{home,var/cache,var/lib/libvirt,var/log,var/tmp}
-mount -o ${sv_opts},subvol=@home /dev/mapper/cryptdev /mnt/home
-mount -o ${sv_opts},subvol=@cache /dev/mapper/cryptdev /mnt/var/cache
-mount -o ${sv_opts},subvol=@libvirt /dev/mapper/cryptdev /mnt/var/lib/libvirt
-mount -o ${sv_opts},subvol=@log /dev/mapper/cryptdev /mnt/var/log
-mount -o ${sv_opts},subvol=@tmp /dev/mapper/cryptdev /mnt/var/tmp
+mount -o ${sv_opts},subvol=@home /dev/mapper/nvme0n1p3 /mnt/home
+mount -o ${sv_opts},subvol=@cache /dev/mapper/nvme0n1p3 /mnt/var/cache
+mount -o ${sv_opts},subvol=@libvirt /dev/mapper/nvme0n1p3 /mnt/var/lib/libvirt
+mount -o ${sv_opts},subvol=@log /dev/mapper/nvme0n1p3 /mnt/var/log
+mount -o ${sv_opts},subvol=@tmp /dev/mapper/nvme0n1p3 /mnt/var/tmp
 
 mkdir /mnt/efi
 mount /dev/nvme0n1p1 /mnt/efi
