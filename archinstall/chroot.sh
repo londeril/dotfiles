@@ -44,4 +44,6 @@ echo "configuring grub"
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # UEFI
 grub-mkconfig -o /boot/grub/grub.cfg
 
+reflector --verbose --protocol https --latest 5 --sort rate --country Switzerland --save /etc/pacman.d/mirrorlist
+
 echo "exit and reboot"
