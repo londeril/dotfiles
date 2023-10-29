@@ -41,23 +41,22 @@ systemctl enable fstrim.timer
 
 echo "configuring grub"
 #grub-install --target=i386-pc /dev/vda # BIOS
-grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB # UEFI
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # UEFI
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "updating mirrors"
 reflector --verbose --protocol https --latest 5 --sort rate --country Switzerland --save /etc/pacman.d/mirrorlist
 
-#echo "configuring snapper"
-#sudo umount /.snapshots
-#sudo rm -rf /.snapshots
+echo "configuring snapper"
+sudo umount /.snapshots
+sudo rm -rf /.snapshots
 
-#snapper -c root create-config /
+snapper -c root create-config /
 
-#sudo btrfs subvolume delete .snapshots
-#sudo mkdir /.snapshots
-#sudo mount -a
-#sudo chmod 750 /.snapshots
-#sudo chown :wheel /.snapshots
-
+sudo btrfs subvolume delete .snapshots
+sudo mkdir /.snapshots
+sudo mount -a
+sudo chmod 750 /.snapshots
+sudo chown :wheel /.snapshots
 
 echo "exit and reboot"

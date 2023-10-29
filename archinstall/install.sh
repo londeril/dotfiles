@@ -20,25 +20,17 @@ mount /dev/nvme0n1p3 /mnt
 echo "creating btrfs subvolumes and remounting accordingly"
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
-btrfs subvolume create /mnt/@cache
-btrfs subvolume create /mnt/@libvirt
-btrfs subvolume create /mnt/@log
-btrfs subvolume create /mnt/@tmp
 btrfs subvolume create /mnt/@snapshots
 
 umount /mnt
 sv_opts="rw,noatime,compress-force=zstd:1,space_cache=v2"
 mount -o ${sv_opts},subvol=@ /dev/nvme0n1p3 /mnt
-mkdir -p /mnt/{home,var/cache,var/lib/libvirt,var/log,var/tmp,.snapshots}
+mkdir -p /mnt/{home,.snapshots}
 mount -o ${sv_opts},subvol=@home /dev/nvme0n1p3 /mnt/home
-mount -o ${sv_opts},subvol=@cache /dev/nvme0n1p3 /mnt/var/cache
-mount -o ${sv_opts},subvol=@libvirt /dev/nvme0n1p3 /mnt/var/lib/libvirt
-mount -o ${sv_opts},subvol=@log /dev/nvme0n1p3 /mnt/var/log
-mount -o ${sv_opts},subvol=@tmp /dev/nvme0n1p3 /mnt/var/tmp
 mount -o ${sv_opts},subvol=@snapshots /dev/nvme0n1p3 /mnt/.snapshots
 
-mkdir /mnt/efi
-mount /dev/nvme0n1p1 /mnt/efi
+mkdir /mnt/boot
+mount /dev/nvme0n1p1 /mnt/boot
 
 
 # bootstrappig
