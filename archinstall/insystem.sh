@@ -150,3 +150,13 @@ sudo mkdir /.snapshots
 sudo mount -a
 sudo chmod 750 /.snapshots
 sudo chown :wheel /.snapshots
+
+
+sudo vi /etc/mkinitcpio.conf
+
+#Add the hook grub-btrfs-overlayfs at the end of HOOKS in /etc/mkinitcpio.conf ...
+
+#HOOKS=(base ... fsck grub-btrfs-overlayfs)
+
+
+sudo snapper -c root create -d "-- Baseinstall --"
