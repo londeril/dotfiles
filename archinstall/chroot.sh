@@ -40,6 +40,8 @@ systemctl enable libvirtd
 systemctl enable fstrim.timer
 systemctl enable grub-btrfsd
 
+cp -r /root/dotfiles /home/daniel/.dotfiles
+
 echo "configuring grub"
 #grub-install --target=i386-pc /dev/vda # BIOS
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # UEFI
