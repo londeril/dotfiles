@@ -11,12 +11,12 @@ loadkeys de_CH-latin1
 reflector --verbose --protocol https --latest 5 --sort rate --country Switzerland --save /etc/pacman.d/mirrorlist
 
 echo "formating"
-mkfs.vfat -F32 -n ESP /dev/nvme0n1p1
-mkswap /dev/nvme0n1p2
-mkfs.btrfs -L arch /dev/nvme0n1p3 -f
-mkfs.ext4 /dev/nvme0n1p4
+mkfs.vfat -F32 -n ESP ${disk}p1
+mkswap ${disk}p2
+mkfs.btrfs -L arch ${disk}p3 -f
+mkfs.ext4 vp4
 
-mount /dev/nvme0n1p3 /mnt
+mount ${disk}p3 /mnt
 
 echo "creating btrfs subvolumes and remounting accordingly"
 btrfs subvolume create /mnt/@
@@ -26,13 +26,13 @@ umount /mnt
 sv_opts="rw,noatime,compress-force=zstd:1,space_cache=v2"
 mount -o ${sv_opts},subvol=@ /dev/nvme0n1p3 /mnt
 mkdir -p /mnt/{.snapshots}
-mount -o ${sv_opts},subvol=@snapshots /dev/nvme0n1p3 /mnt/.snapshots
+mount -o ${sv_opts},subvol=@snapshots ${disk}p3 /mnt/.snapshots
 
 mkdir /mnt/boot
-mount /dev/nvme0n1p1 /mnt/boot
+mount ${disk}p1 /mnt/boot
 
 mkdir /mnt/home
-mount /dev/nvme0n1p4 /mnt/home
+mount ${disk}p4 /mnt/home
 
 
 # bootstrappig
