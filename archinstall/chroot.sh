@@ -41,11 +41,14 @@ systemctl enable fstrim.timer
 systemctl enable grub-btrfsd
 
 cp -r /root/dotfiles /home/daniel/.dotfiles
+chown daniel /home/daniel/.* -R
 
 echo "configuring grub"
 #grub-install --target=i386-pc /dev/vda # BIOS
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # UEFI
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# MAKE LINUX DEFAULT AND NOT LTS!
 
 echo "updating mirrors"
 reflector --verbose --protocol https --latest 5 --sort rate --country Switzerland --save /etc/pacman.d/mirrorlist
