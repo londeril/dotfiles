@@ -25,7 +25,7 @@ btrfs subvolume create /mnt/@snapshots
 umount /mnt
 sv_opts="rw,noatime,compress-force=zstd:1,space_cache=v2"
 mount -o ${sv_opts},subvol=@ /dev/nvme0n1p3 /mnt
-mkdir -p /mnt/{.snapshots}
+mkdir -p /mnt/.snapshots
 mount -o ${sv_opts},subvol=@snapshots ${disk}p3 /mnt/.snapshots
 
 mkdir /mnt/boot
