@@ -38,6 +38,7 @@ systemctl enable cups.socket
 systemctl enable avahi-daemon
 systemctl enable libvirtd
 systemctl enable fstrim.timer
+systemctl enable grub-btrfsd
 
 echo "configuring grub"
 #grub-install --target=i386-pc /dev/vda # BIOS
@@ -46,17 +47,5 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "updating mirrors"
 reflector --verbose --protocol https --latest 5 --sort rate --country Switzerland --save /etc/pacman.d/mirrorlist
-
-echo "configuring snapper"
-sudo umount /.snapshots
-sudo rm -rf /.snapshots
-
-snapper -c root create-config /
-
-sudo btrfs subvolume delete .snapshots
-sudo mkdir /.snapshots
-sudo mount -a
-sudo chmod 750 /.snapshots
-sudo chown :wheel /.snapshots
 
 echo "exit and reboot"
