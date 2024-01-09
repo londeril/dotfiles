@@ -12,10 +12,12 @@
     "modules-center": ["hyprland/window"],
     "modules-right": [
         "tray",
-        //"custom/updates",
-        //"custom/language",
         "custom/wireguard-manager",
+        "network#WiFi",
+        "network#OfficeDock",
         "battery",
+        "cpu",
+        "memory", 
         "backlight",
         "pulseaudio",
        // "pulseaudio#microphone"
@@ -44,12 +46,51 @@
         }*/
     },
 
+    "cpu": {
+        "interval": 10,
+        "format": "  {usage}%",
+        "max-length": 10,
+        "on-click": "gnome-system-monitor"
+
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "  {}%",
+        "max-length": 10,
+        "on-click": "gnome-system-monitor"
+    },
+
+    "network#WiFi": {
+        "interface": "wlp0s20f3",
+        "format": "{ifname}",
+        "format-wifi": "   {essid} ({ipaddr})",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
+    },
+
+    "network#OfficeDock": {
+        "interface": "fs",
+        "format": "{ifname}",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
+    },
+
     "custom/wireguard-manager": {
     "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
     "format": "{icon}",
     "format-icons": {
-        "connected": "<span color=\"#50fa7b\">VPN: 🔒</span>",
-        "disconnected": "<span color=\"#ff5555\">VPN: 🔓</span>",
+        "connected": "<span color=\"#50fa7b\"> 󱎚  ECM-MGMT</span>", /*🔒🔓*/
+        "disconnected": "<span color=\"#ff5555\">󱙱  ECM-MGMT</span>",
     },
     "interval": "once",
     "on-click": "~/.config/waybar/wireguard-manager/wireguard-manager.sh -t && pkill -SIGRTMIN+1 waybar",
@@ -77,15 +118,15 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{: %R   %d.%m.%Y}",
+        "format": "{:   %d.%m.%Y     %R  }",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
+        "format-icons": [""],
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
         "min-length": 6
     },
     "battery": {
@@ -98,7 +139,7 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+        "format-icons": ["  ","  ", "  ", "  "]
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -115,7 +156,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [" ", " ", " "]
         }
     },
     "pulseaudio#microphone": {

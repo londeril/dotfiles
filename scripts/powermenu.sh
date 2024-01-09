@@ -18,6 +18,7 @@ case $selected in
   $lock)
     /home/daniel/.dotfiles/scripts/swaylocker.sh ;;
   $suspend)
+    /home/daniel/.dotfiles/scripts/swaylocker.sh &
     systemctl suspend ;;
   $reboot)
     systemctl reboot ;;
@@ -25,4 +26,4 @@ case $selected in
     systemctl poweroff ;;
 esac
 
-~/.dotfiles/waybar/launch.sh
+#~/.dotfiles/waybar/launch.sh
