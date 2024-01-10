@@ -6,18 +6,15 @@ suspend="󰤄 suspend"
 logout=" logout"
 reboot=" reboot"
 shutdown=" shutdown" 
-dock="dock"
-undock="undock"
+dock="󱐥 dock"
+undock="󰚦 undock"
 
 entries="$lock\n$suspend\n$dock\n$undock\n$reboot\n$shutdown\n$logout"
 
 #selected=$(echo -e $entries | wofi --width 25 --height 210 --dmenu -p "Powermenu")
-selected=$(echo -e $entries | fuzzel --dmenu -l 5 -p "Powermenu ")
+selected=$(echo -e $entries | fuzzel --dmenu -l 7 -p "Powermenu ")
 
 case $selected in
-  *)
-    # nothing chosen, exiting
-    ;;
   $lock)
     /home/daniel/.dotfiles/scripts/swaylocker.sh &
     ;;

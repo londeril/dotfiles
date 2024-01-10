@@ -1,8 +1,7 @@
 #!/bin/sh
 # swaylock-effects-git launcher
 swaylock \
-	--image ~/Pictures/Wallpaper/christmas.jpg \
-	--indicator-idle-visible \
+	--image ~/.dotfiles/lockscreen.jpg \
 	--indicator-radius 100 \
 	--indicator-thickness 7 \
 	--ring-color 0d73ccff \
@@ -17,4 +16,4 @@ swaylock \
 
 
 # --screenshots \ --clock \ 	--timestr %H:%M \ 	--datestr "%d. %B %Y" \ --effect-blur 7x5 \
-#	--effect-vignette 0.5:0.5 \ --grace 2 \ --fade-in 0.2 \
+#	--effect-vignette 0.5:0.5 \ --grace 2 \ --fade-in 0.2 \ --indicator-idle-visible \
