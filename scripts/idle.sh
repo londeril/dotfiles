@@ -5,6 +5,18 @@ ACSTATUS=`cat /sys/class/power_supply/AC/online`
 AUDIO=`pactl list | grep RUNNING && echo 1 || echo 0`
 
 case $1 in 
+	SCREENSAVER )
+		# we where called to display nice pictures of the kids in both screens, happy to comply! but only if we don't play audio and if we are running on AC power
+		if [[ $AUDIO == 0 ]] && [[ $ACSTATUS == 1 ]]; then
+			~/.dotfiles/scripts/screensaver.sh 
+			echo "on AC and no Audio - displaying pics"
+		fi
+		;;
+	KILLSAVER )
+		# kill screensaver
+		killall -15 feh
+		echo "killing screensaver on input"
+		;;
 	BATSCREEN )
 		# we where called to turn off the screen - let's do that IF we run on battery AND no sound is playing
 		if [[ $ACSTATUS == 0 ]] && [[ $AUDIO == 0 ]]; then
@@ -33,7 +45,21 @@ case $1 in
 			echo "on AC and no Audio - suspend"
 		fi
 		;;
-esac
+	BATDIM )
+		# we where called to dim the screen - we'll do that if we don't run an AC and no Audio is playing. but we'll fist need to get the current brightness
+		brightnessctl get > /tmp/brightness
+		if [[ $ACSTATUS == 0 ]] && [[ $AUDIO == 0 ]]; then
+			brightnessctl set 4800 >/dev/null
+			echo "on Battery and no Audio - dim screen"
+		fi
+		;;
+	BATUNDIM )
+		# restore brightness
+		BRIGHTNESS=`cat /tmp/brightness`
+		brightnessctl set $BRIGHTNESS >/dev/null
+		echo "input registered undimming"
+		;;
+esac	
 
 
 #swayidle -w \
