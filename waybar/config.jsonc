@@ -16,6 +16,7 @@
         "network#WiFi",
         "network#OfficeDock",
         "network#USBOnTheGo",
+        "network#OfficeDockUSB",
         "battery",
         "cpu",
         "memory", 
@@ -69,6 +70,19 @@
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+
+    "network#OfficeDockUSB": {
+        "interface": "enp3s0u2u3u3u2",
+        "format": "{ifname}",
+        "format-ethernet": "  {ipaddr}",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": "nm-connection-editor",
