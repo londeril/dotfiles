@@ -5,7 +5,7 @@
 ACSTATUS=`cat /sys/class/power_supply/AC/online`
 # Check if Audio is playing or not
 AUDIO=`pactl list | grep RUNNING && echo 1 || echo 0`
-# check if we are on our cosy home wlan
+# check if we are on our cosy home wlan or at the very least in a new with the same subnet...
 IP=$(ip a | awk '/inet / && /172\.16\.3\./ {print $2}' | cut -d'/' -f1)
 if [[ ! -z "$IP" ]]; then
 	HOME=1
