@@ -62,6 +62,7 @@ tooltip {
 #network,
 #workspaces,
 #tray,
+#idle_inhibitor,
 #backlight {
     background: #1e1e2e;
     padding: 0px 5px;
@@ -78,6 +79,7 @@ tooltip {
 #pulseaudio,
 #cpu,
 #memory,
+#idle_inhibitor,
 #workspaces {
     color: #f8bd27;
 }

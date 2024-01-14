@@ -1,8 +1,17 @@
 #!/bin/bash
 
 # get some status vars
+# check if we run on AC or BAT power
 ACSTATUS=`cat /sys/class/power_supply/AC/online`
+# Check if Audio is playing or not
 AUDIO=`pactl list | grep RUNNING && echo 1 || echo 0`
+# check if we are on our cosy home wlan
+IP=$(ip a | awk '/inet / && /172\.16\.3\./ {print $2}' | cut -d'/' -f1)
+if [[ ! -z "$IP" ]]; then
+	HOME=1
+else
+	HOME=0
+fi
 
 case $1 in 
 	SCREENSAVER )
@@ -25,15 +34,18 @@ case $1 in
 		fi
 		;;
 	BATLOCK )
-		# we where called to lock the session with the on battery timer - so let's see if we are on battery. we'll lock on battery IF no audio is playing
-		if [[ $AUDIO == 0 ]] && [[ $ACSTATUS == 0 ]]; then
+		# we where called to lock the session with the on battery timer - so let's see if we are on battery. we'll lock on battery IF no audio is playing.
+		# also we won't lock if we are in our own cozy WLAN - we've entered the password enough times today...
+		if [[ $AUDIO == 0 ]] && [[ $ACSTATUS == 0 ]] && [[ $HOME == 0 ]]; then
 			~/.dotfiles/scripts/swaylocker.sh &
-			echo "on Battery and no Audio - lock"
+			echo "on Battery and no Audio and not at home - lock"
 		fi
 		;;
 	BATSUSPEND )
 		# we where called to suspend the machine - let's do that IF we run on battery
 		if [[ $ACSTATUS == 0 ]] && [[ $AUDIO == 0 ]]; then
+			~/.dotfiles/scripts/swaylocker.sh &
+			sleep 3
 			systemctl suspend
 			echo "on Battery and no Audio - suspend"
 		fi

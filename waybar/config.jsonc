@@ -7,7 +7,8 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "idle_inhibitor"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
@@ -54,6 +55,15 @@
         "max-length": 10,
         "on-click": "gnome-system-monitor"
 
+    },
+
+    "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "  I'M WIDE AWAKE!!",
+        "deactivated": " "
+    },
+    "timeout": 30.5
     },
 
     "memory": {
