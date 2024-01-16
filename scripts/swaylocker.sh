@@ -1,7 +1,7 @@
 #!/bin/sh
 # swaylock-effects-git launcher
 swaylock \
-	--image ~/.dotfiles/lockscreen.jpg \
+	--image /home/daniel/.dotfiles/lockscreen.jpg \
 	--indicator-radius 100 \
 	--indicator-thickness 7 \
 	--ring-color 0d73ccff \
