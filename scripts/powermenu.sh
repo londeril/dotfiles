@@ -24,15 +24,22 @@ case $selected in
     systemctl suspend
     ;;
   $dock)
-    # disable internal notebook display
-    hyprctl keyword monitor eDP-1,disable
-    # get current workspaces from hyrland
-    workspaces=`hyprctl -j workspaces`
-    # loop through the json data and extract the workspace's ids
-    for item in $(echo "$workspaces" | jq -c '.[] | .id'); do
-      # move each workspace to the big screen
-      hyprctl dispatch moveworkspacetomonitor $item DP-7
-    done
+    # chances are we messed up... check if there is only the internal screen pressent - if it is... don't dock...
+    monitors=$(hyprctl monitors -j | jq '. | length')
+    if [ "$monitors" -eq 1 ]; then
+        # only one screen present.. please don't disable that...
+        notify-send -u critical -t 0 "There is only one screen... I will not disable the last monitor... bailing"
+    else
+      # disable internal notebook display
+      hyprctl keyword monitor eDP-1,disable
+      # get current workspaces from hyrland
+      workspaces=`hyprctl -j workspaces`
+      # loop through the json data and extract the workspace's ids
+      for item in $(echo "$workspaces" | jq -c '.[] | .id'); do
+        # move each workspace to the big screen
+        hyprctl dispatch moveworkspacetomonitor $item DP-7
+      done
+    fi
     ;;
   $undock)
     # get the internal screen back online 
