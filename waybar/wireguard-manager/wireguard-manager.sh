@@ -5,7 +5,7 @@ STATUS_CONNECTED_STR='{"text":"Connected","class":"connected","alt":"connected"}
 STATUS_DISCONNECTED_STR='{"text":"Disconnected","class":"disconnected","alt":"disconnected"}'
 
 function askpass() {
-  rofi -dmenu -password -no-fixed-num-lines -p "Sudo password : " -theme ~/.config/waybar/wireguard-manager/rofi.rasi 
+  rofi -dmenu -password -no-fixed-num-lines -p "Sudo password : " -theme ~/.config/rofi/rounded-blue-dark.rasi 
 }
 
 function status_wireguard() {

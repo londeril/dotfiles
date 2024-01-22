@@ -8,23 +8,31 @@
     "height": 0,
     "modules-left": [
         "hyprland/workspaces",
-        "idle_inhibitor"
+        "idle_inhibitor",
+        "wlr/taskbar"
+        //"hyprland/window"
     ],
-    "modules-center": ["hyprland/window"],
+    "modules-center": [
+        "group/timedate"
+    ],
+
     "modules-right": [
         "tray",
+        "custom/insync",
         "custom/wireguard-manager",
         "network#WiFi",
         "network#OfficeDock",
         "network#USBOnTheGo",
         "network#OfficeDockUSB",
-        "battery",
-        "cpu",
-        "memory", 
-        "backlight",
-        "pulseaudio",
+        "group/hardware",
+        //"cpu",
+        //"memory", 
+        //"backlight",
+        "group/soundbl",
+        //"pulseaudio",
        // "pulseaudio#microphone"
-       "clock"
+       "battery",
+       "custom/powermenu"
     ],
 
     "hyprland/window": {
@@ -130,7 +138,7 @@
     "format": "{icon}",
     "format-icons": {
         "connected": "<span color=\"#50fa7b\"> 󱎚  ECM-MGMT</span>", /*🔒🔓*/
-        "disconnected": "<span color=\"#ff5555\">󱙱  ECM-MGMT</span>",
+        "disconnected": "<span color=\"#5a5a5a\">󱙱  ECM-MGMT</span>",
     },
     "interval": "once",
     "on-click": "~/.config/waybar/wireguard-manager/wireguard-manager.sh -t && pkill -SIGRTMIN+1 waybar",
@@ -138,29 +146,36 @@
     "signal": 1,
     },
 
-    "custom/updates": {
-        "format": " {}",
-        "interval": 7200,                     // every two hours
-        "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
-        "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "kitty -e sudo pacman -Syu", // update system
-        "signal": 8
-    },
-   "custom/weather" : {
+   "custom/powermenu" : {
+        "format": " ",
         "tooltip" : true,
-        "format" : "{}",
-        "interval" : 30,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
+        "on-click": "~/.dotfiles/scripts/powermenu.sh"
     },
+
+    "custom/insync" : {
+        "exec": "exec ~/.dotfiles/scripts/insync.sh",
+        "format": "{}",
+        "on-click": "insync show",
+        "interval": 30,
+        "tooltip": false
+    },
+
     "tray": {
-        "icon-size": 13,
+        "icon-size": 18,
         "spacing": 10
     },
-    "clock": {
-        "format": "{:   %d.%m.%Y     %R  }",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    
+
+    "clock#date": {
+        "format": "{:   %d.%m.%Y}",
+        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
+
+    "clock": {
+        "format": "{:  %R  }",
+        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
@@ -208,5 +223,73 @@
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
+    },
+
+     // Taskbar
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "icon-theme": "Newaita-reborn-darkQ"
+    },
+
+    // Bluetooth
+    "bluetooth": {
+        "format-disabled": "󰂲 ",
+        "format-off": "󰂲 ",
+        "format-on": "󰂯 ",
+        "format-connected": "󰂰 ",
+        "interval": 30,
+        "on-click": "blueman-manager"
+    },
+
+
+    // Group Hardware
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "memory",
+            "cpu"
+            
+        ]
+    },
+
+    // Group Sound/Backlight
+     "group/soundbl": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "pulseaudio",
+            "backlight",
+            "bluetooth"
+            
+        ]
+    },
+
+    // Group Time/Date
+     "group/timedate": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "clock",
+            "clock#date"
+            
+        ]
     }
+
+
 }

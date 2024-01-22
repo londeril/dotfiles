@@ -22,14 +22,12 @@ tooltip {
 
 #workspaces button {
     padding: 5px;
-    /*color: #825a00;*//*#313244*/
-    color: rgba(146, 146, 146, 1);
+    color: #825a00;/*#313244*/
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    /*color: #f8bd27;*/
-    color: rgba(227, 227, 227, 1);
+    color: #f8bd27;
 }
 
 #workspaces button.focused {
@@ -46,14 +44,20 @@ tooltip {
 
 #workspaces button:hover {
     background: #11111b;
-    color: rgba(227, 227, 227, 1);
+    color: #f8bd27;
     border-radius: 10px;
 }
 
+#custom-language,
+#custom-updates,
+#custom-caffeine,
+#custom-weather,
+#bluetooth,
 #custom-wireguard-manager,
 #window,
 #clock,
 #memory,
+#cpu,
 #battery,
 #pulseaudio,
 #network,
@@ -61,40 +65,15 @@ tooltip {
 #tray,
 #custom-powermenu,
 #idle_inhibitor,
-#taskbar,
-#tray,
-#cpu,
-#backlight,
-#custom-insync,
-#bluetooth
- {
-    /*background: rgba(21, 18, 27, 0);*/
-    background: rgba(79, 67, 59, 0.7);
-    /*background: rgba(97, 113, 143, 0.54);*/
-    /*background: #1e1e2e;*/
-    /*padding: 0px 5px;*/
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
+#backlight {
+    background: #1e1e2e;
+    padding: 0px 5px;
     /*margin: 0px 0px;*/
     margin-top: 2px;
-    margin-right: 2px;
-    margin-bottom: 2px;
-    margin-left: 2px;
     /*border: 1px solid #181825;*/
-    /*color: #f8bd27;*/
-    color: rgba(227, 227, 227, 1);
-    border-radius: 10px;
 }
 
-
-
-
-
-
-
-/*#backlight,
+#backlight,
 #network,
 #custom-wireguard-manager,
 #battery,
@@ -107,19 +86,16 @@ tooltip {
 #idle_inhibitor,
 #workspaces {
     color: #f8bd27;
-    color: rgba(227, 227, 227, 1);
-    border-radius: 10px;
 }
 
 #tray {
     border-radius: 10px 0px 0px 10px;
-    margin-right: 10px;
-}*/
+    /*margin-right: 10px;*/
+}
 
 #workspaces {
     /*background: #1e1e2e;*/
-    /*border-radius: 0px 10px 10px 0px;*/
-    border-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
     /*margin-left: 10px;
     padding-right: 0px;
     padding-left: 5px;*/
