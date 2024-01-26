@@ -82,7 +82,7 @@
     },
 
     "network#WiFi": {
-        "interface": "wlp0s20f3",
+        "interface": "wlan0",
         "format": "{ifname}",
         "format-wifi": "   {essid} ({ipaddr})",
         "format-disconnected": "", //An empty format will hide the module.
@@ -95,9 +95,9 @@
     },
 
     "network#OfficeDockUSB": {
-        "interface": "enp3s0u2u3u3u2",
+        "interface": "eth2",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr}",
+        "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
@@ -108,7 +108,7 @@
     },
 
     "network#OfficeDock": {
-        "interface": "enp3s0u2u4",
+        "interface": "eth3",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
@@ -121,9 +121,9 @@
     },
 
     "network#USBOnTheGo": {
-        "interface": "enp0s13f0u3",
+        "interface": "eth1",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr}",
+        "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
