@@ -19,8 +19,8 @@
     "modules-right": [
         "tray",
         "custom/insync",
-        "network#OfficeDock",
-        "network#USBOnTheGo",
+        "network#Office",
+        "network#Lab",
         "group/hardware",
         //"cpu",
         //"memory", 
@@ -90,8 +90,8 @@
         "on-click-right": "nm-applet"
     },
 
-    "network#OfficeDockUSB": {
-        "interface": "eth2",
+    "network#Office": {
+        "interface": "enp6s0",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
@@ -103,8 +103,8 @@
         "on-click-right": "nm-applet"
     },
 
-    "network#OfficeDock": {
-        "interface": "eth3",
+    "network#Lab": {
+        "interface": "enp4s0",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
