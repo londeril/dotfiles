@@ -15,8 +15,8 @@ function status_wireguard() {
 
 function toggle_wireguard() {
   status_wireguard && \
-     SUDO_ASKPASS=~/.config/waybar/wireguard-manager/wireguard-manager.sh sudo -A systemctl stop $SERVICE_NAME || \
-     SUDO_ASKPASS=~/.config/waybar/wireguard-manager/wireguard-manager.sh sudo -A systemctl start $SERVICE_NAME
+     SUDO_ASKPASS=~/.dotfiles/scripts/wireguard-manager/wireguard-manager.sh sudo -A systemctl stop $SERVICE_NAME || \
+     SUDO_ASKPASS=~/.dotfiles/scripts/wireguard-manager/wireguard-manager.sh sudo -A systemctl start $SERVICE_NAME
 }
 
 case $1 in

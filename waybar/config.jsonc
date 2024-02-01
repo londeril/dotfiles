@@ -135,14 +135,14 @@
     },
 
     "custom/wireguard-manager": {
-    "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
-    "format": "{icon}",
+    "exec": "exec ~/.dotfiles/scripts/wireguard-manager/wireguard-manager.sh -s",
+    "format": "{icon}", 
     "format-icons": {
         "connected": "<span color=\"#50fa7b\"> 󱎚  ECM-MGMT</span>", /*🔒🔓*/
         "disconnected": "<span color=\"#5a5a5a\">󱙱  ECM-MGMT</span>",
     },
     "interval": "once",
-    "on-click": "~/.config/waybar/wireguard-manager/wireguard-manager.sh -t && pkill -SIGRTMIN+1 waybar",
+    "on-click": "~/.dotfiles/scripts/wireguard-manager/wireguard-manager.sh -t && pkill -SIGRTMIN+1 waybar",
     "return-type": "json",
     "signal": 1,
     },
