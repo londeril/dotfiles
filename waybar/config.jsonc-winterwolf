@@ -1,0 +1,296 @@
+{
+    "layer": "top",
+    "output": ["eDP-1", "DP-7"],
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "hyprland/workspaces",
+        "idle_inhibitor",
+        "wlr/taskbar"
+        //"hyprland/window"
+    ],
+    "modules-center": [
+        "group/timedate"
+    ],
+
+    "modules-right": [
+        "tray",
+        "custom/insync",
+        "custom/wireguard-manager",
+        "network#WiFi",
+        "network#OfficeDock",
+        "network#USBOnTheGo",
+        "network#OfficeDockUSB",
+        "group/hardware",
+        //"cpu",
+        //"memory", 
+        //"backlight",
+        "group/soundbl",
+        //"pulseaudio",
+       // "pulseaudio#microphone"
+       "battery",
+       "custom/powermenu"
+    ],
+
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        //"format": "{icon}",
+        /*"persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }*/
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "  {usage}%",
+        "max-length": 10,
+        "on-click": "gnome-system-monitor"
+
+    },
+
+    "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "  I'M WIDE AWAKE!!",
+        "deactivated": " "
+    },
+    "timeout": 30.5
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "  {}%",
+        "max-length": 10,
+        "on-click": "gnome-system-monitor"
+    },
+
+    "network#WiFi": {
+        "interface": "wlan0",
+        "format": "{ifname}",
+        "format-wifi": "   {essid} ({ipaddr})",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+
+    "network#OfficeDockUSB": {
+        "interface": "eth2",
+        "format": "{ifname}",
+        "format-ethernet": "  {ipaddr}",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+
+    "network#OfficeDock": {
+        "interface": "eth3",
+        "format": "{ifname}",
+        "format-ethernet": "  {ipaddr}",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+
+    "network#USBOnTheGo": {
+        "interface": "eth1",
+        "format": "{ifname}",
+        "format-ethernet": "  {ipaddr}",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+
+    "custom/wireguard-manager": {
+    "exec": "exec ~/.dotfiles/scripts/wireguard-manager/wireguard-manager.sh -s",
+    "format": "{icon}", 
+    "format-icons": {
+        "connected": "<span color=\"#50fa7b\"> 󱎚  ECM-MGMT</span>", /*🔒🔓*/
+        "disconnected": "<span color=\"#5a5a5a\">󱙱  ECM-MGMT</span>",
+    },
+    "interval": "once",
+    "on-click": "~/.dotfiles/scripts/wireguard-manager/wireguard-manager.sh -t && pkill -SIGRTMIN+1 waybar",
+    "return-type": "json",
+    "signal": 1,
+    },
+
+   "custom/powermenu" : {
+        "format": " ",
+        "tooltip" : true,
+        "on-click": "~/.dotfiles/scripts/powermenu.sh"
+    },
+
+    "custom/insync" : {
+        "exec": "exec ~/.dotfiles/scripts/insync.sh",
+        "format": "{}",
+        "on-click": "insync show",
+        "interval": 30,
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    
+
+    "clock#date": {
+        "format": "{:   %d.%m.%Y}",
+        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "clock": {
+        "format": "{:  %R  }",
+        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [""],
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "min-length": 6
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["  ","  ", "  ", "  "]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" ", " ", " "]
+        }
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5
+    },
+
+     // Taskbar
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "icon-theme": "Newaita-reborn-darkQ"
+    },
+
+    // Bluetooth
+    "bluetooth": {
+        "format-disabled": "󰂲 ",
+        "format-off": "󰂲 ",
+        "format-on": "󰂯 ",
+        "format-connected": "󰂰 ",
+        "interval": 30,
+        "on-click": "blueman-manager"
+    },
+
+
+    // Group Hardware
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "memory",
+            "cpu"
+            
+        ]
+    },
+
+    // Group Sound/Backlight
+     "group/soundbl": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "pulseaudio",
+            "backlight",
+            "bluetooth"
+            
+        ]
+    },
+
+    // Group Time/Date
+     "group/timedate": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "clock",
+            "clock#date"
+            
+        ]
+    }
+
+
+}
