@@ -1,5 +1,6 @@
 {
     "layer": "top",
+    "output": ["eDP-1", "DP-7"],
     "position": "top",
     "mod": "dock",
     "exclusive": true,

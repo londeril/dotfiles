@@ -8,10 +8,10 @@ echo "setting gnome defaults"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'
-gsettings set org.gnome.desktop.interface font-name 'Cantarell 10'
-gsettings set org.gnome.desktop.interface document-font-name 'Cantarell 10'
+gsettings set org.gnome.desktop.interface font-name 'Lato 10'
+gsettings set org.gnome.desktop.interface document-font-name 'Lato 10'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Monospace Regular 10'
-gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Cantarell Bold 10'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Lato Bold 10'
 gsettings set org.gnome.desktop.interface font-antialiasing 'rgba'
 gsettings set org.gnome.desktop.interface font-hinting 'full'
 gsettings set org.gnome.desktop.interface clock-show-weekday 'true'
@@ -56,5 +56,5 @@ echo "setting dock icons"
 gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'microsoft-edge.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Evolution.desktop', 'org.gnome.Geary.desktop', 'obsidian.desktop', '1password.desktop', 'org.remmina.Remmina.desktop', 'com.spotify.Client.desktop', 'kitty.desktop', 'anydesk.desktop']"
 
 # change default shell to zsh this will ask for a password
-echo "change shell to zsh - this will prompt you for your password"
-chsh -s $(which zsh)
+#echo "change shell to zsh - this will prompt you for your password"
+#chsh -s $(which zsh)
