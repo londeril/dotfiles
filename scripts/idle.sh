@@ -26,6 +26,8 @@ case $1 in
 		if [[ $AUDIO == 0 ]] && [[ $ACSTATUS == 1 ]]; then
 			/home/daniel/.dotfiles/scripts/screensaver.sh 
 			echo "on AC and no Audio - displaying pics"
+		else
+			echo "wanted to display pics but some criteria was not met"
 		fi
 		;;
 	KILLSAVER )
@@ -38,6 +40,8 @@ case $1 in
 		if [[ $ACSTATUS == 0 ]] && [[ $AUDIO == 0 ]]; then
 			hyprctl dispatch dpms off
 			echo "on Battery and no Audio - display off"
+		else
+			echo "wanted to turn the screen off but some criteria was not met"
 		fi
 		;;
 	OFFICESCREEN )
@@ -45,6 +49,8 @@ case $1 in
 		if [[ $ACSTATUS == 1 ]] && [[ $WORK == 1 ]]; then
 			hyprctl dispatch dpms off
 			echo "on AC and no Audio but at the Office - display off"
+		else
+			echo "wanted to turn the screen off while int the office but some criteria was not met"
 		fi
 		;;
 	BATLOCK )
@@ -53,6 +59,8 @@ case $1 in
 		if [[ $AUDIO == 0 ]] && [[ $ACSTATUS == 0 ]] && [[ $HOME == 0 ]]; then
 			/home/daniel/.dotfiles/scripts/swaylocker.sh &
 			echo "on Battery and no Audio and not at home - lock"
+		else
+			echo "wanted to lock the screen but some criteria was not met"
 		fi
 		;;
 	BATSUSPEND )
@@ -62,6 +70,8 @@ case $1 in
    			sleep 3
     		systemctl suspend
 			echo "on Battery and no Audio - suspend"
+		else
+			echo "wanted to suspend but some criteria was not met"
 		fi
 		;;
 	ACLOCK )
@@ -69,6 +79,8 @@ case $1 in
 		if [[ $AUDIO == 0 ]] && [[ $ACSTATUS == 1 ]] && [[ $WORK == 0 ]]; then
 			/home/daniel/.dotfiles/scripts/swaylocker.sh &
 			echo "on AC and no Audio - suspend"
+		else
+			echo "wanted to lock the screen but some criteria was not met"
 		fi
 		;;
 	BATDIM )
@@ -77,6 +89,8 @@ case $1 in
 		if [[ $ACSTATUS == 0 ]] && [[ $AUDIO == 0 ]]; then
 			brightnessctl set 4800 >/dev/null
 			echo "on Battery and no Audio - dim screen"
+		else
+			echo "wanted to dim the screen but some criteria was not met"
 		fi
 		;;
 	BATUNDIM )
