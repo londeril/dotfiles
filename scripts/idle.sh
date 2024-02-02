@@ -39,6 +39,11 @@ case $1 in
 			hyprctl dispatch dpms off
 			echo "on Battery and no Audio - display off"
 		fi
+		# if we are in the office we want to turn the laptop screen off (without locking the notebook!) when it wasn't used in a while
+		if [[ $ACSTATUS == 1 ]] && [[ $WORK == 1 ]]; then
+			hyprctl dispatch dpms off
+			echo "on AC and no Audio but at the Office - display off"
+		fi
 		;;
 	BATLOCK )
 		# we where called to lock the session with the on battery timer - so let's see if we are on battery. we'll lock on battery IF no audio is playing.
