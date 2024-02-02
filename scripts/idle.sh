@@ -13,6 +13,13 @@ else
 	HOME=0
 fi
 
+IP=$(ip a | awk '/inet / && /192\.168\.251\./ {print $2}' | cut -d'/' -f1)
+if [[ ! -z "$IP" ]]; then
+	WORK=1
+else
+	WORK=0
+fi
+
 case $1 in 
 	SCREENSAVER )
 		# we where called to display nice pictures of the kids in both screens, happy to comply! but only if we don't play audio and if we are running on AC power
@@ -51,8 +58,8 @@ case $1 in
 		fi
 		;;
 	ACLOCK )
-		# we where called to lock the session with the AC tier - so let's do this if we are on AC AND no audio is playing
-		if [[ $AUDIO == 0 ]] && [[ $ACSTATUS == 1 ]]; then
+		# we where called to lock the session with the AC timer - so let's do this if we are on AC, no audio is playing and we are not in the office
+		if [[ $AUDIO == 0 ]] && [[ $ACSTATUS == 1 ]] && [[ $WORK == 0 ]]; then
 			/home/daniel/.dotfiles/scripts/swaylocker.sh &
 			echo "on AC and no Audio - suspend"
 		fi
