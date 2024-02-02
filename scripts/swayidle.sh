@@ -16,4 +16,5 @@ swayidle -w \
                 timeout $BATLOCK '/home/daniel/.dotfiles/scripts/idle.sh BATLOCK' \
                 timeout $BATSUSPEND '/home/daniel/.dotfiles/scripts/idle.sh BATSUSPEND' \
                 timeout $SCREENSAVER '/home/daniel/.dotfiles/scripts/idle.sh SCREENSAVER' resume '/home/daniel/.dotfiles/scripts/idle.sh KILLSAVER' \
-                timeout $ACLOCK '/home/daniel/.dotfiles/scripts/idle.sh ACLOCK'
+                timeout $ACLOCK '/home/daniel/.dotfiles/scripts/idle.sh ACLOCK' \
+                timeout $OFFICESCREEN '/home/daniel/.dotfiles/scripts/idle.sh OFFICESCREEN' 
