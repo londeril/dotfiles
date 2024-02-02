@@ -13,6 +13,10 @@ else
 	HOME=0
 fi
 
+# get the hostname of the current machine
+HOSTNAME=`hostname`
+
+# check if we are on our office lan or at the very least in a new with the same subnet...
 IP=$(ip a | awk '/inet / && /192\.168\.251\./ {print $2}' | cut -d'/' -f1)
 if [[ ! -z "$IP" ]]; then
 	WORK=1
@@ -26,6 +30,10 @@ case $1 in
 		if [[ $AUDIO == 0 ]] && [[ $ACSTATUS == 1 ]]; then
 			/home/daniel/.dotfiles/scripts/screensaver.sh 
 			echo "on AC and no Audio - displaying pics"
+		# let's check if we run on viper
+		elif [[ $AUDIO == 0 ]] && [[ $WORK == 1 ]] && [[ $HOSTNAME == "viper" ]]; then
+			/home/daniel/.dotfiles/scripts/screensaver.sh 
+			echo "in the Office and no Audio - displaying pics"
 		else
 			echo "wanted to display pics but some criteria was not met"
 		fi
