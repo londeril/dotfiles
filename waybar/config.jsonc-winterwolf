@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "output": ["eDP-1", "DP-7"],
+    "output": ["HDMI-A-1"],
     "position": "top",
     "mod": "dock",
     "exclusive": true,
@@ -9,7 +9,6 @@
     "height": 0,
     "modules-left": [
         "hyprland/workspaces",
-        "idle_inhibitor",
         "wlr/taskbar"
         //"hyprland/window"
     ],
@@ -20,11 +19,7 @@
     "modules-right": [
         "tray",
         "custom/insync",
-        "custom/wireguard-manager",
-        "network#WiFi",
-        "network#OfficeDock",
-        "network#USBOnTheGo",
-        "network#OfficeDockUSB",
+        "network",
         "group/hardware",
         //"cpu",
         //"memory", 
@@ -32,7 +27,6 @@
         "group/soundbl",
         //"pulseaudio",
        // "pulseaudio#microphone"
-       "battery",
        "custom/powermenu"
     ],
 
@@ -108,8 +102,8 @@
         "on-click-right": "nm-applet"
     },
 
-    "network#OfficeDock": {
-        "interface": "eth3",
+    "network": {
+        "interface": "enp6s0",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
@@ -270,9 +264,7 @@
             "transition-left-to-right": false
         },        
         "modules": [
-            "pulseaudio",
-            "backlight",
-            "bluetooth"
+            "pulseaudio"
             
         ]
     },
