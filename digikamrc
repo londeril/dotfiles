@@ -138,7 +138,7 @@ EnableCM=true
 GamutCheckMaskColor=126,255,255
 LastMismatchBehavior=2049
 LastMissingProfileBehavior=2050
-LastSpecifiedAssignProfile=
+LastSpecifiedAssignProfile[$e]=/usr/share/digikam/profiles/
 LastSpecifiedInputProfile=
 LastUncalibratedBehavior=2080
 ManagedPreviews=true
@@ -821,7 +821,7 @@ tagPaths=1
 
 [Database Settings]
 Database Connectoptions=
-Database Encrypted Password=AwIZGRk=
+Database Encrypted Password=AwJVVVU=
 Database Hostname=
 Database Name=/run/media/daniel/Photostore/Masters/
 Database Name Face=/run/media/daniel/Photostore/Masters/
@@ -1154,7 +1154,7 @@ Show Only Face Tags For Assigning Name=true
 Show Permanent Delete Dialog=true
 Show Splash=true
 Show Trash Delete Dialog=true
-State=AAAA/wAAAAD9AAAAAAAABogAAAUIAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAACfQAAAUIAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 String Comparison Type=0
 ToolBarsMovable=Disabled
 Use Large Thumbs=false
@@ -1528,7 +1528,7 @@ ItemProperties Expanded=true
 LocationProperties Expanded=true
 Minimized=true
 PhotographProperties Expanded=true
-RestoreSize=32
+RestoreSize=33
 RightsProperties Expanded=true
 TagsProperties Expanded=true
 VideoProperties Expanded=true
@@ -1607,9 +1607,9 @@ State=AAAA/wAAAAD9AAAAAQAAAAIAAAMGAAAAxPwBAAAAAfsAAAAmAGwAaQBnAGgAdAB0AGEAYgBsAG
 ToolBarsMovable=Disabled
 
 [MainWindow]
-InitialAlbumID=134217940
+InitialAlbumID=134217938
 SplitterState=AAAA/wAAAAEAAAADAAABhgAADUgAAAF9Af////8AAAAAAQE=
-ThumbbarState=AAAA/wAAAAD9AAAAAQAAAAIAAAg0AAAAwPwBAAAAAfsAAAAmAG0AYQBpAG4AdwBpAG4AZABvAHcAXwB0AGgAdQBtAGIAYgBhAHIAAAAAAAAACDQAAABxAQAAAwAABMMAAAUIAAAABAAAAAQAAAAIAAAACPwAAAAA
+ThumbbarState=AAAA/wAAAAD9AAAAAQAAAAIAAAg0AAAAwPwBAAAAAfsAAAAmAG0AYQBpAG4AdwBpAG4AZABvAHcAXwB0AGgAdQBtAGIAYgBhAHIAAAAAAAAACDQAAABxAQAAAwAACC8AAAUIAAAABAAAAAQAAAAIAAAACPwAAAAA
 
 [MediaPlayer AVFilterAudio]
 enable=true
@@ -1714,10 +1714,10 @@ CaseSensitive=0
 HelpBoxNotifSeen=true
 
 [People Sidebar]
-CurrentIndex=212
+CurrentIndex=210
 Expansion=4,7,5,6,210,212
 RestoreChecked=false
-Selection=212
+Selection=210
 SortColumn=0
 SortOrder=0
 
