@@ -1,6 +1,7 @@
 preload = ~/Pictures/Wallpaper/wintertime.jpg
 preload = ~/Pictures/Wallpaper/dragon.jpg
 wallpaper = eDP-1,~/Pictures/Wallpaper/dragon.jpg
-wallpaper = DP-1,~/Pictures/Wallpaper/wintertime.jpg
-wallpaper = DP-6,~/Pictures/Wallpaper/wintertime.jpg
-wallpaper = DP-7,~/Pictures/Wallpaper/wintertime.jpg
+wallpaper = DP-1,~/Pictures/Wallpaper/dragon.jpg
+wallpaper = DP-6,~/Pictures/Wallpaper/dragon.jpg
+wallpaper = DP-7,~/Pictures/Wallpaper/dragon.jpg
+wallpaper = HDMI-1,~/Pictures/Wallpaper/dragon.jpg
