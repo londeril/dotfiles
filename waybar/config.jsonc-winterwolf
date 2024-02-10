@@ -18,7 +18,7 @@
 
     "modules-right": [
         "tray",
-        "custom/insync",
+        //"custom/insync",
         "network",
         "group/hardware",
         //"cpu",
