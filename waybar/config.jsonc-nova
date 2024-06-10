@@ -14,7 +14,7 @@
         //"hyprland/window"
     ],
     "modules-center": [
-        "group/timedate"
+        "group/timedate"   
     ],
 
     "modules-right": [
@@ -168,12 +168,12 @@
     
 
     "clock#date": {
-        "format": "{:   %d.%m.%Y}",
+        "format": "{:%d.%m.%Y}",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "clock": {
-        "format": "{:  %R  }",
+        //"format": "{:%R}",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
