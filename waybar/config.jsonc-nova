@@ -122,7 +122,7 @@
     },
 
     "network#USBOnTheGo": {
-        "interface": "eth1",
+        "interface": "eth0",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
