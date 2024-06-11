@@ -18,9 +18,10 @@
 
     "modules-right": [
         "tray",
-        "custom/insync",
+        //"custom/insync",
         "network#Office",
-        "network#Lab",
+        "network#Domain",
+	"network#SAN",
         "group/hardware",
         //"cpu",
         //"memory", 
@@ -91,9 +92,9 @@
     },
 
     "network#Office": {
-        "interface": "eth0",
+        "interface": "br0",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr}",
+        "format-ethernet": "ECM: {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
@@ -103,10 +104,10 @@
         "on-click-right": "nm-applet"
     },
 
-    "network#Lab": {
-        "interface": "enp4s0",
+    "network#Domain": {
+        "interface": "br1",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr}",
+        "format-ethernet": "Domain: {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
@@ -116,10 +117,10 @@
         "on-click-right": "nm-applet"
     },
 
-    "network#USBOnTheGo": {
-        "interface": "eth1",
+    "network#SAN": {
+        "interface": "enp12s0f1",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr}",
+        "format-ethernet": "SAN: {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
@@ -284,6 +285,4 @@
             
         ]
     }
-
-
 }
