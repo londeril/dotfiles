@@ -20,6 +20,7 @@
         "tray",
         //"custom/insync",
         "network#Office",
+	"network#Setup",
         "network#Domain",
 	"network#SAN",
         "group/hardware",
@@ -129,6 +130,36 @@
         "on-click": "nm-connection-editor",
         "on-click-right": "nm-applet"
     },
+
+    "network#Setup": {
+        "interface": "enp4s0",
+        "format": "{ifname}",
+        "format-ethernet": "Setup: {ipaddr}",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     "custom/wireguard-manager": {
     "exec": "exec ~/.dotfiles/scripts/wireguard-manager/wireguard-manager.sh -s",
