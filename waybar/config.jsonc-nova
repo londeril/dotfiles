@@ -96,7 +96,7 @@
     },
 
     "network#OfficeDockUSB": {
-        "interface": "eth2",
+        "interface": "eth4",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
