@@ -51,4 +51,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo "updating mirrors"
 reflector --verbose --protocol https --latest 5 --sort rate --country Switzerland --save /etc/pacman.d/mirrorlist
 
+echo "copy sddm theme"
+cp -r /root/dotfiles/sddm-themes/* /usr/share/sddm/themes/
+mkdir /etc/sddm.conf.d
+cp /root/dotfiles/archinstall/defaults.conf /etc/sddm.conf.d/
+
 echo "exit and reboot"
