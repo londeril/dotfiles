@@ -55,5 +55,6 @@ echo "copy sddm theme"
 cp -r /root/dotfiles/sddm-themes/* /usr/share/sddm/themes/
 mkdir /etc/sddm.conf.d
 cp /root/dotfiles/archinstall/defaults.conf /etc/sddm.conf.d/
+cp /root/dotfiles/archinstall/Xsetup /usr/share/sddm/scripts/
 
 echo "exit and reboot"
