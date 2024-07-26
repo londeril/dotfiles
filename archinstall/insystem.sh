@@ -11,10 +11,9 @@ mkdir ~/Data
 
 echo "copy configs in place and symlinking them"
 #ln -s ~/.dotfiles/hypr ~/.config/
-ln -s ~/.dotfiles/zsh ~/.config/
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/.dotfiles/kitty ~/.config/
-ln -s ~/.dotfiles/waybar ~/.config/
+#ln -s ~/.dotfiles/waybar ~/.config/
 ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
 ln -s ~/.dotfiles/gtk-3.0 ~/.config/
@@ -23,6 +22,10 @@ ln -s ~/.dotfiles/btop ~/.config/
 ln -s ~/.dotfiles/neofetch ~/.config/
 ln -s ~/.dotfiles/ranger ~/.config/
 ln -s ~/.dotfiles/dunst ~/.config/
+ln -s ~/.dotfiles/rofi ~/.config/
+
+echo "install oh-my-zsh"
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 #echo "copy Gradience themes"
 #cp ~/.dotfiles/Gradience/blueish.json ~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/
@@ -138,6 +141,9 @@ sudo mkdir /.snapshots
 sudo mount -a
 sudo chmod 750 /.snapshots
 sudo chown :wheel /.snapshots
+
+echo "linking dmenu"
+sudo ln -s /usr/bin/rofi /usr/bin/dmenu
 
 
 sudo vi /etc/mkinitcpio.conf
