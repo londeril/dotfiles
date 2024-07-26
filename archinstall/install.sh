@@ -32,8 +32,8 @@ btrfs subvolume create /mnt/@tmp
 
 umount /mnt
 sv_opts="rw,noatime,compress-force=zstd:1,space_cache=v2"
-mkdir -p /mnt/{home,.snapshots,var/cache,var/lib/libvirt,var/log,var/tmp}
 mount -o ${sv_opts},subvol=@ ${disk}p3 /mnt
+mkdir -p /mnt/{home,.snapshots,var/cache,var/lib/libvirt,var/log,var/tmp}
 mount -o ${sv_opts},subvol=@snapshots ${disk}p3 /mnt/.snapshots
 mount -o ${sv_opts},subvol=@home ${disk}p3 /mnt/home
 mount -o ${sv_opts},subvol=@cache ${disk}p3 /mnt/var/cache
