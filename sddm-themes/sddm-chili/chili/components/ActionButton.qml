@@ -1,9 +1,10 @@
 /*
+ *   Copyright 2018 Marian Arlt <marianarlt@icloud.com>
  *   Copyright 2016 David Edmundson <davidedmundson@kde.org>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
- *   published by the Free Software Foundation; either version 2 or
+ *   published by the Free Software Foundation; either version 3 or
  *   (at your option) any later version.
  *
  *   This program is distributed in the hope that it will be useful,
@@ -18,60 +19,77 @@
  */
 
 import QtQuick 2.2
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick.Controls 1.4
 
 Item {
     id: root
+
+    anchors.top: parent.bottom
+    anchors.topMargin: icon.height
+
     property alias text: label.text
     property alias iconSource: icon.source
-    property alias containsMouse: mouseArea.containsMouse
     property alias font: label.font
     signal clicked
 
     activeFocusOnTab: true
-    opacity: ( containsMouse || activeFocus ) ? 1 : 0.6
     property int iconSize
+    opacity: activeFocus ? 1 : 0.6
 
-    implicitWidth: Math.max(icon.implicitWidth + units.largeSpacing * 3, label.contentWidth)
-    implicitHeight: Math.max(icon.implicitHeight + units.largeSpacing * 2, label.contentHeight)
+    implicitWidth: Math.max(icon.implicitWidth, label.contentWidth)
+    implicitHeight: Math.max(icon.implicitHeight + label.height * 2, label.height)
 
-    PlasmaCore.IconItem {
+    Image {
         id: icon
+
         anchors {
             top: parent.top
             horizontalCenter: parent.horizontalCenter
         }
-
-        width: config.PowerIconSize ? config.PowerIconSize : iconSize
-        height: config.PowerIconSize ? config.PowerIconSize : iconSize
-
-        colorGroup: PlasmaCore.ColorScope.colorGroup
-        active: mouseArea.containsMouse || root.activeFocus
+        width: config.PowerIconSize || iconSize
+        height: config.PowerIconSize || iconSize
     }
 
-    PlasmaComponents.Label {
+    Label {
         id: label
-        font.family: config.Font || "Noto Sans"
-        font.pointSize: config.FontPointSize || root.generalFontSize
+
+        font.pointSize: iconSize / 3
         renderType: Text.QtRendering
         anchors {
             top: icon.bottom
-            topMargin: units.smallSpacing
             left: parent.left
             right: parent.right
+            topMargin: label.height / 2
         }
         horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignTop
         wrapMode: Text.WordWrap
+        color: "white"
         font.underline: root.activeFocus
     }
-
     MouseArea {
         id: mouseArea
         hoverEnabled: true
+        cursorShape: Qt.PointingHandCursor
         onClicked: root.clicked()
+        onEntered: fadeIn.start()
+        onExited: fadeOut.start()
         anchors.fill: root
+    }
+
+    PropertyAnimation {
+        id: fadeIn
+        target: root
+        properties: "opacity"
+        to: 1
+        duration: 200
+    }
+
+     PropertyAnimation {
+        id: fadeOut
+        target: root
+        properties: "opacity"
+        to: 0.6
+        duration: 200
     }
 
     Keys.onEnterPressed: clicked()

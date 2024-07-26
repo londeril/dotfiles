@@ -1,9 +1,9 @@
 /*
- *   Copyright 2016 Boudhayan Gupta <bgupta@kde.org>
+ *   Copyright 2018 Marian Arlt <marianarlt@icloud.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
- *   published by the Free Software Foundation; either version 2 or
+ *   published by the Free Software Foundation; either version 3 or
  *   (at your option) any later version.
  *
  *   This program is distributed in the hope that it will be useful,
@@ -18,24 +18,36 @@
  */
 
 import QtQuick 2.2
-
 import QtGraphicalEffects 1.0
 
 FocusScope {
-    id: sceneBackground
+    id: backgroundComponent
+
+    property alias imageSource: backgroundImage.source
+    property bool configBlur: config.blur == "true"
 
     Image {
-        id: sceneImageBackground
+        id: backgroundImage
+
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
-        source: config.background || config.Background
+
+        clip: true
+        focus: true
         smooth: true
     }
 
     RecursiveBlur {
-        anchors.fill: sceneImageBackground
-        source: sceneImageBackground
-        radius: config.Blur == "true" ? config.RecursiveBlurRadius : 0
-        loops: config.Blur == "true" ? config.RecursiveBlurLoops : 0
+        id: backgroundBlur
+
+        anchors.fill: backgroundImage
+        source: backgroundImage
+        radius: configBlur ? config.recursiveBlurRadius : 0
+        loops: configBlur ? config.recursiveBlurLoops : 0
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: container.focus = true
     }
 }

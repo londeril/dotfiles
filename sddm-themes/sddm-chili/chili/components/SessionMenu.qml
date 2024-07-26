@@ -1,9 +1,9 @@
 /*
- *   Copyright 2016 David Edmundson <davidedmundson@kde.org>
+ *   Copyright 2018 Marian Alexander Arlt <marianarlt@icloud.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
- *   published by the Free Software Foundation; either version 2 or
+ *   published by the Free Software Foundation; either version 3 or
  *   (at your option) any later version.
  *
  *   This program is distributed in the hope that it will be useful,
@@ -18,35 +18,46 @@
  */
 
 import QtQuick 2.2
+import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.4
 
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
-
-import QtQuick.Controls 1.3 as QQC
-
-PlasmaComponents.ToolButton {
+ToolButton {
     id: root
+
     property int currentIndex: -1
-    property int sessionFontSize
+    property int rootFontSize
+    property string rootFontColor
 
     visible: menu.items.length > 1
-    font.family: config.Font || "Noto Sans"
-    font.pointSize: sessionFontSize
 
-    text: instantiator.objectAt(currentIndex).text || ""
+    opacity: root.activeFocus ? 1 : 0.5
+
+    style: ButtonStyle {
+        label: Label {
+            id: buttonLabel
+            color: rootFontColor
+            font.pointSize: rootFontSize
+            renderType: Text.QtRendering
+            text: instantiator.objectAt(currentIndex).text || ""
+            font.underline: root.activeFocus
+        }
+        background: Rectangle {
+            color: "transparent"
+        }
+    }
 
     Component.onCompleted: {
         currentIndex = sessionModel.lastIndex
     }
 
-    menu: QQC.Menu {
+    menu: Menu {
         id: menu
         Instantiator {
             id: instantiator
             model: sessionModel
             onObjectAdded: menu.insertItem(index, object)
             onObjectRemoved: menu.removeItem( object )
-            delegate: QQC.MenuItem {
+            delegate: MenuItem {
                 text: model.name
                 onTriggered: {
                     root.currentIndex = model.index
