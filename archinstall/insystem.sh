@@ -25,7 +25,10 @@ ln -s ~/.dotfiles/dunst ~/.config/
 ln -s ~/.dotfiles/rofi ~/.config/
 
 echo "install oh-my-zsh"
-tar xfvz ~/.dotfiles/archinstall/oh-my-zsh.tar.gz ~/
+cp oh-my-zsh.tar.gz ~/Pictures
+cd
+tar xfvz oh-my-zsh.tar.gz
+rm oh-my-zsh.tar.gz
 
 #echo "copy Gradience themes"
 #cp ~/.dotfiles/Gradience/blueish.json ~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/
