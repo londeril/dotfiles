@@ -59,4 +59,7 @@ cp /root/dotfiles/archinstall/Xsetup /usr/share/sddm/scripts/
 echo "enabling mdns"
 sudo cp /root/dotfiles/archinstall/nsswitch.conf /etc/
 
+echo "removing subvolids from fstab"
+sudo sed -i 's/subvolid=.*,//' /etc/fstab
+
 echo "exit and reboot"

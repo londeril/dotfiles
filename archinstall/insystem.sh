@@ -61,7 +61,7 @@ echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable
 sudo pacman -Syu sublime-text
 
 echo "getting needed packages from the AUR"
-yay -S 1password pcloud insync typora nccm-git 
+yay -S 1password pcloud insync typora nccm-git snapper-support btrfs-assistant
 
 #echo "deploying nccm wrapper"
 #sudo mv /usr/bin/nccm /usr/bin/nccm-bin
