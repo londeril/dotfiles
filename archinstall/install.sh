@@ -27,7 +27,7 @@ mkfs.vfat -F32 -n ESP ${disk}p1
 mkfs.btrfs -L arch ${crypt} -f
 
 echo "creating btrfs subvolumes and remounting accordingly"
-mount ${disk}p3 /mnt
+mount ${crypt} /mnt
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@snapshots
 btrfs subvolume create /mnt/@home
