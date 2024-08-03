@@ -143,16 +143,18 @@ sudo mkdir /.snapshots
 sudo mount -a
 sudo chmod 750 /.snapshots
 sudo chown :wheel /.snapshots
+sudo systemctl enable grub-btrfsd
 
 echo "linking dmenu"
 sudo ln -s /usr/bin/rofi /usr/bin/dmenu
 
 
-sudo vi /etc/mkinitcpio.conf
+#sudo vi /etc/mkinitcpio.conf
 
-echo "Add the hook grub-btrfs-overlayfs at the end of HOOKS in /etc/mkinitcpio.conf ...
+#echo "Add the hook grub-btrfs-overlayfs at the end of HOOKS in /etc/mkinitcpio.conf ...
 
-echo "HOOKS=(base ... fsck grub-btrfs-overlayfs)"
+#echo "HOOKS=(base ... fsck grub-btrfs-overlayfs)"
 
+sudo mkinitcpio -P
 
 sudo snapper -c root create -d "-- Baseinstall --"
