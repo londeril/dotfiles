@@ -158,3 +158,6 @@ sudo ln -s /usr/bin/rofi /usr/bin/dmenu
 sudo mkinitcpio -P
 
 sudo snapper -c root create -d "-- Baseinstall --"
+
+echo "Add root = "@snapshots,@,UUID" to /etc/btrfs-assistant.conf !!"
+ls /dev/disk/by-uuid
