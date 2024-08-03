@@ -159,5 +159,5 @@ sudo mkinitcpio -P
 
 sudo snapper -c root create -d "-- Baseinstall --"
 
-echo "Add root = "@snapshots,@,UUID" to /etc/btrfs-assistant.conf !!"
+echo "Add root = '@snapshots,@,UUID' to /etc/btrfs-assistant.conf !!"
 ls /dev/disk/by-uuid
