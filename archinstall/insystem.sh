@@ -9,9 +9,12 @@ mkdir ~/Pictures/Wallpapers
 mkdir ~/Pictures/ScreensaverPics
 mkdir ~/Data
 
+echo "making sure nothing is in the way for symlinks"
+
 echo "copy configs in place and symlinking them"
 #ln -s ~/.dotfiles/hypr ~/.config/
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
+rm -r ~/.config/kitty
 ln -s ~/.dotfiles/kitty ~/.config/
 #ln -s ~/.dotfiles/waybar ~/.config/
 ln -s ~/.dotfiles/icons ~/.icons
@@ -25,7 +28,7 @@ ln -s ~/.dotfiles/dunst ~/.config/
 ln -s ~/.dotfiles/rofi ~/.config/
 
 echo "install oh-my-zsh"
-cp oh-my-zsh.tar.gz ~/Pictures
+cp oh-my-zsh.tar.gz ~/
 cd
 tar xfvz oh-my-zsh.tar.gz
 rm oh-my-zsh.tar.gz
@@ -34,9 +37,6 @@ rm oh-my-zsh.tar.gz
 #cp ~/.dotfiles/Gradience/blueish.json ~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/
 
 #sudo ln -s ~/.dotfiles/hypr/hyprlaunch.sh /usr/bin/hyprlaunch
-
-echo "enabling mdns"
-sudo cp ~/.dotfiles/archinstall/nsswitch.conf /etc/
 
 #echo "copy fonts"
 # cp fonts
@@ -60,9 +60,8 @@ curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 sudo pacman -Syu sublime-text
 
-#echo "getting needed packages from the AUR"
-#yay -S sublime-text-4 1password anydesk-bin pcloud insync typora input-remapper-git nccm-git swaylock-effects-git 
-#yay -S 1password insync nccm-git
+echo "getting needed packages from the AUR"
+yay -S 1password pcloud insync typora nccm-git 
 
 #echo "deploying nccm wrapper"
 #sudo mv /usr/bin/nccm /usr/bin/nccm-bin

@@ -25,7 +25,6 @@ useradd -m -s /bin/zsh -g users daniel
 usermod -aG wheel daniel
 sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers
 
-
 echo "user password?"
 passwd daniel
 echo "root password?"
@@ -56,5 +55,8 @@ cp -r /root/dotfiles/sddm-themes/* /usr/share/sddm/themes/
 mkdir /etc/sddm.conf.d
 cp /root/dotfiles/archinstall/defaults.conf /etc/sddm.conf.d/
 cp /root/dotfiles/archinstall/Xsetup /usr/share/sddm/scripts/
+
+echo "enabling mdns"
+sudo cp /root/dotfiles/archinstall/nsswitch.conf /etc/
 
 echo "exit and reboot"
