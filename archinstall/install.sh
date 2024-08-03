@@ -64,8 +64,8 @@ mkdir /mnt/boot
 mount ${disk}p1 /mnt/boot
 
 #swapon ${disk}p2
-btrfs filesystem mkswapfile --size 16g --uuid clear /swap/swapfile
-swapon /swap/swapfile
+btrfs filesystem mkswapfile --size 16g --uuid clear /mnt/swap/swapfile
+swapon /mnt/swap/swapfile
 
 # bootstrappig
 echo "Starting Bootstrap"

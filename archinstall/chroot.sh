@@ -63,4 +63,4 @@ echo "removing subvolids from fstab"
 sudo sed -i 's/subvolid=.*,//' /etc/fstab
 
 echo "exit add encrypt to hooks in etc/mkinitcpio.conf before filesystems, run mkinitcpio -P, add cryptdevice=UUID=the-uuid:root root=/dev/mapper/root to /etc/default/grub and run grub-mkconfig -o /boot/grub/grub.cfg and reboot"
-echo "check if btrfs swapfile config was written to fstab"
+
