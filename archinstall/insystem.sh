@@ -5,7 +5,7 @@ mkdir ~/Downloads
 mkdir ~/Documents
 mkdir ~/Pictures
 mkdir ~/Pictures/Screenshots
-mkdir ~/Pictures/Wallpapers
+mkdir ~/Pictures/Wallpaper
 mkdir ~/Pictures/ScreensaverPics
 mkdir ~/Data
 
@@ -19,6 +19,8 @@ ln -s ~/.dotfiles/kitty ~/.config/
 #ln -s ~/.dotfiles/waybar ~/.config/
 ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
+rm -r ~/.config/gtk-3.0
+rm -r ~/.config/gtk-4.0
 ln -s ~/.dotfiles/gtk-3.0 ~/.config/
 ln -s ~/.dotfiles/gtk-3.0 ~/.config/gtk-4.0
 ln -s ~/.dotfiles/btop ~/.config/
@@ -26,6 +28,9 @@ ln -s ~/.dotfiles/neofetch ~/.config/
 ln -s ~/.dotfiles/ranger ~/.config/
 ln -s ~/.dotfiles/dunst ~/.config/
 ln -s ~/.dotfiles/rofi ~/.config/
+mkdir ~/.configs/hypr
+ln -s ~/.dotfiles/hypr/hyprlock.conf ~/.config/hypr
+ln -s ~/.dotfiles/hypr/hyridle.conf ~/.config/hypr
 
 echo "install oh-my-zsh"
 cp oh-my-zsh.tar.gz ~/

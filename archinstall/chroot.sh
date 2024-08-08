@@ -53,14 +53,18 @@ reflector --verbose --protocol https --latest 5 --sort rate --country Switzerlan
 echo "copy sddm theme"
 cp -r /root/dotfiles/sddm-themes/* /usr/share/sddm/themes/
 mkdir /etc/sddm.conf.d
-cp /root/dotfiles/archinstall/defaults.conf /etc/sddm.conf.d/
-cp /root/dotfiles/archinstall/Xsetup /usr/share/sddm/scripts/
+cp /root/dotfiles/archinstall/sddm/defaults.conf /etc/sddm.conf.d/
+cp /root/dotfiles/archinstall/sddm/Xsetup /usr/share/sddm/scripts/
 
 echo "enabling mdns"
-sudo cp /root/dotfiles/archinstall/nsswitch.conf /etc/
+sudo cp /root/dotfiles/archinstall/etc/nsswitch.conf /etc/
 
 echo "removing subvolids from fstab"
 sudo sed -i 's/subvolid=.*,//' /etc/fstab
+
+echo "copying pacman hooks"
+mkdir /etc/pacman.d/hooks
+cp /root/dotfiles/archinstall/hooks/* /etc/pacman.d/hooks/
 
 echo "exit add encrypt to hooks in etc/mkinitcpio.conf before filesystems, run mkinitcpio -P, add cryptdevice=UUID=the-uuid:root root=/dev/mapper/root to /etc/default/grub and run grub-mkconfig -o /boot/grub/grub.cfg and reboot"
 
