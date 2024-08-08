@@ -83,7 +83,7 @@
     },
 
     "network#WiFi": {
-        "interface": "wlan0",
+        "interface": "wlp0s20f3",
         "format": "{ifname}",
         "format-wifi": "   {essid} ({ipaddr})",
         "format-disconnected": "", //An empty format will hide the module.

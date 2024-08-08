@@ -12,11 +12,17 @@ mkdir ~/Data
 echo "making sure nothing is in the way for symlinks"
 
 echo "copy configs in place and symlinking them"
-#ln -s ~/.dotfiles/hypr ~/.config/
+rm ~/.config/hypr/hyprland.conf
+ln -s ~/.dotfiles/hypr/hyprland.conf-nova ~/.config/hypr/hyprland.conf
+ln -s ~/.dotfiles/hypr/hypridle.conf ~/.config/hypr
+ln -s ~/.dotfiles/hypr/hyprlock.conf ~/.config/hypr
+ln -s ~/.dotfiles/hypr/hyprpaper.conf-nova ~/.config/hypr/hyprpaper.conf
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 rm -r ~/.config/kitty
 ln -s ~/.dotfiles/kitty ~/.config/
-#ln -s ~/.dotfiles/waybar ~/.config/
+mkdir ~/.config/waybar
+ln -s ~/.dotfiles/waybar/config.jsonc-nova ~/.config/waybar/config.jsonc
+ln -s ~/.dotfiles/waybar/style.css ~./config/waybar/
 ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
 rm -r ~/.config/gtk-3.0
@@ -66,7 +72,7 @@ echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable
 sudo pacman -Syu sublime-text
 
 echo "getting needed packages from the AUR"
-yay -S 1password pcloud insync typora nccm-git snapper-support btrfs-assistant
+yay -S 1password pcloud insync typora nccm-git snapper-support btrfs-assistant hyprshot
 
 #echo "deploying nccm wrapper"
 #sudo mv /usr/bin/nccm /usr/bin/nccm-bin

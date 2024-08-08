@@ -22,10 +22,12 @@ echo $selected
 case $selected in
   $lock)
     echo "hier"
-    /home/daniel/.dotfiles/scripts/swaylocker.sh &
+    #/home/daniel/.dotfiles/scripts/swaylocker.sh &
+    loginctl lock-session
     ;;
   $suspend)
-    /home/daniel/.dotfiles/scripts/swaylocker.sh &
+    #/home/daniel/.dotfiles/scripts/swaylocker.sh &
+    loginctl lock-session
     sleep 3
     systemctl suspend
     ;;
