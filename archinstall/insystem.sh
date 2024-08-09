@@ -37,6 +37,7 @@ ln -s ~/.dotfiles/rofi ~/.config/
 mkdir ~/.configs/hypr
 ln -s ~/.dotfiles/hypr/hyprlock.conf ~/.config/hypr
 ln -s ~/.dotfiles/hypr/hyridle.conf ~/.config/hypr
+ln -s ~/.dotfiles/vim/vimrc ~/.vmrc
 
 echo "install oh-my-zsh"
 cp oh-my-zsh.tar.gz ~/
