@@ -25,10 +25,6 @@ ln -s ~/.dotfiles/waybar/config.jsonc-nova ~/.config/waybar/config.jsonc
 ln -s ~/.dotfiles/waybar/style.css ~./config/waybar/
 ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
-rm -r ~/.config/gtk-3.0
-rm -r ~/.config/gtk-4.0
-ln -s ~/.dotfiles/gtk-3.0 ~/.config/
-ln -s ~/.dotfiles/gtk-3.0 ~/.config/gtk-4.0
 ln -s ~/.dotfiles/btop ~/.config/
 ln -s ~/.dotfiles/neofetch ~/.config/
 ln -s ~/.dotfiles/ranger ~/.config/
