@@ -13,7 +13,7 @@ echo "generating adjtime"
 hwclock --systohc
 
 echo "setting hostname"
-echo "nova" > /etc/hostname
+echo "archi" > /etc/hostname
 
 echo "adding hosts entries"
 echo "127.0.0.1   localhost" >> /etc/hosts
