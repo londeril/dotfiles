@@ -1,10 +1,9 @@
-file:///home/daniel/Downloads
-file:///mnt/ecm/General
-file:///mnt/ecm/Customers/Firmenkunden/Erlenhof
-file:///home/daniel/TempData
-file:///home/daniel/RDPShare
-file:///mnt/ecm/Customers/Firmenkunden
-file:///mnt/ecm
-file:///mnt/BigData
-file:///home/daniel/pCloudDrive/Data
+file:///home/daniel/Downloads Downloads
+file:///mnt/ecm/General General
+file:///mnt/ecm/Customers/Firmenkunden/Erlenhof Erlenhof
+file:///home/daniel/RDPShare RDPShare
+file:///mnt/ecm/Customers/Firmenkunden Firmenkunden
+file:///mnt/ecm ecm
+file:///mnt/BigData BigData
+file:///home/daniel/pCloudDrive/Data Data
 smb://192.168.251.109/kunden/ KundenNAS
