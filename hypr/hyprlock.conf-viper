@@ -102,9 +102,9 @@ label {
 
 
 
-# Put a picture of choice here. Default is the current wallpaper
+# Landscape Pics on ultrawide
 image {
-    monitor =
+    monitor = HDMI-A-1
     path = ~/.dotfiles/lockscreen.jpg
     size = 1000
     rounding = 10
@@ -114,6 +114,23 @@ image {
     reload_time = 10
     reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
     #reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
+    position = 0, 0
+    halign = center
+    valign = center
+}
+
+# Portrait Pics on Landscape 
+image {
+    monitor = DP-1
+    path = ~/.dotfiles/lockscreen.jpg
+    size = 1000
+    rounding = 10
+    border_size = 2
+    border_color = rgba(f4a84eff)
+    rotate = 0
+    reload_time = 10
+    reload_cmd = find ~/Pictures/PortraitSaver/ -type f | shuf -n 1
+    #reload_cmd = ~/.dotfiles/scripts/randomPic_portrait.sh
     position = 0, 0
     halign = center
     valign = center
