@@ -122,7 +122,7 @@ image {
 # Portrait Pics on Landscape 
 image {
     monitor = DP-1
-    path = ~/.dotfiles/lockscreen.jpg
+    path = ~/.dotfiles/lockscreenPortrait.jpg
     size = 1000
     rounding = 10
     border_size = 2
