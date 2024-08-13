@@ -109,7 +109,7 @@
     },
 
     "network#OfficeDock": {
-        "interface": "eth3",
+        "interface": "enp3s0u2u4",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
