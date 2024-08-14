@@ -93,7 +93,7 @@
     },
 
     "network#Office": {
-        "interface": "br0",
+        "interface": "bridge1",
         "format": "{ifname}",
         "format-ethernet": "ECM: {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
@@ -106,7 +106,7 @@
     },
 
     "network#Domain": {
-        "interface": "br1",
+        "interface": "bridge0",
         "format": "{ifname}",
         "format-ethernet": "Domain: {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
