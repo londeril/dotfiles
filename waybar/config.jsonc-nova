@@ -10,7 +10,9 @@
     "modules-left": [
         "hyprland/workspaces",
         "idle_inhibitor",
-        "wlr/taskbar"
+        "wlr/taskbar",
+        "custom/filelauncher",
+        "custom/terminallauncher"
         //"hyprland/window"
     ],
     "modules-center": [
@@ -64,6 +66,18 @@
         "max-length": 10,
         "on-click": "gnome-system-monitor"
 
+    },
+
+    "custom/filelauncher": {
+        "format": "   ",
+        "on-click": "nemo",
+        "tooltip": false
+    },
+
+    "custom/terminallauncher": {
+        "format": "   ",
+        "on-click": "kitty",
+        "tooltip": false
     },
 
     "idle_inhibitor": {

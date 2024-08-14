@@ -11,7 +11,8 @@
         "hyprland/workspaces",
         "wlr/taskbar",
         //"hyprland/window"
-        "custom/launcher"
+        "custom/filelauncher",
+        "custom/terminallauncher"
     ],
     "modules-center": [
         "group/timedate"
@@ -57,13 +58,17 @@
     },
 
     
-    "custom/launcher": {
+    "custom/filelauncher": {
         "format": "   ",
         "on-click": "nemo",
         "tooltip": false
     },
 
-
+    "custom/terminallauncher": {
+        "format": "   ",
+        "on-click": "kitty",
+        "tooltip": false
+    },
 
     "cpu": {
         "interval": 10,

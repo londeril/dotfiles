@@ -67,7 +67,8 @@ tooltip {
 #backlight,
 #custom-insync,
 #bluetooth,
-#custom-launcher
+#custom-filelauncher,
+#custom-terminallauncher
  {
     /*background: rgba(21, 18, 27, 0);*/
     background: rgba(79, 67, 59, 0.7);
