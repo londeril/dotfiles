@@ -9,8 +9,9 @@
     "height": 0,
     "modules-left": [
         "hyprland/workspaces",
-        "wlr/taskbar"
+        "wlr/taskbar",
         //"hyprland/window"
+        "custom/launcher"
     ],
     "modules-center": [
         "group/timedate"
@@ -54,6 +55,15 @@
             "10": []
         }*/
     },
+
+    
+    "custom/launcher": {
+        "format": "   ",
+        "on-click": "nemo",
+        "tooltip": false
+    },
+
+
 
     "cpu": {
         "interval": 10,

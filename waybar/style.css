@@ -66,7 +66,8 @@ tooltip {
 #cpu,
 #backlight,
 #custom-insync,
-#bluetooth
+#bluetooth,
+#custom-launcher
  {
     /*background: rgba(21, 18, 27, 0);*/
     background: rgba(79, 67, 59, 0.7);
