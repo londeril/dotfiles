@@ -109,7 +109,7 @@ label {
     font_family = Iosevka Nerd Font 10
     position = 0, 0
     halign = center
-    valign = bottom
+    valign = top
 }
 
 #  IPv4 netinfo
