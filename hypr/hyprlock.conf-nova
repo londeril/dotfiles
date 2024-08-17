@@ -91,7 +91,7 @@ label {
 # pending updates
 label {
     monitor =
-    text = cmd[update:60000] echo "<b> pending updates: "$(checkupdates | wc -l)" </b>"
+    text = cmd[update:0] echo "<b> pending updates: "$(checkupdates | wc -l)" </b>"
     color = $color12
     font_size = 24
     font_family = Iosevka Nerd Font 10
@@ -103,7 +103,7 @@ label {
 # public IPv4 address
 label {
     monitor =
-    text = cmd[update:60000] echo "<b> public ipv4: "$(~/.dotfiles/scripts/net.sh publicip)" </b>"
+    text = cmd[update:0] echo "<b> public ipv4: "$(~/.dotfiles/scripts/net.sh publicip)" </b>"
     color = $color12
     font_size = 24
     font_family = Iosevka Nerd Font 10
@@ -115,7 +115,7 @@ label {
 #  IPv4 netinfo
 label {
     monitor =
-    text = cmd[update:60000] echo "<b> route: "$(~/.dotfiles/scripts/net.sh gateway)" dns: "$(~/.dotfiles/scripts/net.sh dns)" </b>"
+    text = cmd[update:0] echo "<b> route: "$(~/.dotfiles/scripts/net.sh gateway)" dns: "$(~/.dotfiles/scripts/net.sh dns)" </b>"
     color = $color12
     font_size = 24
     font_family = Iosevka Nerd Font 10
