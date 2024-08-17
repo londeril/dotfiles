@@ -26,6 +26,7 @@
         "network#Domain",
 	"network#SAN",
         "group/hardware",
+        "group/net",
         //"cpu",
         //"memory", 
         //"backlight",
@@ -85,6 +86,24 @@
         "deactivated": " "
     },
     "timeout": 30.5
+    },
+
+    "custom/publicip": {
+        "format": "    {} ",
+        "tooltip": false,
+        "exec": "exec ~/.dotfiles/scripts/net.sh publicip",
+    },
+
+     "custom/gateway": {
+        "format": " 󰑪   {} ",
+        "tooltip": false,
+        "exec": "exec ~/.dotfiles/scripts/net.sh gateway",
+    },
+
+    "custom/dns": {
+        "format": " 󰇖   {} ",
+        "tooltip": false,
+        "exec": "exec ~/.dotfiles/scripts/net.sh dns",
     },
 
     "memory": {
@@ -328,6 +347,21 @@
         "modules": [
             "clock",
             "clock#date"
+            
+        ]
+    },
+
+    // Group networking
+     "group/net": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": true
+        },        
+        "modules": [
+            "custom/publicip",
+            "custom/gateway"
             
         ]
     }

@@ -27,6 +27,7 @@
         "network#OfficeDock",
         "network#USBOnTheGo",
         "network#OfficeDockUSB",
+        "group/net",
         "group/hardware",
         //"cpu",
         //"memory", 
@@ -79,6 +80,25 @@
         "on-click": "kitty",
         "tooltip": false
     },
+
+    "custom/publicip": {
+        "format": "    {} ",
+        "tooltip": false,
+        "exec": "exec ~/.dotfiles/scripts/net.sh publicip",
+    },
+
+     "custom/gateway": {
+        "format": " 󰑪   {} ",
+        "tooltip": false,
+        "exec": "exec ~/.dotfiles/scripts/net.sh gateway",
+    },
+
+    "custom/dns": {
+        "format": " 󰇖   {} ",
+        "tooltip": false,
+        "exec": "exec ~/.dotfiles/scripts/net.sh dns",
+    },
+
 
     "idle_inhibitor": {
     "format": "{icon}",
@@ -266,7 +286,7 @@
         "drawer": {
             "transition-duration": 300,
             "children-class": "not-memory",
-            "transition-left-to-right": false
+            "transition-left-to-right": true
         },        
         "modules": [
             "memory",
@@ -281,7 +301,7 @@
         "drawer": {
             "transition-duration": 300,
             "children-class": "not-memory",
-            "transition-left-to-right": false
+            "transition-left-to-right": true
         },        
         "modules": [
             "pulseaudio",
@@ -297,11 +317,27 @@
         "drawer": {
             "transition-duration": 300,
             "children-class": "not-memory",
-            "transition-left-to-right": false
+            "transition-left-to-right": true
         },        
         "modules": [
             "clock",
             "clock#date"
+            
+        ]
+    },
+
+    // Group networking
+     "group/net": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": true
+        },        
+        "modules": [
+            "custom/publicip",
+            "custom/gateway",
+            "custom/dns"
             
         ]
     }

@@ -68,7 +68,10 @@ tooltip {
 #custom-insync,
 #bluetooth,
 #custom-filelauncher,
-#custom-terminallauncher
+#custom-terminallauncher,
+#custom-publicip,
+#custom-gateway,
+#custom-dns
  {
     /*background: rgba(21, 18, 27, 0);*/
     background: rgba(79, 67, 59, 0.7);
