@@ -12,7 +12,9 @@
         "wlr/taskbar",
         //"hyprland/window",
         "custom/filelauncher",
-        "custom/terminallauncher"
+        "custom/terminallauncher",
+        "custom/darktablelauncher",
+        "custom/digikamlauncher"
     ],
     "modules-center": [
         "group/timedate"
@@ -64,6 +66,18 @@
     "custom/terminallauncher": {
         "format": "   ",
         "on-click": "kitty",
+        "tooltip": false
+    },
+
+    "custom/digikamlauncher": {
+        "format": "   ",
+        "on-click": "digikam",
+        "tooltip": false
+    },
+
+    "custom/darktablelauncher": {
+        "format": "   ",
+        "on-click": "darktable",
         "tooltip": false
     },
 
