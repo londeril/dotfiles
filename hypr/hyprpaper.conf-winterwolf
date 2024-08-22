@@ -1,7 +1,4 @@
-preload = ~/Pictures/Wallpaper/dragon.jpg
-wallpaper = eDP-1,~/Pictures/Wallpaper/dragon.jpg
-wallpaper = DP-1,~/Pictures/Wallpaper/dragon.jpg
-wallpaper = DP-6,~/Pictures/Wallpaper/dragon.jpg
-wallpaper = DP-7,~/Pictures/Wallpaper/dragon.jpg
-wallpaper = HDMI-A-1,~/Pictures/Wallpaper/dragon.jpg
-wallpaper = HDMI-A-2,~/Pictures/Wallpaper/dragon.jpg
+preload = ~/Pictures/Wallpaper/little-weaver.jpg
+wallpaper = DP-1,~/Pictures/Wallpaper/little-weaver.jpg
+wallpaper = DP-2,~/Pictures/Wallpaper/little-weaver.jpg
+wallpaper = HDMI-A-1,~/Pictures/Wallpaper/little-weaver.jpg

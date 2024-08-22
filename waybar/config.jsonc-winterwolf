@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "output": ["HDMI-A-1"],
+    "output": ["DP-1"],
     "position": "top",
     "mod": "dock",
     "exclusive": true,
@@ -9,8 +9,10 @@
     "height": 0,
     "modules-left": [
         "hyprland/workspaces",
-        "wlr/taskbar"
-        //"hyprland/window"
+        "wlr/taskbar",
+        //"hyprland/window",
+        "custom/filelauncher",
+        "custom/terminallauncher"
     ],
     "modules-center": [
         "group/timedate"
@@ -21,6 +23,7 @@
         //"custom/insync",
         "network",
         "group/hardware",
+        "group/net",
         //"cpu",
         //"memory", 
         //"backlight",
@@ -52,6 +55,19 @@
         }*/
     },
 
+     "custom/filelauncher": {
+        "format": "   ",
+        "on-click": "nemo",
+        "tooltip": false
+    },
+
+    "custom/terminallauncher": {
+        "format": "   ",
+        "on-click": "kitty",
+        "tooltip": false
+    },
+
+
     "cpu": {
         "interval": 10,
         "format": "  {usage}%",
@@ -67,6 +83,24 @@
         "deactivated": " "
     },
     "timeout": 30.5
+    },
+
+    "custom/publicip": {
+        "format": "    {} ",
+        "tooltip": false,
+        "exec": "exec ~/.dotfiles/scripts/net.sh publicip",
+    },
+
+     "custom/gateway": {
+        "format": " 󰑪   {} ",
+        "tooltip": false,
+        "exec": "exec ~/.dotfiles/scripts/net.sh gateway",
+    },
+
+    "custom/dns": {
+        "format": " 󰇖   {} ",
+        "tooltip": false,
+        "exec": "exec ~/.dotfiles/scripts/net.sh dns",
     },
 
     "memory": {
@@ -162,12 +196,12 @@
     
 
     "clock#date": {
-        "format": "{:   %d.%m.%Y}",
+        "format": "{:%d.%m.%Y}",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "clock": {
-        "format": "{:  %R  }",
+        "format": "{:%R}",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
@@ -282,7 +316,21 @@
             "clock#date"
             
         ]
-    }
+    },
 
+    // Group networking
+     "group/net": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": true
+        },        
+        "modules": [
+            "custom/publicip",
+            "custom/gateway"
+            
+        ]
+    }
 
 }
