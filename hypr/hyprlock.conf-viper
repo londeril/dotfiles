@@ -79,7 +79,7 @@ label {
 # uptime
 label {
     monitor = HDMI-A-1
-    text = cmd[update:60000] echo "<b> "$(uptime -p )" </b>"
+    text = cmd[update:1000] echo "<b> "$(uptime -p )" </b>"
     color = $color12
     font_size = 24
     font_family = Iosevka Nerd Font 10
