@@ -1,19 +1,19 @@
-sudo virt-install \
-  --name novacore \
-  --memory 4096 \
-  --vcpus 4 \
-  --cpu host-passthrough \
-  --features kvm_hidden=on \
-  --os-variant win11 \
+virt-install \
+  --name vArchi \
+  --memory 8192 \
+  --memory maxmemory=16384 \
+  --memballoon virtio \
+  --vcpus 8 \
+  --disk size=100,bus=virtio \
+  --network bridge=bridge1,model=virtio \
+  --os-variant archlinux \
   --boot uefi \
-  --disk size=128,bus=virtio \
-  --cdrom /home/daniel/ISOs/Win11_22H2_English_x64v2.iso \
-  --disk /home/daniel/ISOs/virtio-win-0.1.262.iso,device=cdrom \
-  --graphics spice \
-  --tpm model=tpm-crb \
-  --machine q35 \
-  --network=default,model=virtio
-
+  --graphics virtio \
+  --video virtio \
+  --features kvm_hidden=on \
+  --cpu host-passthrough \
+  --cdrom /mnt/BigData/ISOs/archlinux-iso.iso \
+  --virt-type kvm
 
 
 
