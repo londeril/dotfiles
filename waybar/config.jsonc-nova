@@ -21,7 +21,7 @@
 
     "modules-right": [
         "tray",
-        "custom/insync",
+        //"custom/insync",
         "custom/wireguard-manager",
         "network#WiFi",
         "network#OfficeDock",
