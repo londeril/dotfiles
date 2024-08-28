@@ -27,6 +27,7 @@
         "network#OfficeDock",
         "network#USBOnTheGo",
         "network#OfficeDockUSB",
+        "custom/netreset",
         "group/net",
         "group/hardware",
         //"cpu",
@@ -99,6 +100,11 @@
         "exec": "exec ~/.dotfiles/scripts/net.sh dns",
     },
 
+    "custom/netreset": {
+        "format": " 󰱓 ",
+        "tooltip": false,
+        "on-click": "exec ~/.dotfiles/scripts/setupnic.sh nova",
+    },
 
     "idle_inhibitor": {
     "format": "{icon}",
