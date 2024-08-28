@@ -96,7 +96,7 @@ prompt_context() {
 # Distrobox
 prompt_distrobox() {
   if [[ -n $CONTAINER_ID ]]; then
-    prompt_segment yellow black "⬢ $CONTAINER_ID"
+    prompt_segment green black "󰡨 $CONTAINER_ID"
   fi
 }
 
