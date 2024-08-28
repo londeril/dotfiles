@@ -41,6 +41,9 @@ cp oh-my-zsh.tar.gz ~/
 cd
 tar xfvz oh-my-zsh.tar.gz
 rm oh-my-zsh.tar.gz
+cd .oh-my-zsh/themes
+rm agnoster.zsh-theme
+ln -s ~/.dotfiles/zsh/agnoster.zsh-theme ./
 
 #echo "copy Gradience themes"
 #cp ~/.dotfiles/Gradience/blueish.json ~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/
