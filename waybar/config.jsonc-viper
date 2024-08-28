@@ -22,9 +22,10 @@
         "tray",
         //"custom/insync",
         "network#Office",
-	"network#Setup",
+	    "network#Setup",
+        "custom/netreset",
         "network#Domain",
-	"network#SAN",
+	    "network#SAN",
         "group/hardware",
         "group/net",
         //"cpu",
@@ -104,6 +105,12 @@
         "format": " 󰇖   {} ",
         "tooltip": false,
         "exec": "exec ~/.dotfiles/scripts/net.sh dns",
+    },
+
+    "custom/netreset": {
+        "format": " 󰱓 ",
+        "tooltip": false,
+        "on-click": "exec ~/.dotfiles/scripts/setupnic.sh viper",
     },
 
     "memory": {

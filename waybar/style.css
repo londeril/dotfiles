@@ -73,7 +73,8 @@ tooltip {
 #custom-darktablelauncher,
 #custom-publicip,
 #custom-gateway,
-#custom-dns
+#custom-dns,
+#custom-netreset
  {
     /*background: rgba(21, 18, 27, 0);*/
     background: rgba(79, 67, 59, 0.7);
