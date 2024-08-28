@@ -89,6 +89,7 @@ com.todoist.Todoist \
 com.valvesoftware.Steam \
 io.github.flattool.Warehouse \
 com.anydesk.Anydesk \
+com.tomjwatson.Emote \
 -y
 
 #echo "setting default browser to firefox"
