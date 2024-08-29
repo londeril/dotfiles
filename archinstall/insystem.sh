@@ -14,15 +14,15 @@ echo "making sure nothing is in the way for symlinks"
 echo "copy configs in place and symlinking them"
 rm ~/.config/hypr/hyprland.conf
 ln -s ~/.dotfiles/hypr/hyprland.conf-nova ~/.config/hypr/hyprland.conf
-ln -s ~/.dotfiles/hypr/hypridle.conf ~/.config/hypr
-ln -s ~/.dotfiles/hypr/hyprlock.conf ~/.config/hypr
+ln -s ~/.dotfiles/hypr/hypridle-nova.conf ~/.config/hypr
+ln -s ~/.dotfiles/hypr/hyprlock-nova.conf ~/.config/hypr
 ln -s ~/.dotfiles/hypr/hyprpaper.conf-nova ~/.config/hypr/hyprpaper.conf
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 rm -r ~/.config/kitty
 ln -s ~/.dotfiles/kitty ~/.config/
 mkdir ~/.config/waybar
 ln -s ~/.dotfiles/waybar/config.jsonc-nova ~/.config/waybar/config.jsonc
-ln -s ~/.dotfiles/waybar/style.css ~./config/waybar/
+ln -s ~/.dotfiles/waybar/styles.css ~./config/waybar/
 ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
 ln -s ~/.dotfiles/btop ~/.config/
@@ -30,9 +30,6 @@ ln -s ~/.dotfiles/neofetch ~/.config/
 ln -s ~/.dotfiles/ranger ~/.config/
 ln -s ~/.dotfiles/dunst ~/.config/
 ln -s ~/.dotfiles/rofi ~/.config/
-mkdir ~/.configs/hypr
-ln -s ~/.dotfiles/hypr/hyprlock.conf ~/.config/hypr
-ln -s ~/.dotfiles/hypr/hyridle.conf ~/.config/hypr
 ln -s ~/.dotfiles/vim/vimrc ~/.vmrc
 ln -s ~/.dotfiles/user-dirs.dirs ~/.config/
 
@@ -86,7 +83,6 @@ com.github.tchx84.Flatseal \
 com.rtosta.zapzap \
 com.spotify.Client \
 com.todoist.Todoist \
-com.valvesoftware.Steam \
 io.github.flattool.Warehouse \
 com.anydesk.Anydesk \
 com.tomjwatson.Emote \
