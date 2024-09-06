@@ -10,11 +10,32 @@ options=(
 	"jumphost3genua"
 	"veeamcc1genua"
 	"vbr1pratteln"
-	"e9-mgmg-01"
+	"e9-mgmt-01"
+	"e9-file-01"
+	"e9-dc-01"
+	"e9-vbr-01"
 	"vbr1genua"
+	"dns1grellingen"
+	"vbo1genua"
+	"dc1grellingen"
+	"dc2genua"
+	"file2genua"
+	"file1grellingen"
+	"dns2genua"
+	"mgmt3genua"
+	"dc1pratteln"
+	"duresco-infor2"
+	"duresco-rds1"
+	"duresco-lmobile"
+	"duresco-sql1"
+	"duresco-mgmt1"
+	"duresco-file1"
+	"duresco-dc1"
+	"duresco-dc2"
+	"duresco-app1"
 	)
 
-selected=$(printf '%s\n' "${options[@]}" | dmenu -i -p "Select an option:")
+selected=$(printf '%s\n' "${options[@]}" | dmenu -l 10 -i -p "Which RDP Session?")
 
 #selected=$(echo -e "vbr1genua\nserl-file-01\njumphost3genua" | dmenu -l 3 -p "test")
 
