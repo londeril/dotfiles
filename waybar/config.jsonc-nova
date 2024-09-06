@@ -12,7 +12,8 @@
         "idle_inhibitor",
         "wlr/taskbar",
         "custom/filelauncher",
-        "custom/terminallauncher"
+        "custom/terminallauncher",
+        "custom/rdplist"
         //"hyprland/window"
     ],
     "modules-center": [
@@ -73,6 +74,12 @@
     "custom/filelauncher": {
         "format": "   ",
         "on-click": "nemo",
+        "tooltip": false
+    },
+
+    "custom/rdplist": {
+        "format": "   ",
+        "on-click": "~/.dotfiles/scripts/rdplist.sh",
         "tooltip": false
     },
 

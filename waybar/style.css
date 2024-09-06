@@ -74,7 +74,8 @@ tooltip {
 #custom-publicip,
 #custom-gateway,
 #custom-dns,
-#custom-netreset
+#custom-netreset,
+#custom-rdplist
  {
     /*background: rgba(21, 18, 27, 0);*/
     background: rgba(79, 67, 59, 0.7);

@@ -12,7 +12,8 @@
         "wlr/taskbar",
         //"hyprland/window"
         "custom/filelauncher",
-        "custom/terminallauncher"
+        "custom/terminallauncher",
+         "custom/terminallauncher"
     ],
     "modules-center": [
         "group/timedate"
@@ -69,6 +70,12 @@
     "custom/terminallauncher": {
         "format": "   ",
         "on-click": "kitty",
+        "tooltip": false
+    },
+
+    "custom/rdplist": {
+        "format": "   ",
+        "on-click": "~/.dotfiles/scripts/rdplist.sh",
         "tooltip": false
     },
 

@@ -3,7 +3,6 @@
 
 source ~/Data/LinuxConfigShare/rdpconnect.sh
 
-
 PASSWORD=$(op item get "$SECRETLOOKUP" --vault $VAULT --fields password --reveal)
 
 #secret-tool lookup $SECRETLOOKUP password
