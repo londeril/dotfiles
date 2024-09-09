@@ -8,50 +8,42 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "custom/launcher",
-        "custom/left1to2",
-        "group/timedate",
-        "custom/left2to3",
+        "hyprland/workspaces",
         "idle_inhibitor",
-        "custom/left3to4",
-        "cpu",
-        "custom/left4to5",
-        "memory", 
-        "custom/left5to6",
-        "temperature",
-        "custom/left6to7",
-        "battery",
-        "custom/left7to8",
-        "custom/rdplist"        
+        "wlr/taskbar",
+        "custom/filelauncher",
+        "custom/terminallauncher",
+        "custom/rdplist"
+        //"hyprland/window"
     ],
     "modules-center": [
-            "hyprland/workspaces"
+        "group/timedate"   
     ],
 
     "modules-right": [
         "tray",
-        "custom/right6to7",
+        //"custom/insync",
         "custom/wireguard-manager",
-        "custom/right5to6",
         "network#WiFi",
         "network#OfficeDock",
         "network#USBOnTheGo",
         "network#OfficeDockUSB",
-        "custom/right4to5",
         "custom/netreset",
-        "custom/right3to4",
         "group/net",
-        "custom/right2to3",
+        "group/hardware",
+        //"cpu",
+        //"memory", 
+        //"backlight",
         "group/soundbl",
-        "custom/right1to2",
-        "custom/powermenu"
+        //"pulseaudio",
+       // "pulseaudio#microphone"
+       "battery",
+       "custom/powermenu"
     ],
 
-     "hyprland/window": {
-        "format": "{}",
-        "separate-outputs": true
+    "hyprland/window": {
+        "format": "{}"
     },
-
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -71,19 +63,12 @@
         }*/
     },
 
-    "custom/launcher": {
-        "format": "󰣇 ",
-        "interval": "once",
-
-        "on-click": "~/.dotfiles/scripts/applauncher.sh",
-
-        "tooltip": false
-    },
-
     "cpu": {
         "interval": 10,
-        "format": "󰍛 {usage}%",
-        "format-alt": "{min_frequency} GHz - {max_frequency} GHz"
+        "format": "  {usage}%",
+        "max-length": 10,
+        "on-click": "gnome-system-monitor"
+
     },
 
     "custom/filelauncher": {
@@ -105,7 +90,7 @@
     },
 
     "custom/publicip": {
-        "format": "  {} ",
+        "format": "    {} ",
         "tooltip": false,
         "exec": "exec ~/.dotfiles/scripts/net.sh publicip",
     },
@@ -123,7 +108,7 @@
     },
 
     "custom/netreset": {
-        "format": "󰱓  ",
+        "format": " 󰱓 ",
         "tooltip": false,
         "on-click": "exec ~/.dotfiles/scripts/setupnic.sh nova",
     },
@@ -137,26 +122,17 @@
     "timeout": 30.5
     },
 
-    "temperature": {
-        "thermal-zone": 6,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip": false
-    },
-
     "memory": {
-        "interval": 15,
-        "format": " {percentage}%",
-        "format-alt": " {used}GB",
+        "interval": 30,
+        "format": "  {}%",
         "max-length": 10,
-        "tooltip": true,
-        "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
+        "on-click": "gnome-system-monitor"
     },
 
     "network#WiFi": {
         "interface": "wlp0s20f3",
         "format": "{ifname}",
-        "format-wifi": "   {essid} ({ipaddr}) ",
+        "format-wifi": "   {essid} ({ipaddr})",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
@@ -169,7 +145,7 @@
     "network#OfficeDockUSB": {
         "interface": "eth4",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr} ",
+        "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
@@ -182,7 +158,7 @@
     "network#OfficeDock": {
         "interface": "enp3s0u2u4",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr} ",
+        "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
@@ -195,7 +171,7 @@
     "network#USBOnTheGo": {
         "interface": "enp0s13f0u1",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr} ",
+        "format-ethernet": "  {ipaddr}",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
@@ -210,7 +186,7 @@
     "format": "{icon}", 
     "format-icons": {
         "connected": "<span color=\"#50fa7b\"> 󱎚  ECM-MGMT</span>", /*🔒🔓*/
-        "disconnected": "󱙱  ECM-MGMT  ",
+        "disconnected": "<span color=\"#5a5a5a\">󱙱  ECM-MGMT</span>",
     },
     "interval": "once",
     "on-click": "~/.dotfiles/scripts/wireguard-manager/wireguard-manager.sh -t && pkill -SIGRTMIN+1 waybar",
@@ -262,7 +238,7 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon}{capacity}%",
+        "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
@@ -271,7 +247,7 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
-        "format-muted": " Muted ",
+        "format-muted": " Muted",
         "on-click": "pamixer -t",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer -i 5",
@@ -377,94 +353,7 @@
             "custom/dns"
             
         ]
-    },
-
-
-    // module seperators
-    "custom/left1to2": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/left2to3": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/left3to4": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/left4to5": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/left5to6": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/left6to7": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/left7to8": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-// module separators
-    "custom/right1to2": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/right2to3": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/right3to4": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/right4to5": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/right5to6": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/right6to7": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
-
-    "custom/right7to8": {
-        "interval": "once",
-        "tooltip": false,
-        "format": ""
-    },
+    }
 
 
 }

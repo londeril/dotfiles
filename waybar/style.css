@@ -1,69 +1,119 @@
+/* WAYBAR - Stylesheet */
+
+
+@define-color color1 #C8D404;
+@define-color color2 #B7BF04;
+@define-color color3 #A6AA05;
+@define-color color4 #959505;
+@define-color color5 #848006;
+@define-color color6 #736B06;
+@define-color color7 #625607;
+@define-color color8 #514108;
+@define-color color9 #6E3D09;
+
+@define-color fgcolor1 #000000;
+@define-color fgcolor2 #1A1A1A;
+@define-color fgcolor3 #333333;
+@define-color fgcolor4 #FFFFFF;
+@define-color fgcolor5 #FFFFFF;
+@define-color fgcolor6 #FFFFFF;
+@define-color fgcolor7 #FFFFFF;
+@define-color fgcolor8 #FFFFFF;
+@define-color fgcolor9 #FFFFFF;
+
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: Lato, /*Cartograph CF Nerd Font*/ monospace;
-    font-weight: bold;
-    font-size: 12px;
-    min-height: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11px;
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+    background: rgba(0, 0, 0, 0.0);
 }
 
 tooltip {
-    background: #1e1e2e;
-    border-radius: 10px;
+    background: rgba(30, 30, 46, 0.9);
+    color: #cdd6f4;
+    border-radius: 12px;
     border-width: 2px;
     border-style: solid;
-    border-color: #11111b;
+    border-color: #8957b0;
 }
 
+#workspaces {
+    padding-left: 6px;
+    opacity: 1;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    background: @color8;
+}
 #workspaces button {
-    padding: 5px;
-    /*color: #825a00;*//*#313244*/
-    color: rgba(146, 146, 146, 1);
-    margin-right: 5px;
+    padding: 0px;
+    /*margin-top: 3px;
+    margin-bottom: 3px;*/
+    padding-left: 4px;
+    padding-right: 4px;
+    color: @fgcolor8;
 }
 
 #workspaces button.active {
-    /*color: #f8bd27;*/
-    color: rgba(227, 227, 227, 1);
-}
-
-#workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
-    border-radius: 10px;
-}
-
-#workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-    border-radius: 10px;
+    background: @color1;
+    color: @fgcolor1;
+    margin-left: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-right: 2px;
 }
 
 #workspaces button:hover {
-    background: #11111b;
-    color: rgba(227, 227, 227, 1);
-    border-radius: 10px;
+    background: @color1;
+    color: @fgcolor1;
+    margin-left: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-right: 2px;
 }
 
+#workspaces button.urgent {
+    color: @color2;
+}
+
+
+
+
+#custom-launcher {
+    background: @color1;
+    color: @fgcolor1;
+    border-radius: 12px 0px 0px 12px;
+    padding-left: 10px;
+    margin-right: 0px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#custom-rdplist {
+    border-radius: 0px 12px 12px 0px;
+}
+
+#idle_inhibitor,
+#cpu,
+#memory,
+#temperature,
+#custom-rdplist,
+#battery,
+#clock,
+#custom-powermenu,
+#custom-netreset,
 #custom-wireguard-manager,
 #window,
-#clock,
-#memory,
-#battery,
 #pulseaudio,
 #network,
-#workspaces,
 #tray,
-#custom-powermenu,
-#idle_inhibitor,
 #taskbar,
-#tray,
-#cpu,
 #backlight,
 #custom-insync,
 #bluetooth,
@@ -73,131 +123,192 @@ tooltip {
 #custom-darktablelauncher,
 #custom-publicip,
 #custom-gateway,
-#custom-dns,
-#custom-netreset,
-#custom-rdplist
- {
-    /*background: rgba(21, 18, 27, 0);*/
-    background: rgba(79, 67, 59, 0.7);
-    /*background: rgba(97, 113, 143, 0.54);*/
-    /*background: #1e1e2e;*/
-    /*padding: 0px 5px;*/
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
-    /*margin: 0px 0px;*/
-    margin-top: 2px;
-    margin-right: 2px;
-    margin-bottom: 2px;
-    margin-left: 2px;
-    /*border: 1px solid #181825;*/
-    /*color: #f8bd27;*/
-    color: rgba(227, 227, 227, 1);
-    border-radius: 10px;
+#custom-dns {
+    padding-left: 6px;
+    opacity: 1;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-
-
-
-
-
-
-/*#backlight,
-#network,
-#custom-wireguard-manager,
-#battery,
-#clock,
-#pulseaudio,
-#cpu,
-#memory,
-#bluetooth,
-#custom-powermenu,
-#idle_inhibitor,
-#workspaces {
-    color: #f8bd27;
-    color: rgba(227, 227, 227, 1);
-    border-radius: 10px;
+#clock {
+    background: @color2;
+    color: @fgcolor2;
 }
 
-#tray {
-    border-radius: 10px 0px 0px 10px;
-    margin-right: 10px;
-}*/
-
-#workspaces {
-    /*background: #1e1e2e;*/
-    /*border-radius: 0px 10px 10px 0px;*/
-    border-radius: 10px;
-    /*margin-left: 10px;
-    padding-right: 0px;
-    padding-left: 5px;*/
+#idle_inhibitor {
+    background: @color3;
+    color: @fgcolor3;
 }
 
-#custom-caffeine {
-    color: #89dceb;
-    border-radius: 10px 0px 0px 10px;
-    border-right: 0px;
-    /*margin-left: 10px;*/
+#cpu {
+    background: @color4;
+    color: @fgcolor4;
 }
 
-#custom-language {
-    color: #f38ba8;
-    border-left: 0px;
-    border-right: 0px;
+#memory {
+    background: @color5;
+    color: @fgcolor5;
 }
 
-#custom-updates {
-    color: #f5c2e7;
-    border-radius: 10px 0px 0px 10px;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#window {
-    border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
-}
-
-/*#clock {
-    color: #fab387;
-   border-radius: 10px 0px 0px 10px;
-    margin-left: 5px;
-    border-right: 0px;
-}
-
-#network {
-    color: #fab387;
-}
-
-#pulseaudio {
-    color: #fab387;
-    color: #89b4fa;
-    border-left: 0px;
-    border-right: 0px;
+#temperature {
+    background: @color6;
+    color: @fgcolor6;
 }
 
 #battery {
-    color: #fab387;
-    color: #a6e3a1;
-    border-radius: 0 10px 10px 0;
-    margin-right: 10px;
-    border-left: 0px;
-}*/
+    background: @color7;
+    color: @fgcolor7;
+}
 
-#pulseaudio.microphone {
-    color: #cba6f7;
-    border-radius: 0px 10px 10px 0px;
-    border-left: 0px;
-    border-right: 0px;
+#custom-rdplist {
+    background: @color8;
+    color: @fgcolor8;
+}
+
+#custom-powermenu {
+    background: @color1;
+    color: @fgcolor1;
+    border-radius: 0px 12px 12px 0px;
+    padding-right: 10px;
+
     margin-right: 5px;
-}
-
-
-
-#custom-weather {
-    border-radius: 0px 10px 10px 0px;
-    border-right: 0px;
     margin-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+
+#backlight,
+#pulseaudio,
+#bluetooth {
+    background: @color2;
+    color: @fgcolor2;
+
+}
+
+#custom-publicip,
+#custom-gateway,
+#custom-dns {
+    background: @color3;
+    color: @fgcolor3;
+}
+
+#custom-netreset {
+    background: @color4;
+    color: @fgcolor4;
+}
+
+#network {
+    background: @color5;
+    color: @fgcolor5;
+}
+
+#custom-wireguard-manager {
+    background: @color6;
+    color: @fgcolor6;
+}
+
+#tray {
+    background: @color7;
+    color: @color7;
+    border-radius: 12px 0px 0px 12px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+#custom-left1to2,
+#custom-left2to3,
+#custom-left3to4,
+#custom-left4to5,
+#custom-left5to6,
+#custom-left6to7,
+#custom-left7to8 {
+    font-size: 19px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#custom-left1to2 {
+    color: @color1;
+    background: @color2;
+}
+
+#custom-left2to3 {
+    color: @color2;
+    background: @color3;
+}
+
+#custom-left3to4 {
+    color: @color3;
+    background: @color4;
+}
+
+#custom-left4to5 {
+    color: @color4;
+    background: @color5;
+}
+
+#custom-left5to6 {
+    color: @color5;
+    background: @color6;
+}
+
+#custom-left6to7 {
+    color: @color6;
+    background: @color7;
+}
+
+#custom-left7to8 {
+    color: @color7;
+    background: @color8;
+}
+
+#custom-right1to2,
+#custom-right2to3,
+#custom-right3to4,
+#custom-right4to5,
+#custom-right5to6,
+#custom-right6to7,
+#custom-right7to8 {
+    font-size: 19px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#custom-right1to2 {
+    color: @color1;
+    background: @color2;
+}
+
+#custom-right2to3 {
+    color: @color2;
+    background: @color3;
+}
+
+#custom-right3to4 {
+    color: @color3;
+    background: @color4;
+}
+
+#custom-right4to5 {
+    color: @color4;
+    background: @color5;
+}
+
+#custom-right5to6 {
+    color: @color5;
+    background: @color6;
+}
+
+#custom-right6to7 {
+    color: @color6;
+    background: @color7;
+}
+
+#custom-right7to8 {
+    color: @color7;
+    background: @color8;
+}
+
