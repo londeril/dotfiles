@@ -78,7 +78,8 @@ tooltip {
 }
 
 #workspaces button.urgent {
-    color: @color2;
+    color: @color1;
+    background: #DC143C;
 }
 
 
