@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SERVICE_NAME="wg-quick@ecm-mgmt"
+SERVICE_NAME="wg-quick@office"
 STATUS_CONNECTED_STR='{"text":"Connected","class":"connected","alt":"connected"}'
 STATUS_DISCONNECTED_STR='{"text":"Disconnected","class":"disconnected","alt":"disconnected"}'
 

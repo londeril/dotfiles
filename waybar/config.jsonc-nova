@@ -209,7 +209,7 @@
     "exec": "exec ~/.dotfiles/scripts/wireguard-manager/wireguard-manager.sh -s",
     "format": "{icon}", 
     "format-icons": {
-        "connected": "<span color=\"#50fa7b\"> 󱎚  ECM-MGMT</span>", /*🔒🔓*/
+        "connected": "<span color=\"#50fa7b\"> 󱎚  ECM-MGMT </span>", /*🔒🔓*/
         "disconnected": "󱙱  ECM-MGMT  ",
     },
     "interval": "once",
