@@ -9,3 +9,4 @@ umount /mnt/var/log
 umount /mnt/var/tmp
 umount /mnt/swap
 umount /mnt/boot
+umount /mnt
