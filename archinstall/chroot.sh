@@ -32,7 +32,7 @@ passwd
 
 echo "enabling services for next boot"
 systemctl enable NetworkManager
-systemctl enable sddm
+systemctl enable ly-dm
 systemctl enable cups.socket
 systemctl enable avahi-daemon
 systemctl enable libvirtd

@@ -34,6 +34,7 @@ options=(
 	"duresco-dc2"
 	"duresco-app1"
 	"serl-medidata-01"
+	"serl-vbo-01"
 	)
 
 selected=$(printf '%s\n' "${options[@]}" | dmenu -l 10 -i -p "Which RDP Session?")
