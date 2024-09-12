@@ -96,7 +96,8 @@ tooltip {
     margin-bottom: 5px;
 }
 
-#custom-rdplist {
+#custom-rdplist,
+#custom-digikamlauncher  {
     border-radius: 0px 12px 12px 0px;
 }
 
@@ -153,17 +154,20 @@ tooltip {
     color: @fgcolor5;
 }
 
-#temperature {
+#temperature
+{
     background: @color6;
     color: @fgcolor6;
 }
 
-#battery {
+#battery,
+#custom-darktablelauncher {
     background: @color7;
     color: @fgcolor7;
 }
 
-#custom-rdplist {
+#custom-rdplist,
+#custom-digikamlauncher {
     background: @color8;
     color: @fgcolor8;
 }

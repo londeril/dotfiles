@@ -8,32 +8,49 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "hyprland/workspaces",
-        "wlr/taskbar",
-        //"hyprland/window",
-        "custom/filelauncher",
-        "custom/terminallauncher",
+        "custom/launcher",
+        "custom/left1to2",
+        "group/timedate",
+        "custom/left2to3",
+        "idle_inhibitor",
+        "custom/left3to4",
+        "cpu",
+        "custom/left4to5",
+        "memory", 
+        "custom/left5to6",
+        
+        "custom/left6to7",
         "custom/darktablelauncher",
+        "custom/left7to8",
         "custom/digikamlauncher"
+        
     ],
     "modules-center": [
-        "group/timedate"
+            "hyprland/workspaces"
     ],
 
     "modules-right": [
         "tray",
-        //"custom/insync",
+        "custom/right6to7",
+        "custom/right5to6",
         "network",
-        "group/hardware",
+        "custom/right4to5",
+        "custom/right3to4",
         "group/net",
-        //"cpu",
-        //"memory", 
-        //"backlight",
+        "custom/right2to3",
         "group/soundbl",
-        //"pulseaudio",
-       // "pulseaudio#microphone"
-       "custom/powermenu"
+        "custom/right1to2",
+        "custom/powermenu"
     ],
+
+     "custom/launcher": {
+        "format": "󰣇 ",
+        "interval": "once",
+
+        "on-click": "~/.dotfiles/scripts/applauncher.sh",
+
+        "tooltip": false
+    },
 
     "hyprland/window": {
         "format": "{}"
@@ -153,11 +170,11 @@
     "network": {
         "interface": "enp6s0",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr}",
+        "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-disconnected": "Disconnected ",
         "max-length": 50,
         "on-click": "nm-connection-editor",
         "on-click-right": "nm-applet"
@@ -211,12 +228,12 @@
 
     "clock#date": {
         "format": "{:%d.%m.%Y}",
-        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip": false
     },
 
     "clock": {
         "format": "{:%R}",
-        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip": false
     },
 
     "backlight": {
@@ -240,9 +257,9 @@
         "format-icons": ["  ","  ", "  ", "  "]
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon} {volume}% ",
         "tooltip": false,
-        "format-muted": " Muted",
+        "format-muted": " Muted ",
         "on-click": "pamixer -t",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer -i 5",
@@ -345,6 +362,91 @@
             "custom/gateway"
             
         ]
-    }
+    },
+        // module seperators
+    "custom/left1to2": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/left2to3": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/left3to4": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/left4to5": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/left5to6": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/left6to7": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/left7to8": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+// module separators
+    "custom/right1to2": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/right2to3": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/right3to4": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/right4to5": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/right5to6": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/right6to7": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
+
+    "custom/right7to8": {
+        "interval": "once",
+        "tooltip": false,
+        "format": ""
+    },
 
 }
