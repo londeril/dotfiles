@@ -1,18 +1,18 @@
 sudo virt-install \
-  --name novacore \
-  --memory 4096 \
-  --vcpus 4 \
+  --name Win11Playground \
+  --memory 8192 \
+  --vcpus 8 \
   --cpu host-passthrough \
   --features kvm_hidden=on \
   --os-variant win11 \
   --boot uefi \
   --disk size=128,bus=virtio \
-  --cdrom /home/daniel/ISOs/Win11_22H2_English_x64v2.iso \
-  --disk /home/daniel/ISOs/virtio-win-0.1.262.iso,device=cdrom \
+  --cdrom /mnt/BigData/ISOs/Win11_22H2_English_x64v2.iso \
+  --disk /mnt/BigData/ISOs/virtio-win-0.1.262.iso,device=cdrom \
   --graphics spice \
   --tpm model=tpm-crb \
   --machine q35 \
-  --network=default,model=virtio
+  --network bridge=bridge1,model=virtio
 
 
   Hints:
@@ -20,6 +20,7 @@ sudo virt-install \
   Change Name ;)
 
    --network bridge=bridge0,model=virtio
+   --network=default,model=virtio
 
 
 
