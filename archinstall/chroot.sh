@@ -50,11 +50,11 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo "updating mirrors"
 reflector --verbose --protocol https --latest 5 --sort rate --country Switzerland --save /etc/pacman.d/mirrorlist
 
-echo "copy sddm theme"
-cp -r /root/dotfiles/sddm-themes/* /usr/share/sddm/themes/
-mkdir /etc/sddm.conf.d
-cp /root/dotfiles/archinstall/sddm/defaults.conf /etc/sddm.conf.d/
-cp /root/dotfiles/archinstall/sddm/Xsetup /usr/share/sddm/scripts/
+#echo "copy sddm theme"
+#cp -r /root/dotfiles/sddm-themes/* /usr/share/sddm/themes/
+#mkdir /etc/sddm.conf.d
+#cp /root/dotfiles/archinstall/sddm/defaults.conf /etc/sddm.conf.d/
+#cp /root/dotfiles/archinstall/sddm/Xsetup /usr/share/sddm/scripts/
 
 echo "enabling mdns"
 sudo cp /root/dotfiles/archinstall/etc/nsswitch.conf /etc/

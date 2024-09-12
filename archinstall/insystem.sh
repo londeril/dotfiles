@@ -14,8 +14,8 @@ echo "making sure nothing is in the way for symlinks"
 echo "copy configs in place and symlinking them"
 rm ~/.config/hypr/hyprland.conf
 ln -s ~/.dotfiles/hypr/hyprland.conf-nova ~/.config/hypr/hyprland.conf
-ln -s ~/.dotfiles/hypr/hypridle-nova.conf ~/.config/hypr
-ln -s ~/.dotfiles/hypr/hyprlock-nova.conf ~/.config/hypr
+ln -s ~/.dotfiles/hypr/hypridle-nova.conf ~/.config/hypr/hypridle.conf
+ln -s ~/.dotfiles/hypr/hyprlock-nova.conf ~/.config/hypr/hyprlock.conf
 ln -s ~/.dotfiles/hypr/hyprpaper.conf-nova ~/.config/hypr/hyprpaper.conf
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 rm -r ~/.config/kitty
