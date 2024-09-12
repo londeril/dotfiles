@@ -9,9 +9,9 @@
 # ----------------------------------------------------- 
 
 # HP Portrait monitor first
-#monitor=HDMI-A-1,preferred,0x0,1,transform,3
-#monitor=DP-1,preferred,auto,1,bitdepth,10
-#monitor=DP-2,preffered,auto,1
+monitor=HDMI-A-1,preferred,0x0,1,transform,3
+monitor=DP-1,preferred,auto,1
+
 
 # ----------------------------------------------------- 
 # Autostart needed usils
