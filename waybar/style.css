@@ -161,7 +161,8 @@ tooltip {
 }
 
 #battery,
-#custom-darktablelauncher {
+#custom-darktablelauncher,
+#taskbar {
     background: @color7;
     color: @fgcolor7;
 }

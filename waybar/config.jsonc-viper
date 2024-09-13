@@ -311,7 +311,7 @@
      // Taskbar
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 18,
+        "icon-size": 12,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "icon-theme": "Newaita-reborn-darkQ"
