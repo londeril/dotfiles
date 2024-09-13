@@ -7,8 +7,6 @@ PASSWORD=$(op item get "$SECRETLOOKUP" --vault $VAULT --format=json | jq -r '.fi
 )
 
 echo $SECRETLOOKUP
-echo "BBBBAAAA"
-
 
 #op item get "$SECRETLOOKUP" --vault $VAULT --fields password --reveal
 
