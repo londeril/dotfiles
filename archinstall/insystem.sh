@@ -93,6 +93,7 @@ xdg-settings set default-web-browser firefox.desktop
 
 # set sane gnome defaults
 echo "setting gnome defaults"
+gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 #gsettings set org.gnome.mutter center-new-windows 'true'
 #gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'
