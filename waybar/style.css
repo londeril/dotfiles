@@ -125,6 +125,7 @@ tooltip {
 #custom-darktablelauncher,
 #custom-publicip,
 #custom-gateway,
+#custom-mounter,
 #custom-dns {
     padding-left: 6px;
     opacity: 1;
@@ -210,7 +211,8 @@ tooltip {
     color: @fgcolor5;
 }
 
-#custom-wireguard-manager {
+#custom-wireguard-manager,
+#custom-mounter {
     background: @color6;
     color: @fgcolor6;
 }
