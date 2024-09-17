@@ -60,3 +60,8 @@ source = ~/.dotfiles/hypr/windowrules.conf
 # Key bindings
 # ----------------------------------------------------- 
 source = ~/.dotfiles/hypr/keybindings.conf
+
+# ----------------------------------------------------- 
+# Plugins
+# ----------------------------------------------------- 
+source = ~/.dotfiles/hypr/plugins.conf
