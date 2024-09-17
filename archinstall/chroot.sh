@@ -11,6 +11,7 @@ echo "KEYMAP=de_CH-latin1" > /etc/vconsole.conf
 
 echo "generating adjtime"
 hwclock --systohc
+timedatectl set-ntp true
 
 echo "setting hostname"
 echo "archi" > /etc/hostname
