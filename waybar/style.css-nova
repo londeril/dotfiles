@@ -1,25 +1,49 @@
 /* WAYBAR - Stylesheet */
 
-/* dark red to light red for autumn.jpg */
-@define-color color1 #b93024;
-@define-color color2 #b92823;
-@define-color color3 #b81521;
-@define-color color4 #af1c25;
-@define-color color5 #a62429;
-@define-color color6 #9d2c2d;
-@define-color color7 #943431;
-@define-color color8 #8b3c35;
-@define-color color9 #824439;
 
-@define-color fgcolor1 #FFFFFF;
-@define-color fgcolor2 #FFFFFF;
-@define-color fgcolor3 #FFFFFF;
+/* yellow to brown-ish for little-weaver.jpg
+@define-color color1 #C8D404;
+@define-color color2 #B7BF04;
+@define-color color3 #A6AA05;
+@define-color color4 #959505;
+@define-color color5 #848006;
+@define-color color6 #736B06;
+@define-color color7 #625607;
+@define-color color8 #514108;
+@define-color color9 #6E3D09;
+
+@define-color fgcolor1 #000000;
+@define-color fgcolor2 #1A1A1A;
+@define-color fgcolor3 #333333;
 @define-color fgcolor4 #FFFFFF;
 @define-color fgcolor5 #FFFFFF;
 @define-color fgcolor6 #FFFFFF;
 @define-color fgcolor7 #FFFFFF;
 @define-color fgcolor8 #FFFFFF;
 @define-color fgcolor9 #FFFFFF;
+*/
+
+/* light brown to dark brown for elephant.jpg */
+@define-color color1 #FEDFA2;
+@define-color color2 #E5C68C;
+@define-color color3 #CCAE77;
+@define-color color4 #B39662;
+@define-color color5 #9A7E4D;
+@define-color color6 #816638;
+@define-color color7 #684E23;
+@define-color color8 #5F421C;
+@define-color color9 #583B19;
+
+@define-color fgcolor1 #000000;
+@define-color fgcolor2 #1A1A1A;
+@define-color fgcolor3 #333333;
+@define-color fgcolor4 #FFFFFF;
+@define-color fgcolor5 #FFFFFF;
+@define-color fgcolor6 #FFFFFF;
+@define-color fgcolor7 #FFFFFF;
+@define-color fgcolor8 #FFFFFF;
+@define-color fgcolor9 #FFFFFF;
+
 
 
 * {
