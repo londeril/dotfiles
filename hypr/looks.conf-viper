@@ -1,6 +1,15 @@
 # ----------------------------------------------------- 
 # Hyprland General window decoration / Animations / Layouts Stub - to be sourced by config files
 # ----------------------------------------------------- 
+group {
+    col.border_inactive = rgba(6A3000ff) rgba(080300ff) 20deg
+    col.border_active = rgba(824439ff) rgba(b93024ff) 20deg
+    groupbar {
+        col.active = rgba(b93024ff)
+        col.inactive = rgba(824439ff)
+    }
+}
+
 general {
     gaps_in = 4
     gaps_out = 4
@@ -9,6 +18,8 @@ general {
     # col.active_border = rgba(ffffffee)
     # Color Gradient for active window
     
+
+
     #darkblue to lightblue
     #col.active_border = rgba(0d73ccff) rgba(074642FF) 20deg
     
