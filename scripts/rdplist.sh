@@ -33,7 +33,7 @@ options=(
 	"duresco-dc1"
 	"duresco-dc2"
 	"duresco-app1"
-	"serl-medidata-01"
+	"serl-vd-01"
 	"serl-vbo-01"
 	"serl-print-02"
 	"serl-exch-01"
