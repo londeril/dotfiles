@@ -43,7 +43,7 @@ source = ~/.dotfiles/hypr/keyboard.conf
 # ----------------------------------------------------- 
 # General window decoration / Animations / Layouts
 # ----------------------------------------------------- 
-source = ~/.dotfiles/hypr/looks.conf
+source = ~/.dotfiles/hypr/looks.conf-winterwolf
 
 # ----------------------------------------------------- 
 # Misc settings
