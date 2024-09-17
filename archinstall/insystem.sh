@@ -32,6 +32,8 @@ ln -s ~/.dotfiles/dunst ~/.config/
 ln -s ~/.dotfiles/rofi ~/.config/
 ln -s ~/.dotfiles/vim/vimrc ~/.vmrc
 ln -s ~/.dotfiles/user-dirs.dirs ~/.config/
+rm -r ~/.config/clipse
+ln -s ~/.dotfiles/clipse/custom_theme.json ~/.config/clipse/
 
 echo "install oh-my-zsh"
 cp oh-my-zsh.tar.gz ~/

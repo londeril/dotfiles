@@ -13,6 +13,14 @@ monitor=HDMI-A-1,preferred,auto,1
 # 24" 19:10 portrait mode
 monitor=DP-1,prefered,auto,1,transform,1
 
+# open 3 persistent workspaces on the second monitor
+workspace = 1,monitor:DP-1,persistent:true
+workspace = 2,monitor:DP-1,persistent:true
+workspace = 3,monitor:DP-1,persistent:true
+
+# open 1 persistent workspace on the main monitor and flag it as default
+workspace = 4,monitor:HDMI-A-1,default:true,persistent:true
+
 
 # ----------------------------------------------------- 
 # Autostart needed usils
