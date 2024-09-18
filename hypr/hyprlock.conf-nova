@@ -143,7 +143,7 @@ image {
     size = 1000
     rounding = 10
     border_size = 2
-    border_color = rgba(B9A100ff)  
+    border_color = rgba(B9A100ff)
     rotate = 0
     reload_time = 10
     reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
