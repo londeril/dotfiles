@@ -52,4 +52,4 @@ source = ~/.dotfiles/hypr/keybindings.conf
 # ----------------------------------------------------- 
 # Plugins
 # ----------------------------------------------------- 
-source = ~/.dotfiles/hypr/plugins.conf
+#source = ~/.dotfiles/hypr/plugins.conf
