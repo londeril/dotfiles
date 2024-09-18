@@ -19,8 +19,10 @@
         "custom/left4to5",
         "memory", 
         "custom/left5to6",
+	    "custom/filelauncher",
         "custom/left6to7",
-        "custom/left7to8",
+        "custom/terminallauncher",
+	    "custom/left7to8",
         "custom/rdplist"        
     ],
     "modules-center": [
@@ -92,7 +94,7 @@
 
     "custom/terminallauncher": {
         "format": "   ",
-        "on-click": "kitty",
+        "on-click": "kitty -e sh -c 'fastfetch; exec $SHELL'",
         "tooltip": false
     },
 

@@ -212,14 +212,21 @@ tooltip {
 }
 
 #custom-wireguard-manager,
+#custom-filelauncher,
 #custom-mounter {
     background: @color6;
     color: @fgcolor6;
 }
 
-#tray {
+#custom-terminallauncher {
     background: @color7;
-    color: @color7;
+    color: @fgcolor7;
+}
+
+#tray
+ {
+    background: @color7;
+    color: @fgcolor7;
     border-radius: 12px 0px 0px 12px;
     padding-right: 10px;
     padding-left: 10px;
