@@ -1,6 +1,18 @@
 # ----------------------------------------------------- 
 # Hyprland General window decoration / Animations / Layouts Stub - to be sourced by config files
 # ----------------------------------------------------- 
+
+group {
+    col.border_inactive = rgba(6A3000ff) rgba(080300ff) 20deg
+    col.border_active = rgba(583B19FF) rgba(FEDFA2FF) 20deg
+    groupbar {
+        col.active = rgba(FEDFA2FF)
+        col.inactive = rgba(583B19FF)
+        text_color = rgba(000000ff)
+    }
+}
+
+
 general {
     gaps_in = 4
     gaps_out = 4
