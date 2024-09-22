@@ -60,7 +60,7 @@ cups-pdf \
 nss-mdns \
 evince \
 powerline-fonts \
-vim \
+nvim \
 git \
 curl \
 wget \

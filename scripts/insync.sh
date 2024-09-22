@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 
 STATUS=`insync status  | grep "Sync status:" | awk '{print $3}'`
 
