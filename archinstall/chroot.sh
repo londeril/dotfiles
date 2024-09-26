@@ -4,22 +4,21 @@
 
 echo "doing locale config"
 ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=en_US.UTF-8" >/etc/locale.conf
+echo "en_US.UTF-8 UTF-8" >>/etc/locale.gen
 locale-gen
-echo "KEYMAP=de_CH-latin1" > /etc/vconsole.conf
+echo "KEYMAP=de_CH-latin1" >/etc/vconsole.conf
 
 echo "generating adjtime"
 hwclock --systohc
-timedatectl set-ntp true
 
 echo "setting hostname"
-echo "archi" > /etc/hostname
+echo "archi" >/etc/hostname
 
 echo "adding hosts entries"
-echo "127.0.0.1   localhost" >> /etc/hosts
-echo "::1         localhost" >> /etc/hosts
-echo "127.0.1.1   archi.localdomain archi" >> /etc/hosts
+echo "127.0.0.1   localhost" >>/etc/hosts
+echo "::1         localhost" >>/etc/hosts
+echo "127.0.1.1   archi.localdomain archi" >>/etc/hosts
 
 echo "Adding user"
 useradd -m -s /bin/zsh -g users daniel
@@ -68,4 +67,3 @@ mkdir /etc/pacman.d/hooks
 cp /root/dotfiles/archinstall/hooks/* /etc/pacman.d/hooks/
 
 echo "exit add encrypt to hooks in etc/mkinitcpio.conf before filesystems, run mkinitcpio -P, add cryptdevice=UUID=the-uuid:root root=/dev/mapper/root to /etc/default/grub and run grub-mkconfig -o /boot/grub/grub.cfg and reboot"
-

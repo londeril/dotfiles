@@ -53,6 +53,9 @@ ln -s ~/.dotfiles/zsh/agnoster.zsh-theme ./
 # cp fonts
 #fc-cache -fv
 
+echo "updating time and enabling ntp"
+timedatectl set-ntp true
+
 echo "setting global git username"
 git config --global user.email "daniel@dashwood.ch"
 git config --global user.name "Daniel"
@@ -81,21 +84,21 @@ yay -S 1password clipse morgen-bin pcloud-drive typora nccm-git snapper-support 
 
 echo "installing flatpaks"
 flatpak install \
-com.github.tchx84.Flatseal \
-com.rtosta.zapzap \
-com.spotify.Client \
-com.todoist.Todoist \
-io.github.flattool.Warehouse \
-com.anydesk.Anydesk \
-com.tomjwatson.Emote \
--y
+  com.github.tchx84.Flatseal \
+  com.rtosta.zapzap \
+  com.spotify.Client \
+  com.todoist.Todoist \
+  io.github.flattool.Warehouse \
+  com.anydesk.Anydesk \
+  com.tomjwatson.Emote \
+  -y
 
 #echo "setting default browser to firefox"
 xdg-settings set default-web-browser firefox.desktop
 
 # set sane gnome defaults
 echo "setting gnome defaults"
-gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty 
+gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 #gsettings set org.gnome.mutter center-new-windows 'true'
 #gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'
@@ -160,7 +163,6 @@ sudo systemctl enable grub-btrfsd
 
 echo "linking dmenu"
 sudo ln -s /usr/bin/rofi /usr/bin/dmenu
-
 
 #sudo vi /etc/mkinitcpio.conf
 
