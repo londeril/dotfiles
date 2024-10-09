@@ -7,6 +7,7 @@ pacstrap -K /mnt \
   linux \
   freerdp \
   dmidecode \
+  file-roller \
   swtpm \
   gvfs-smb \
   imagemagick \
@@ -104,4 +105,3 @@ pacstrap -K /mnt \
   rofi-wayland \
   kitty \
   nemo
-
