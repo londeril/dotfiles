@@ -1,3 +1,6 @@
 
 2024/10/08 (10:30:48) | ===> btop++ v.1.4.0
 2024/10/08 (10:30:48) | WARNING: ROCm SMI: Failed to get maximum GPU temperature, defaulting to 110°C
+
+2024/10/19 (22:13:49) | ===> btop++ v.1.4.0
+2024/10/19 (22:13:49) | WARNING: Intel GPU: Failed to initialize PMU
