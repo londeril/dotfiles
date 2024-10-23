@@ -1,3 +1,9 @@
 
 2024/10/08 (10:30:48) | ===> btop++ v.1.4.0
 2024/10/08 (10:30:48) | WARNING: ROCm SMI: Failed to get maximum GPU temperature, defaulting to 110°C
+
+2024/10/15 (10:47:16) | ===> btop++ v.1.4.0
+2024/10/15 (10:47:16) | WARNING: ROCm SMI: Failed to get maximum GPU temperature, defaulting to 110°C
+
+2024/10/18 (13:13:10) | ===> btop++ v.1.4.0
+2024/10/18 (13:13:10) | WARNING: ROCm SMI: Failed to get maximum GPU temperature, defaulting to 110°C
