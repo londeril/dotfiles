@@ -83,6 +83,7 @@ pacstrap -K /mnt \
   btop \
   virt-manager \
   btrfs-progs \
+  grub-btrfs \
   cryptsetup \
   htop \
   pacman-contrib \
