@@ -3,6 +3,7 @@
 
 general {
     grace = 1
+    pam_module = sudo
 }
 
 background {
