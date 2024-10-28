@@ -36,30 +36,30 @@ input-field {
 }
 
 # Date
-#label {
+# label {
 #    monitor =
 #    text = cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"
- #   color = 
- #   font_size = 24
- #   font_family = Iosevka Nerd Font 10
- #   position = 0, 0
- #   halign = right
- #   valign = top
-#}
+#    color = 
+#    font_size = 24
+#    font_family = Iosevka Nerd Font 10
+#    position = 0, 0
+#    halign = right
+#    valign = top
+# }
 
 # # Time
-# label {
-#     monitor =
-#     #text = cmd[update:1000] echo "<b><big> $(date +"%I:%M:%S %p") </big></b>" # AM/PM
-#     text = cmd[update:0] echo "<b><big> $(date +"%H:%M") - $(date +'%A, %-d %B %Y') </big></b>" # 24H
-#     color = $color15
-#     font_size = 24
-#     font_family = Iosevka Nerd Font 10
-#
-#     position = 0, 0
-#     halign = left
-#     valign = top
-# }
+label {
+    monitor =
+    #text = cmd[update:1000] echo "<b><big> $(date +"%I:%M:%S %p") </big></b>" # AM/PM
+    text = cmd[update:0] echo "<b><big> $(date +"%H:%M") - $(date +'%A, %-d %B %Y') </big></b>" # 24H
+    color = $color15
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+
+    position = 0, 0
+    halign = left
+    valign = top
+}
 #
 # # User
 # #label {
@@ -75,16 +75,16 @@ input-field {
 # #}
 #
 # # uptime
-# label {
-#     monitor =
-#     text = cmd[update:0] echo "<b> "$(uptime -p )" </b>"
-#     color = $color12
-#     font_size = 24
-#     font_family = Iosevka Nerd Font 10
-#     position = 0, 0
-#     halign = right
-#     valign = bottom
-# }
+label {
+    monitor =
+    text = cmd[update:0] echo "<b> "$(uptime -p )" </b>"
+    color = $color12
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+    position = 0, 0
+    halign = right
+    valign = bottom
+}
 #
 # # pending updates
 # label {
@@ -99,55 +99,56 @@ input-field {
 # }
 #
 # # Remaining battery capacity
-# label {
-#     monitor = 
-#     text = cmd[update:0] echo "<b> battery: "$(cat /sys/class/power_supply/BAT0/capacity)"%</b>"
-#     color = $color12
-#     font_size = 24
-#     font_family = Iosevka Nerd Font 10
-#     position = 0, 0
-#     halign = center
-#     valign = bottom
-# }
+label {
+    monitor = 
+    text = cmd[update:0] echo "<b> battery: "$(cat /sys/class/power_supply/BAT0/capacity)"%</b>"
+    color = $color12
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+    position = 0, 0
+    halign = center
+    valign = bottom
+}
 #
 # # public IPv4 address
-# label {
-#     monitor =
-#     text = cmd[update:0] echo "<b> public ipv4: "$(~/.dotfiles/scripts/net.sh publicip)" </b>"
-#     color = $color12
-#     font_size = 24
-#     font_family = Iosevka Nerd Font 10
-#     position = 0, 0
-#     halign = center
-#     valign = top
-# }
+label {
+    monitor =
+    text = cmd[update:0] echo "<b> public ipv4: "$(~/.dotfiles/scripts/net.sh publicip)" </b>"
+    color = $color12
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+    position = 0, 0
+    halign = center
+    valign = top
+}
 #
 # #  IPv4 netinfo
-# label {
-#     monitor =
-#     text = cmd[update:0] echo "<b> route: "$(~/.dotfiles/scripts/net.sh gateway)" dns: "$(~/.dotfiles/scripts/net.sh dns)" </b>"
-#     color = $color12
-#     font_size = 24
-#     font_family = Iosevka Nerd Font 10
-#     position = 0, 0
-#     halign = right
-#     valign = top
-# }
+label {
+    monitor =
+    text = cmd[update:0] echo "<b> route: "$(~/.dotfiles/scripts/net.sh gateway)" dns: "$(~/.dotfiles/scripts/net.sh dns)" </b>"
+    color = $color12
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+    position = 0, 0
+    halign = right
+    valign = top
+}
 
 
 # Put a picture of choice here. Default is the current wallpaper
-# image {
-#     monitor =
-#     path = ~/.dotfiles/lockscreen.jpg
-#     size = 1000
-#     rounding = 10
-#     border_size = 2
-#     border_color = rgba(B9A100ff)
-#     rotate = 0
-#     reload_time = 10
-#     reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
-#     position = 0, 0
-#     halign = center
-#     valign = center
-# }
+image {
+    monitor =
+    path = /home/daniel/.dotfiles/lockscreen.jpg
+    size = 1000
+    rounding = 10
+    border_size = 2
+    border_color = rgba(B9A100ff)
+    rotate = 0
+    reload_time = 60
+    reload_cmd = /home/daniel/.dotfiles/scripts/randomPic_landscape.sh
+    #reload_cmd = 
+    position = 0, 0
+    halign = center
+    valign = center
+}
 

@@ -1,3 +1,4 @@
 #!/bin/bash
 
-find /home/daniel/Pictures/LandscapeSaver/ -type f | shuf -n 1
+PICTURE=$(find /home/daniel/Pictures/LandscapeSaver/ -type f | shuf -n 1)
+echo $PICTURE
