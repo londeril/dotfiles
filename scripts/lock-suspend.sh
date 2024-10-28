@@ -4,3 +4,4 @@
 loginctl lock-session
 sleep 3
 systemctl suspend
+

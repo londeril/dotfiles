@@ -1,6 +1,6 @@
 general {
     lock_cmd = pidof hyprlock || hyprlock       # avoid starting multiple hyprlock instances.
-    before_sleep_cmd = loginctl lock-session    # lock before suspend.
+    before_sleep_cmd = /home/daniel/.dotfiles/scripts/howdy-checker.sh set_suspend    # lock before suspend.
     after_sleep_cmd = hyprctl dispatch dpms on  # to avoid having to press a key twice to turn on the display.
 }
 
@@ -22,6 +22,6 @@ listener {
 }
 
 listener {
-    timeout = 420                                 # 7Nmin
-    on-timeout = systemctl suspend                # suspend machine
+    #timeout = 900                                 # 7Nmin
+    on-timeout = /home/daniel/.dotfiles/scripts/howdy-checker.sh set_suspend_suspend                # suspend machine
 }
