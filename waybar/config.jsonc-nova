@@ -14,7 +14,7 @@ _       __            __                  ______            _____
 */
 {
     "layer": "top",
-    "output": ["eDP-1", "DP-7", "DP-3"],
+    "output": ["eDP-1", "DP-7"],
     "position": "top",
     "mod": "dock",
     "exclusive": true,
@@ -182,8 +182,8 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDockUSB": {
-        "interface": "eth4",
-        "format": "{ifname}",
+        "interface": "eth0",
+        "format": "SetupNic ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
