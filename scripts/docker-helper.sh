@@ -48,6 +48,9 @@ case $1 in
   # since we are docked and we no longer rely on microsoft share point B$, we want to mount the local file share
   ~/.dotfiles/scripts/mounter.sh -t && pkill -SIGRTMIN+1 waybar
 
+  # swap hyprlock config to the office one
+  rm /home/daniel/.config/hypr/hyprlock.conf
+  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova-office
   ;;
 --undock)
   # the system is currently docked but we want to unplug the dock.
@@ -87,6 +90,10 @@ case $1 in
 
   # reload waybar
   ~/.dotfiles/scripts/launch.sh
+
+  # swap hyprlock config to laptop mode
+  rm /home/daniel/.config/hypr/hyprlock.conf
+  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova
 
   ;;
 *)
