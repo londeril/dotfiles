@@ -50,7 +50,7 @@ case $1 in
 
   # swap hyprlock config to the office one
   rm /home/daniel/.config/hypr/hyprlock.conf
-  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova-office
+  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova-office /home/daniel/.config/hypr/hyprlock.conf
   ;;
 --undock)
   # the system is currently docked but we want to unplug the dock.
@@ -93,7 +93,7 @@ case $1 in
 
   # swap hyprlock config to laptop mode
   rm /home/daniel/.config/hypr/hyprlock.conf
-  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova
+  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova /home/daniel/.config/hypr/hyprlock.conf
 
   ;;
 *)
