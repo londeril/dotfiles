@@ -9,17 +9,24 @@
 # ----------------------------------------------------- 
 # autodetect first all monitors and use it's preferred resolution.
 # change scalig to 1 - this should work for all external displays
-# set the 24" office display to portrait
-monitor=desc:Samsung Electric Company S24E650 H4ZH201777,prefered, auto,1,transform,1
+#
+# set the internal display to prefered
+monitor=desc:Sharp Corporation 0x14F7,disabled
 
-# set the office ultrawide to 100Hz
-monitor=desc:Samsung Electric Company C34H89x H4ZR302295,3440x1440@100,auto,1
+# set the ultrawide to 100Hz
+monitor=desc:BNQ BenQ SW2700 M6J01353SL0,2560x1440@69,auto,1,bitdepth,10
 
 # default rule to catch new/unknown monitors with prefered resolution
 monitor=,prefered,auto,1
 
-# set the 10Bit photo monitor to 10bit
-monitor=desc:BNQ BenQ SW2700 M6J01353SL0,2560x1440@60,auto,1,bitdepth,10
+# open 3 persistent workspaces on the second monitor
+workspace = 1,monitor:desc:Samsung Electric Company S24E650 H4ZH201777,persistent:true
+workspace = 2,monitor:desc:Samsung Electric Company S24E650 H4ZH201777,persistent:true
+workspace = 3,monitor:desc:Samsung Electric Company S24E650 H4ZH201777,persistent:true
+
+# open 1 persistent workspace on the main monitor and flag it as default
+workspace = 4,monitor:desc:Samsung Electric Company C34H89x H4ZR302295,default:true,persistent:true
+
  
 # ----------------------------------------------------- 
 # Autostart needed usils

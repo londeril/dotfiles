@@ -20,7 +20,7 @@ monitor=desc:Samsung Electric Company S24E650 H4ZH201777,prefered, auto,1,transf
 monitor=desc:Samsung Electric Company C34H89x H4ZR302295,3440x1440@100,auto,1
 
 # default rule to catch new/unknown monitors with prefered resolution
-monitor=,prefered,auto,100
+monitor=,prefered,auto,1
 
 # open 3 persistent workspaces on the second monitor
 workspace = 1,monitor:desc:Samsung Electric Company S24E650 H4ZH201777,persistent:true
