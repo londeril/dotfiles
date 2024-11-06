@@ -2,7 +2,21 @@
 # docking helper
 # this script will prepare the system to be (un)docked. We don't want to leave too much to autoconfig or chance...
 
-# let's see if the external monitor is connected
+
+check_location() {
+  if hyprctl monitors | grep -q "Samsung Electric Company C34H89x H4ZR302295"; then
+    echo "office"
+  elif hyprctl monitors | grep -q "Put the home PhotoMonitor desc here"; then
+    echo "home"
+  else
+    echo "local"
+  fi
+}
+
+
+
+# let's see if and which external monitor is connected
+
 if hyprctl monitors | grep -q "Samsung Electric Company C34H89x H4ZR302295"; then
   OFFICE=true
 else
@@ -99,11 +113,11 @@ case $1 in
 
   # swap hyprlock config to laptop mode
   rm /home/daniel/.config/hypr/hyprlock.conf
-  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova /home/daniel/.config/hypr/hyprlock.conf
+  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova-local /home/daniel/.config/hypr/hyprlock.conf
 
   # swap hypridle config to laptop mode
   rm /home/daniel/.config/hypr/hypridle.conf
-  ln -s /home/daniel/.dotfiles/hypr/hypridle.conf-nova /home/daniel/.config/hypr/hypridle.conf
+  ln -s /home/daniel/.dotfiles/hypr/hypridle.conf-nova-local /home/daniel/.config/hypr/hypridle.conf
   pkill hypridle
   hypridle &!
 

@@ -13,6 +13,7 @@ echo "making sure nothing is in the way for symlinks"
 
 echo "copy configs in place and symlinking them"
 rm ~/.config/hypr/hyprland.conf
+mkdir ~/.config/hypr
 ln -s ~/.dotfiles/hypr/hyprland.conf-nova ~/.config/hypr/hyprland.conf
 ln -s ~/.dotfiles/hypr/hypridle.conf-nova ~/.config/hypr/hypridle.conf
 ln -s ~/.dotfiles/hypr/hyprlock.conf-nova ~/.config/hypr/hyprlock.conf

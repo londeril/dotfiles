@@ -27,6 +27,7 @@ _       __            __                  ______            _____
         "group/timedate",
         "custom/left2to3",
         "idle_inhibitor",
+        "custom/howdytoggler",
         "custom/left3to4",
         "cpu",
         "custom/left4to5",
@@ -47,7 +48,6 @@ _       __            __                  ______            _____
         "custom/right6to7",
         "custom/wireguard-manager",
         "custom/mounter",
-        "custom/docker",
         "custom/right5to6",
         "network#WiFi",
         "network#OfficeDock",
@@ -234,6 +234,20 @@ _       __            __                  ______            _____
     "signal": 1,
     },
 
+    "custom/howdytoggler": {
+    "exec": "exec ~/.dotfiles/scripts/howdy-toggler.sh -s",
+    "format": "{icon}", 
+    "format-icons": {
+        "enabled": "<span color=\"#FF000D\">!HOWDY ENABLED!</span>", /*🔒🔓*/
+        "disabled": "󰱻 ",
+    },
+    "interval": "once",
+    "on-click": "~/.dotfiles/scripts/howdy-toggler.sh -t && pkill -SIGRTMIN+1 waybar",
+    "return-type": "json",
+    "signal": 1,
+    },
+
+
 
    "custom/mounter": {
     "exec": "exec ~/.dotfiles/scripts/mounter.sh -s",
@@ -248,19 +262,7 @@ _       __            __                  ______            _____
     "signal": 1,
     },
 
-    "custom/docker": {
-    "exec": "exec ~/.dotfiles/scripts/docker-helper.sh -s",
-    "format": "{icon}", 
-    "format-icons": {
-        "docked": "<span color=\"#50fa7b\">| 󱘖 Mount </span>", 
-        "undocked": "| 󱘖 Mount ",
-    },
-    "interval": "once",
-    "on-click": "~/.dotfiles/scripts/docker-helper.sh -t && pkill -SIGRTMIN+1 waybar",
-    "return-type": "json",
-    "signal": 1,
-    },
-
+    
    "custom/powermenu" : {
         "format": " ",
         "tooltip" : true,

@@ -127,6 +127,7 @@ tooltip {
 
 #idle_inhibitor,
 #cpu,
+#custom-howdytoggler,
 #memory,
 #temperature,
 #custom-rdplist,
@@ -164,7 +165,8 @@ tooltip {
     color: @fgcolor2;
 }
 
-#idle_inhibitor {
+#idle_inhibitor,
+#custom-howdytoggler {
     background: @color3;
     color: @fgcolor3;
 }
