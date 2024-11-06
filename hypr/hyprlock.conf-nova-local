@@ -144,7 +144,7 @@ image {
     border_size = 2
     border_color = rgba(B9A100ff)
     rotate = 0
-    reload_time = 60
+    reload_time = 10
     reload_cmd = /home/daniel/.dotfiles/scripts/randomPic_landscape.sh
     #reload_cmd = 
     position = 0, 0
