@@ -105,4 +105,5 @@ pacstrap -K /mnt \
   dunst \
   rofi-wayland \
   kitty \
-  nemo
+  nemo \
+  virt-viewer
