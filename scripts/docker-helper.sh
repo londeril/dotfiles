@@ -53,6 +53,9 @@ case $1 in
     hyprctl dispatch moveworkspacetomonitor $ws $MONITOR2 >/dev/null
   done
 
+  # Move workspace one to MONITOR1
+  hyprctl dispatch moveworkspacetomonitor 1 $MONITOR1 >/dev/null
+
   # all is setup - disbale the internal display
   hyprctl keyword monitor desc:Sharp Corporation 0x14F7,disable >/dev/null
 
