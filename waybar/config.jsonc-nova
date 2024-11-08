@@ -184,7 +184,7 @@ _       __            __                  ______            _____
 
     "network#OfficeDockUSB": {
         "interface": "eth0",
-        "format": "SetupNic ",
+        "format": "{ifname} ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
