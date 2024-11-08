@@ -74,6 +74,11 @@ case $1 in
   ln -s /home/daniel/.dotfiles/hypr/hypridle.conf-nova-office /home/daniel/.config/hypr/hypridle.conf
   pkill hypridle
   hypridle &!
+
+  # kill and restart hyprpaper, for good measure
+  pkill hyprpaper
+  hyprpaper &!
+
   ;;
 --undock)
   # the system is currently docked but we want to unplug the dock.
