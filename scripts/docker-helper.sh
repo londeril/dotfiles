@@ -37,12 +37,13 @@ case $1 in
   fi
 
   # enable the external monitors
-  hyprctl keyword monitor desc:Samsung Electric Company S24E650 H4ZH201777,prefered, 0x0,1,transform,1 >/dev/null
+  hyprctl keyword monitor desc:HP Inc. HP E243i 6CM82505J0,prefered, 0x0,1,transform,1 >/dev/null
   hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,3440x1440@100,auto,1 >/dev/null
 
   # move all desktops from the internal screen to the big screen
   # Define monitor descriptions
-  MONITOR1="desc:Samsung Electric Company S24E650 H4ZH201777"
+  MONITOR1="desc:HP Inc. HP E243i 6CM82505J0"
+  #MONITOR1="desc:Samsung Electric Company S24E650 H4ZH201777"
   MONITOR2="desc:Samsung Electric Company C34H89x H4ZR302295"
 
   # Get all workspace IDs
@@ -112,6 +113,10 @@ case $1 in
   for ws in $workspaces; do
     hyprctl dispatch moveworkspacetomonitor $ws $INTMONITOR >/dev/null
   done
+
+  # disbale external monitor
+  hyprctl keyword monitor desc:Samsung Electric Company S24E650 H4ZH201777,disable >/dev/null
+  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,disbale >/dev/null
 
   # notify the user that it's now time to unplug the monitor
   notify-send -u critical -t 0 "We are clear to undock :)"
