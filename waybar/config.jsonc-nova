@@ -14,7 +14,7 @@ _       __            __                  ______            _____
 */
 {
     "layer": "top",
-    "output": ["eDP-1", "DP-6"],
+    "output": ["eDP-1", "DP-5"],
     "position": "top",
     "mod": "dock",
     "exclusive": true,
