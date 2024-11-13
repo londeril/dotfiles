@@ -114,10 +114,6 @@ case $1 in
     hyprctl dispatch moveworkspacetomonitor $ws $INTMONITOR >/dev/null
   done
 
-  # disbale external monitor
-  hyprctl keyword monitor desc:Samsung Electric Company S24E650 H4ZH201777,disable >/dev/null
-  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,disbale >/dev/null
-
   # notify the user that it's now time to unplug the monitor
   notify-send -u critical -t 0 "We are clear to undock :)"
 
@@ -133,6 +129,11 @@ case $1 in
   ln -s /home/daniel/.dotfiles/hypr/hypridle.conf-nova-local /home/daniel/.config/hypr/hypridle.conf
   pkill hypridle
   hypridle &!
+  
+  # disbale external monitor
+  hyprctl keyword monitor desc:Samsung Electric Company S24E650 H4ZH201777,disable >/dev/null
+  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,disbale >/dev/null
+
 
   ;;
 *)
