@@ -1,8 +1,3 @@
+# this is just a placeholder config for hyprpaper to start - waypaper will restore the wallpaper
 preload = ~/Pictures/Wallpaper/elephant-highress.jpg
-wallpaper = eDP-1,~/Pictures/Wallpaper/elephant-highress.jpg
-wallpaper = DP-1,~/Pictures/Wallpaper/elephant-highress.jpg
-wallpaper = DP-5,~/Pictures/Wallpaper/elephant-highress.jpg
-wallpaper = DP-3,~/Pictures/Wallpaper/elephant-highress.jpg
-wallpaper = DP-6,~/Pictures/Wallpaper/elephant-highress.jpg
-wallpaper = DP-7,~/Pictures/Wallpaper/elephant-highress.jpg
-wallpaper = HDMI-1,~/Pictures/Wallpaper/elephant-highress.jpg
+#wallpaper = Samsung Electric Company C34H89x H4ZR302295,~/Pictures/Wallpaper/elephant-highress.jpg
