@@ -1,7 +1,7 @@
 #!/bin/bash
 
 virt-install \
-  --name vCosmic \
+  --name vArchi \
   --memory 8192 \
   --memory maxmemory=8192 \
   --memballoon virtio \
