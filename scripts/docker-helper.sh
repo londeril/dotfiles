@@ -76,9 +76,8 @@ case $1 in
   pkill hypridle
   hypridle &!
 
-  # kill and restart hyprpaper, for good measure
-  pkill hyprpaper
-  hyprpaper &!
+  # reload wallpapers
+  waypaper --restore
 
   ;;
 --undock)
@@ -132,8 +131,10 @@ case $1 in
   
   # disbale external monitor
   hyprctl keyword monitor desc:Samsung Electric Company S24E650 H4ZH201777,disable >/dev/null
-  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,disbale >/dev/null
-
+  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,disable >/dev/null
+  
+  # waypaper restore
+  waypaper --restore
 
   ;;
 *)
