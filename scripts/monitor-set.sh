@@ -1,7 +1,7 @@
 #!/bin/bash
 # remove stale monitors - always make sure to bring up the internal screen first!
 
-HYPRLAND_INSTANCE_SIGNATURE=$(</tmp/hyprland_instance_signature)
+export HYPRLAND_INSTANCE_SIGNATURE=$(</tmp/hyprland_instance_signature)
 
 hyprctl keyword monitor eDP-1,preferred,auto,1
 
