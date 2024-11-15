@@ -1,5 +1,6 @@
 #!/bin/bash
-# this script will set some sane defaults on hyprland start-up. this will prevent forgotten howdy activation and off-screen lockscreens
+# this script will set some sane defaults on hyprland start-up.
+# this will prevent forgotten howdy activation and off-screen lockscreens
 #
 # check if we have to change some links
 if [ "$(readlink -f /home/daniel/.config/hypr/hyprlock.conf)" != "/home/daniel/.dotfiles/hypr/hyprlock.conf-nova-local" ]; then
