@@ -32,7 +32,7 @@ passwd
 
 echo "enabling services for next boot"
 systemctl enable NetworkManager
-systemctl enable ly
+#systemctl enable ly
 systemctl enable cups.socket
 systemctl enable avahi-daemon
 systemctl enable libvirtd
@@ -51,11 +51,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo "updating mirrors"
 reflector --verbose --protocol https --latest 5 --sort rate --country Switzerland --save /etc/pacman.d/mirrorlist
 
-#echo "copy sddm theme"
-#cp -r /root/dotfiles/sddm-themes/* /usr/share/sddm/themes/
-#mkdir /etc/sddm.conf.d
-#cp /root/dotfiles/archinstall/sddm/defaults.conf /etc/sddm.conf.d/
-#cp /root/dotfiles/archinstall/sddm/Xsetup /usr/share/sddm/scripts/
+echo "configuring pam.d for howdy"
+sudo cp /root/dotfiles/archinstall/pam.d/* /etc/pam.d/
 
 echo "enabling mdns"
 sudo cp /root/dotfiles/archinstall/etc/nsswitch.conf /etc/

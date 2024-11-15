@@ -3,5 +3,5 @@
 auth [success=ok default=1] pam_exec.so /home/daniel/.dotfiles/scripts/howdy-checker.sh check_suspend
 auth sufficient pam_howdy.so
 auth        include     login
-auth optional pam_exec.so /home/daniel/.dotfiles/scripts/howdy-checker.sh remove_suspend 
+#auth optional pam_exec.so /home/daniel/.dotfiles/scripts/howdy-checker.sh remove_suspend 
 
