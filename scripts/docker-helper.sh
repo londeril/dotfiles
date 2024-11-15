@@ -43,7 +43,6 @@ case $1 in
   # move all desktops from the internal screen to the big screen
   # Define monitor descriptions
   MONITOR1="desc:HP Inc. HP E243i 6CM82505J0"
-  #MONITOR1="desc:Samsung Electric Company S24E650 H4ZH201777"
   MONITOR2="desc:Samsung Electric Company C34H89x H4ZR302295"
 
   # Get all workspace IDs
@@ -99,7 +98,6 @@ case $1 in
   fi
 
   # enable internal screen
-  #  hyprctl keyword monitor desc:Sharp Corporation 0x14F7,enable >/dev/null
   hyprctl keyword monitor desc:Sharp Corporation 0x14F7,prefered,auto,1 >/dev/null
 
   # Define monitor descriptions
@@ -128,10 +126,6 @@ case $1 in
   ln -s /home/daniel/.dotfiles/hypr/hypridle.conf-nova-local /home/daniel/.config/hypr/hypridle.conf
   pkill hypridle
   hypridle &!
-  
-  # disbale external monitor
-  hyprctl keyword monitor desc:Samsung Electric Company S24E650 H4ZH201777,disable >/dev/null
-  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,disable >/dev/null
   
   # waypaper restore
   waypaper --restore

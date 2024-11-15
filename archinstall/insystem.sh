@@ -52,6 +52,14 @@ ln -s ~/.dotfiles/zsh/agnoster.zsh-theme ./
 # cp fonts
 #fc-cache -fv
 
+echo "symlinking some scripts to path"
+sudo ln -s /home/daniel/.dotfiles/scripts/backup_runner.sh /usr/bin/backup-runner
+sudo ln -s /home/daniel/.dotfiles/scripts/dotfiles.sh /usr/bin/dot
+sudo ln -s /home/daniel/.dotfiles/scripts/screensaverSorter.sh /usr/bin/screensaverSorter
+sudo ln -s /home/daniel/.dotfiles/scripts/ssh-no-knownhosts.sh /usr/bin/sshkh
+sudo ln -s /home/daniel/.dotfiles/scripts/photosync.sh /usr/bin/photosync
+sudo ln -s /home/daniel/.dotfiles/scripts/updatemirrors.sh /usr/bin/updatemirrors
+
 echo "updating time and enabling ntp"
 timedatectl set-ntp true
 

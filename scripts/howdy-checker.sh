@@ -22,15 +22,15 @@ check_suspend)
   if [ -f /tmp/suspend ] && [ "$(cat /tmp/suspend)" = "1" ]; then
     # machine woke from suspend and no password unlock happend so far
     # DO NOT permit face-unlock
-    echo "howdy deny"
+    #echo "howdy deny"
     exit 1
   elif [ -f /tmp/suspend ] && [ "$(cat /tmp/suspend)" = "0" ]; then
     # there was a password unlock since last wake up - allow hawdy
-    echo "howdy allow"
+    #echo "howdy allow"
     exit 0
   else
     # check failed...better save than sorry - no howdy unlock
-    echo "howdy deny"
+    #echo "howdy deny"
     exit 1
   fi
   ;;
