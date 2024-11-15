@@ -24,7 +24,7 @@ ln -s ~/.dotfiles/kitty ~/.config/
 mkdir ~/.config/waybar
 ln -s ~/.dotfiles/waybar/config.jsonc-nova ~/.config/waybar/config.jsonc
 ln -s ~/.dotfiles/waybar/style.css-nova ~/.config/waybar/
-ln -s ~/.dotfiles/icons ~/.icons
+#ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
 ln -s ~/.dotfiles/ranger ~/.config/
 ln -s ~/.dotfiles/dunst ~/.config/
