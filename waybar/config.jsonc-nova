@@ -37,7 +37,7 @@ _       __            __                  ______            _____
         "custom/left6to7",
         "battery",
         "custom/left7to8",
-        "custom/rdplist"        
+        "custom/rdplist"
     ],
     "modules-center": [
             "hyprland/workspaces"

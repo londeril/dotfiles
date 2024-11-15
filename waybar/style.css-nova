@@ -151,6 +151,7 @@ tooltip {
 #custom-publicip,
 #custom-gateway,
 #custom-mounter,
+#taskbar,
 #custom-dns {
     padding-left: 6px;
     opacity: 1;
@@ -195,7 +196,8 @@ tooltip {
 }
 
 #custom-rdplist,
-#custom-digikamlauncher {
+#custom-digikamlauncher,
+#taskbar {
     background: @color8;
     color: @fgcolor8;
 }
