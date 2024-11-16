@@ -37,7 +37,7 @@ _       __            __                  ______            _____
         "custom/left6to7",
         "battery",
         "custom/left7to8",
-        "custom/rdplist"
+        "custom/backup"
     ],
     "modules-center": [
             "hyprland/workspaces"
@@ -262,7 +262,13 @@ _       __            __                  ______            _____
     "signal": 1,
     },
 
-    
+    "custom/backup": {
+        "exec": "exec cat /home/daniel/.config/lastest_backup",
+        "format": "Lastest Backup: {} ",
+        "interval": "once",
+        "on-click": "exec /home/daniel/.dotfiles/scripts/backup_runner.sh backup"
+
+      },
    "custom/powermenu" : {
         "format": " ",
         "tooltip" : true,

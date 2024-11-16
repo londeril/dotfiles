@@ -121,7 +121,8 @@ tooltip {
 }
 
 #custom-rdplist,
-#custom-digikamlauncher  {
+#custom-digikamlauncher,
+#custom-backup {
     border-radius: 0px 12px 12px 0px;
 }
 
@@ -131,6 +132,7 @@ tooltip {
 #memory,
 #temperature,
 #custom-rdplist,
+#custom-backup,
 #battery,
 #clock,
 #custom-powermenu,
@@ -197,6 +199,7 @@ tooltip {
 
 #custom-rdplist,
 #custom-digikamlauncher,
+#custom-backup,
 #taskbar {
     background: @color8;
     color: @fgcolor8;
