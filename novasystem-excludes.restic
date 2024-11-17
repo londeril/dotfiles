@@ -1,0 +1,17 @@
+/bin/
+/usr/
+/lib/
+/srv/
+/var/
+/home/
+/.bootbackup/
+/proc/
+/sys/
+/opt/
+/tmp/
+/dev/
+/mnt/
+/run/
+/.snapshots/
+/swap/
+
