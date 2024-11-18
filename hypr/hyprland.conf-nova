@@ -7,6 +7,12 @@
 # Monitor Setup
 # See https://wiki.hyprland.org/Configuring/Monitors/
 # ----------------------------------------------------- 
+
+xwayland {
+  force_zero_scaling = true
+}
+
+
 # autodetect first all monitors and use it's preferred resolution.
 # change scalig to 1 - this should work for all external displays
 # set the 24" office display to portrait
