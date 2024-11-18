@@ -8,8 +8,10 @@
 # See https://wiki.hyprland.org/Configuring/Monitors/
 # ----------------------------------------------------- 
 
+# force xwayland apps to 1:1 scale... 
 xwayland {
   force_zero_scaling = true
+  #enabled = false
 }
 
 
