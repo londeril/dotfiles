@@ -36,13 +36,13 @@ case $1 in
     exit 1
   fi
 
-  # enable the external monitors
-  hyprctl keyword monitor desc:HP Inc. HP E243i 6CM82505J0,prefered, 0x0,1,transform,1 >/dev/null
+  # enable the external monitor(s)
+#  hyprctl keyword monitor desc:HP Inc. HP E243i 6CM82505J0,prefered, 0x0,1,transform,1 >/dev/null
   hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,3440x1440@100,auto,1 >/dev/null
 
   # move all desktops from the internal screen to the big screen
   # Define monitor descriptions
-  MONITOR1="desc:HP Inc. HP E243i 6CM82505J0"
+#  MONITOR1="desc:HP Inc. HP E243i 6CM82505J0"
   MONITOR2="desc:Samsung Electric Company C34H89x H4ZR302295"
 
   # Get all workspace IDs
@@ -53,11 +53,18 @@ case $1 in
     hyprctl dispatch moveworkspacetomonitor $ws $MONITOR2 >/dev/null
   done
 
-  # Move workspace one to MONITOR1
-  hyprctl dispatch moveworkspacetomonitor 1 $MONITOR1 >/dev/null
+  # Move workspace one to internal display
+  hyprctl dispatch moveworkspacetomonitor 1 eDP-1 >/dev/null
 
   # all is setup - disbale the internal display
-  hyprctl keyword monitor desc:Sharp Corporation 0x14F7,disable >/dev/null
+  # hyprctl keyword monitor desc:Sharp Corporation 0x14F7,disable >/dev/null
+  #
+  # all is setup - change scaling on eDP-1
+  hyprctl keyword monitor eDP-1,prefered,0x0,1.25
+  
+  # change waybar config to office
+  rm /home/daniel/.config/waybar/config.jsonc
+  ln -s /home/daniel/.dotfiles/waybar/config.jsonc-nova-office /home/daniel/.config/waybar/config.jsonc
 
   # reload waybar
   ~/.dotfiles/scripts/launch.sh
@@ -98,7 +105,10 @@ case $1 in
   fi
 
   # enable internal screen
-  hyprctl keyword monitor desc:Sharp Corporation 0x14F7,prefered,auto,1 >/dev/null
+  #hyprctl keyword monitor desc:Sharp Corporation 0x14F7,prefered,auto,1 >/dev/null
+
+  # set scaling of internal Monitor to 1
+  hyprctl keyword monitor eDP-1,prefered,auto,1
 
   # Define monitor descriptions
   INTMONITOR="desc:Sharp Corporation 0x14F7"
@@ -110,6 +120,10 @@ case $1 in
   for ws in $workspaces; do
     hyprctl dispatch moveworkspacetomonitor $ws $INTMONITOR >/dev/null
   done
+
+  # change waybar config to standalone
+  rm /home/daniel/.config/waybar/config.jsonc
+  ln -s /home/daniel/.dotfiles/waybar/config.jsonc-nova /home/daniel/.config/waybar/config.jsonc
 
   # notify the user that it's now time to unplug the monitor
   notify-send -u critical -t 0 "We are clear to undock :)"

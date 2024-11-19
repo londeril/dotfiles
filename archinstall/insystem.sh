@@ -83,7 +83,7 @@ sudo pacman -Syu sublime-text
 
 #insync
 echo "getting needed packages from the AUR"
-yay -S 1password clipse waypaper pcloud-drive nccm-git snapper-support btrfs-assistant hyprshot swayosd-git
+yay -S 1password clipse waypaper pcloud-drive nccm-git spotify morgen-bin todoist-appimage snapper-support btrfs-assistant hyprshot swayosd-git
 
 #echo "deploying nccm wrapper"
 #sudo mv /usr/bin/nccm /usr/bin/nccm-bin
@@ -93,8 +93,6 @@ echo "installing flatpaks"
 flatpak install \
   com.github.tchx84.Flatseal \
   com.rtosta.zapzap \
-  com.spotify.Client \
-  com.todoist.Todoist \
   io.github.flattool.Warehouse \
   com.anydesk.Anydesk \
   com.tomjwatson.Emote \
