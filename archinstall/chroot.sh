@@ -38,7 +38,7 @@ systemctl enable avahi-daemon
 systemctl enable libvirtd
 systemctl enable fstrim.timer
 systemctl enable grub-btrfsd
-systemctl enable iptables
+systemctl enable nftables
 
 cp -r /root/dotfiles /home/daniel/.dotfiles
 chown daniel /home/daniel/.* -R

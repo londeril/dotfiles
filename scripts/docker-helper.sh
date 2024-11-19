@@ -60,7 +60,7 @@ case $1 in
   # hyprctl keyword monitor desc:Sharp Corporation 0x14F7,disable >/dev/null
   #
   # all is setup - change scaling on eDP-1
-  hyprctl keyword monitor eDP-1,prefered,0x0,1.25
+  # hyprctl keyword monitor eDP-1,prefered,0x0,1.25
   
   # change waybar config to office
   rm /home/daniel/.config/waybar/config.jsonc
@@ -108,7 +108,7 @@ case $1 in
   #hyprctl keyword monitor desc:Sharp Corporation 0x14F7,prefered,auto,1 >/dev/null
 
   # set scaling of internal Monitor to 1
-  hyprctl keyword monitor eDP-1,prefered,auto,1
+  # hyprctl keyword monitor eDP-1,prefered,auto,1
 
   # Define monitor descriptions
   INTMONITOR="desc:Sharp Corporation 0x14F7"
