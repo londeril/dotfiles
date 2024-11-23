@@ -13,12 +13,12 @@ echo "generating adjtime"
 hwclock --systohc
 
 echo "setting hostname"
-echo "archi" >/etc/hostname
+echo "raven" >/etc/hostname
 
 echo "adding hosts entries"
 echo "127.0.0.1   localhost" >>/etc/hosts
 echo "::1         localhost" >>/etc/hosts
-echo "127.0.1.1   archi.localdomain archi" >>/etc/hosts
+echo "127.0.1.1   raven.localdomain raven" >>/etc/hosts
 
 echo "Adding user"
 useradd -m -s /bin/zsh -g users daniel
@@ -38,7 +38,7 @@ systemctl enable avahi-daemon
 systemctl enable libvirtd
 systemctl enable fstrim.timer
 systemctl enable grub-btrfsd
-systemctl enable nftables
+#systemctl enable nftables
 
 cp -r /root/dotfiles /home/daniel/.dotfiles
 chown daniel /home/daniel/.* -R
