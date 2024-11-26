@@ -140,17 +140,17 @@ image {
     valign = center
 }
 
-# Portrait Pics on Landscape 
+# Smaller landscape pics on eDP-1 
 image {
-    monitor = HP Inc. HP E243i 6CM82505J0
-    path = ~/.dotfiles/lockscreenPortrait.jpg
+    monitor = eDP-1
+    path = ~/.dotfiles/lockscreen.jpg
     size = 1000
     rounding = 10
     border_size = 2
     border_color = rgba(824439ff)
     rotate = 0
     reload_time = 10
-    reload_cmd = find ~/Pictures/PortraitSaver/ -type f | shuf -n 1
+    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
     #reload_cmd = ~/.dotfiles/scripts/randomPic_portrait.sh
     position = 0, 0
     halign = center
