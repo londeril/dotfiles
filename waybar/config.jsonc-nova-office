@@ -52,7 +52,7 @@ _       __            __                  ______            _____
         "network#WiFi",
         "network#OfficeDock",
         "network#USBOnTheGo",
-        "network#OfficeDockUSB",
+        "network#OfficeDockSetupNic",
         "custom/right4to5",
         "custom/netreset",
         "custom/right3to4",
@@ -182,8 +182,8 @@ _       __            __                  ______            _____
         "on-click-right": "nm-applet"
     },
 
-    "network#OfficeDockUSB": {
-        "interface": "enp59s0u2u3u3",
+    "network#OfficeDockSetupNic": {
+        "interface": "enp59s0u2u4",
         "format": "{ifname} ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -196,7 +196,7 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDock": {
-        "interface": "enp59s0u2u4",
+        "interface": "enp59s0u2u3u3",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
