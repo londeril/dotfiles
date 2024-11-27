@@ -183,7 +183,7 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDockUSB": {
-        "interface": "enp59s0u2u3u3",
+        "interface": "enp0s13f0u3u4u2",
         "format": "{ifname} ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -210,7 +210,7 @@ _       __            __                  ______            _____
 
     "network#USBOnTheGo": {
         "interface": "enp0s13f0u1",
-        "format": "{ifname}",
+        "format": "USBOnTheGo ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",

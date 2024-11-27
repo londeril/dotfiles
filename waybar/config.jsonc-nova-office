@@ -183,10 +183,10 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDockSetupNic": {
-        "interface": "enp59s0u2u4",
-        "format": "{ifname} ",
+        "interface": "enp0s13f0u3u4u4",
+        "format": "SetupNIC ",
         "format-ethernet": "  {ipaddr} ",
-        "format-disconnected": "", //An empty format will hide the module.
+        "format-disconnected": "SetupNIC ", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
@@ -196,7 +196,7 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDock": {
-        "interface": "enp59s0u2u3u3",
+        "interface": "enp0s13f0u3u4u2",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
