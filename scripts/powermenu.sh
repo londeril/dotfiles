@@ -15,7 +15,7 @@ entries="$lock\n$suspend\n$reboot\n$shutdown\n$logout\n$dock\n$undock"
 
 #selected=$(echo -e $entries | wofi --width 25 --height 210 --dmenu -p "Powermenu")
 #selected=$(echo -e $entries | fuzzel --dmenu -l 7 -p "Powermenu ")
-selected=$(echo -e $entries | dmenu --d -l 5 -p "Powermenu ")
+selected=$(echo -e $entries | dmenu --d -l 7 -p "Powermenu ")
 
 case $selected in
 $lock)

@@ -7,12 +7,12 @@ sudo virt-install \
   --os-variant win11 \
   --boot uefi \
   --disk size=128,bus=virtio \
-  --cdrom /mnt/BigData/ISOs/Win11_22H2_English_x64v2.iso \
-  --disk /mnt/BigData/ISOs/virtio-win-0.1.262.iso,device=cdrom \
+  --cdrom /home/daniel/ISOs/Win11_22H2_English_x64v2.iso \
+  --disk /home/daniel//ISOs/virtio-win-0.1.262.iso,device=cdrom \
   --graphics spice \
   --tpm model=tpm-crb \
   --machine q35 \
-  --network bridge=bridge1,model=virtio
+  --network network=default,model=virtio
 
 
   Hints:

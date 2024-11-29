@@ -15,11 +15,11 @@ listener {
     on-timeout = loginctl lock-session            # lock screen when timeout has passed
 }
 
-listener {
-    timeout = 600                                 # 10min
-    on-timeout = hyprctl dispatch dpms off        # screen off when timeout has passed
-    on-resume = hyprctl dispatch dpms on          # screen on when activity is detected 
-}
+#listener {
+#    timeout = 600                                 # 10min
+#    on-timeout = hyprctl dispatch dpms off        # screen off when timeout has passed
+#    on-resume = hyprctl dispatch dpms on          # screen on when activity is detected 
+#}
 
 #listener {
 #    timeout = 360                                # 6min
