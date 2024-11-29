@@ -6,7 +6,7 @@
 check_location() {
   if hyprctl monitors | grep -q "Samsung Electric Company C34H89x H4ZR302295"; then
     echo "office"
-  elif hyprctl monitors | grep -q "Put the home PhotoMonitor desc here"; then
+  elif hyprctl monitors | grep -q "BenQ SW2700 M6J01353SL0"; then
     echo "home"
   else
     echo "local"
