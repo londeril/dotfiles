@@ -57,11 +57,17 @@ sudo cp /root/dotfiles/archinstall/pam.d/* /etc/pam.d/
 echo "enabling mdns"
 sudo cp /root/dotfiles/archinstall/etc/nsswitch.conf /etc/
 
+echo "enabling wlan auto toggle dispatcher"
+sudo cp /root/dotfiles/archinstall/etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh /etc/NetworkManager/dispatcher.d/
+
 echo "removing subvolids from fstab"
 sudo sed -i 's/subvolid=.*,//' /etc/fstab
 
 echo "copying pacman hooks"
 mkdir /etc/pacman.d/hooks
 cp /root/dotfiles/archinstall/hooks/* /etc/pacman.d/hooks/
+
+echo "removing dotfiles from root's user context"
+rm -r /root/dotfiles
 
 echo "exit add encrypt to hooks in etc/mkinitcpio.conf before filesystems, run mkinitcpio -P, add cryptdevice=UUID=the-uuid:root root=/dev/mapper/root to /etc/default/grub and run grub-mkconfig -o /boot/grub/grub.cfg and reboot"
