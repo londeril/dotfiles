@@ -9,6 +9,7 @@ pacstrap -K /mnt \
   dmidecode \
   dosfstools \
   file-roller \
+  ntfs-3g \
   swtpm \
   gvfs-smb \
   imagemagick \
