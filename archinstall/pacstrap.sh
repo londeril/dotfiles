@@ -7,6 +7,7 @@ pacstrap -K /mnt \
   linux \
   freerdp \
   dmidecode \
+  dosfstools \
   file-roller \
   swtpm \
   gvfs-smb \
