@@ -2,7 +2,7 @@
 # Arch Linux installation script (2024)
 #
 
-export disk="/dev/nvme0n1"
+export disk="/dev/nvme1n1"
 export crypt=/dev/mapper/root
 
 # making sure de_CH-latin1 it the current keyboard layout
@@ -10,8 +10,8 @@ echo "Setting Keyboard Layout to Swiss German and updating mirrors"
 loadkeys de_CH-latin1
 
 echo "doing crypt setup"
-cryptsetup -v luksFormat /dev/nvme0n1p2
-cryptsetup open /dev/nvme0n1p2 root
+cryptsetup -v luksFormat ${disk}p2
+cryptsetup open ${disk}p2 root
 
 echo "Updating pacman DB and generating mirror list"
 pacman -Syy
