@@ -57,8 +57,8 @@ sudo cp /root/dotfiles/archinstall/pam.d/* /etc/pam.d/
 echo "enabling mdns"
 sudo cp /root/dotfiles/archinstall/etc/nsswitch.conf /etc/
 
-echo "enabling wlan auto toggle dispatcher"
-sudo cp /root/dotfiles/archinstall/etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh /etc/NetworkManager/dispatcher.d/
+#echo "enabling wlan auto toggle dispatcher"
+#sudo cp /root/dotfiles/archinstall/etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh /etc/NetworkManager/dispatcher.d/
 
 echo "removing subvolids from fstab"
 sudo sed -i 's/subvolid=.*,//' /etc/fstab

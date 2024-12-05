@@ -1,6 +1,6 @@
 #!/bin/sh
 # Arch Linux installation script (2024)
-# 
+#
 
 export disk="/dev/nvme0n1"
 export crypt=/dev/mapper/root
@@ -64,13 +64,13 @@ mkdir /mnt/boot
 mount ${disk}p1 /mnt/boot
 
 #swapon ${disk}p2
-btrfs filesystem mkswapfile --size 16g --uuid clear /mnt/swap/swapfile
+btrfs filesystem mkswapfile --size 64g --uuid clear /mnt/swap/swapfile
 swapon /mnt/swap/swapfile
 
 # bootstrappig
 ./pacstrap.sh
 echo "generating fstab from current mounts"
-genfstab -U /mnt > /mnt/etc/fstab
+genfstab -U /mnt >/mnt/etc/fstab
 
 cp -r /root/dotfiles /mnt/root/
 
