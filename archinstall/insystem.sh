@@ -60,6 +60,7 @@ sudo ln -s /home/daniel/.dotfiles/scripts/ssh-no-knownhosts.sh /usr/bin/sshkh
 sudo ln -s /home/daniel/.dotfiles/scripts/photosync.sh /usr/bin/photosync
 sudo ln -s /home/daniel/.dotfiles/scripts/updatemirrors.sh /usr/bin/updatemirrors
 sudo ln -s /usr/bin/Hyprland /usr/bin/h
+sudo ln -s /usr/bin/nvim /usr/bin/vim
 
 echo "updating time and enabling ntp"
 timedatectl set-ntp true
