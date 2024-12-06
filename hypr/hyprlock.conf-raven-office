@@ -1,0 +1,159 @@
+# Hyprlock                                                          
+# 
+
+general {
+}
+
+background {
+    monitor =
+  	path = screenshot   # screenshot of your desktop
+	  #path = $HOME/.dotfiles/lockscreen.jpg
+    blur_size = 5
+    blur_passes = 1 # 0 disables blurring
+    noise = 0.0117
+    contrast = 1.3000 # Vibrant!!!
+    brightness = 0.8000
+    vibrancy = 0.2100
+    vibrancy_darkness = 0.0
+}
+
+input-field {
+    monitor = Samsung Electric Company C34H89x H4ZR302295
+    size = 250, 50
+    outline_thickness = 3
+    dots_size = 0.33 # Scale of input-field height, 0.2 - 0.8
+    dots_spacing = 0.15 # Scale of dots' absolute size, 0.0 - 1.0
+    dots_center = true
+    outer_color = rgba(824439ff)
+    inner_color = $color0
+    font_color = $color12
+    #fade_on_empty = true
+    placeholder_text = <i>Password...</i> # Text rendered in the input box when it's empty.
+    hide_input = false
+    
+    position = 0, 200
+    halign = center
+    valign = bottom
+}
+
+# Date
+#label {
+#    monitor =
+#    text = cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"
+ #   color = 
+ #   font_size = 24
+ #   font_family = Iosevka Nerd Font 10
+ #   position = 0, 0
+ #   halign = right
+ #   valign = top
+#}
+
+# Time
+label {
+    monitor = Samsung Electric Company C34H89x H4ZR302295
+    #text = cmd[update:1000] echo "<b><big> $(date +"%I:%M:%S %p") </big></b>" # AM/PM
+    text = cmd[update:1000] echo "<b><big> $(date +"%H:%M") - $(date +'%A, %-d %B %Y') </big></b>" # 24H
+    color = $color15
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+
+    position = 0, 0
+    halign = left
+    valign = top
+}
+
+# User
+#label {
+#    monitor = HDMI-A-1
+#    text =    $USER
+#    color = $color12
+#    font_size = 18
+#    font_family = Inter Display Medium#
+#
+#    position = 0, 100
+#    halign = center
+#    valign = bottom
+#}
+
+# uptime
+label {
+    monitor = Samsung Electric Company C34H89x H4ZR302295
+    text = cmd[update:1000] echo "<b> "$(uptime -p )" </b>"
+    color = $color12
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+    position = 0, 0
+    halign = right
+    valign = bottom
+}
+
+# pending updates
+label {
+    monitor = Samsung Electric Company C34H89x H4ZR302295
+    text = cmd[update:0] echo "<b> pending updates: "$(checkupdates | wc -l)" </b>"
+    color = $color12
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+    position = 0, 0
+    halign = left
+    valign = bottom
+}
+
+# public IPv4 address
+label {
+    monitor = Samsung Electric Company C34H89x H4ZR302295
+    text = cmd[update:0] echo "<b> public ipv4: "$(~/.dotfiles/scripts/net.sh publicip)" </b>"
+    color = $color12
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+    position = 0, 0
+    halign = center
+    valign = top
+}
+
+#  IPv4 netinfo
+label {
+    monitor = Samsung Electric Company C34H89x H4ZR302295
+    text = cmd[update:0] echo "<b> route: "$(~/.dotfiles/scripts/net.sh gateway)" dns: "$(~/.dotfiles/scripts/net.sh dns)" </b>"
+    color = $color12
+    font_size = 24
+    font_family = Iosevka Nerd Font 10
+    position = 0, 0
+    halign = right
+    valign = top
+}
+
+# Landscape Pics on ultrawide
+image {
+    monitor = Samsung Electric Company C34H89x H4ZR302295
+    path = ~/.dotfiles/lockscreen.jpg
+    size = 1300
+    rounding = 10
+    border_size = 2
+    border_color = rgba(824439ff)
+    rotate = 0
+    reload_time = 10
+    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
+    #reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
+    position = 0, 0
+    halign = center
+    valign = center
+}
+
+# Smaller landscape pics on eDP-1 
+image {
+    monitor = eDP-1
+    path = ~/.dotfiles/lockscreen.jpg
+    size = 1000
+    rounding = 10
+    border_size = 2
+    border_color = rgba(824439ff)
+    rotate = 0
+    reload_time = 10
+    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
+    #reload_cmd = ~/.dotfiles/scripts/randomPic_portrait.sh
+    position = 0, 0
+    halign = center
+    valign = center
+}
+

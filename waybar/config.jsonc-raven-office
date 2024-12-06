@@ -53,6 +53,7 @@ _       __            __                  ______            _____
         "network#OfficeDock",
         "network#USBOnTheGo",
         "network#OfficeDockSetupNic",
+        "network#Buildin",
         "custom/right4to5",
         "custom/netreset",
         "custom/right3to4",
@@ -211,6 +212,19 @@ _       __            __                  ______            _____
     "network#USBOnTheGo": {
         "interface": "enp0s13f0u1",
         "format": "{ifname}",
+        "format-ethernet": "  {ipaddr} ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+    
+    "network#Buildin": {
+        "interface": "enp2s0",
+        "format": "Build-In ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",

@@ -64,7 +64,7 @@ case $1 in
   
   # change waybar config to office
   rm /home/daniel/.config/waybar/config.jsonc
-  ln -s /home/daniel/.dotfiles/waybar/config.jsonc-nova-office /home/daniel/.config/waybar/config.jsonc
+  ln -s /home/daniel/.dotfiles/waybar/config.jsonc-raven-office /home/daniel/.config/waybar/config.jsonc
 
   # reload waybar
   ~/.dotfiles/scripts/launch.sh
@@ -74,11 +74,11 @@ case $1 in
 
   # swap hyprlock config to the office one
   rm /home/daniel/.config/hypr/hyprlock.conf
-  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova-office /home/daniel/.config/hypr/hyprlock.conf
+  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-raven-office /home/daniel/.config/hypr/hyprlock.conf
 
   # swap hypridle config to office
   rm /home/daniel/.config/hypr/hypridle.conf
-  ln -s /home/daniel/.dotfiles/hypr/hypridle.conf-nova-office /home/daniel/.config/hypr/hypridle.conf
+  ln -s /home/daniel/.dotfiles/hypr/hypridle.conf-raven-office /home/daniel/.config/hypr/hypridle.conf
   pkill hypridle
   hypridle &!
 
@@ -123,7 +123,7 @@ case $1 in
 
   # change waybar config to standalone
   rm /home/daniel/.config/waybar/config.jsonc
-  ln -s /home/daniel/.dotfiles/waybar/config.jsonc-nova /home/daniel/.config/waybar/config.jsonc
+  ln -s /home/daniel/.dotfiles/waybar/config.jsonc-raven /home/daniel/.config/waybar/config.jsonc
 
   # notify the user that it's now time to unplug the monitor
   notify-send -u critical -t 0 "We are clear to undock :)"
@@ -133,11 +133,11 @@ case $1 in
 
   # swap hyprlock config to laptop mode
   rm /home/daniel/.config/hypr/hyprlock.conf
-  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-nova-local /home/daniel/.config/hypr/hyprlock.conf
+  ln -s /home/daniel/.dotfiles/hypr/hyprlock.conf-raven-local /home/daniel/.config/hypr/hyprlock.conf
 
   # swap hypridle config to laptop mode
   rm /home/daniel/.config/hypr/hypridle.conf
-  ln -s /home/daniel/.dotfiles/hypr/hypridle.conf-nova-local /home/daniel/.config/hypr/hypridle.conf
+  ln -s /home/daniel/.dotfiles/hypr/hypridle.conf-raven-local /home/daniel/.config/hypr/hypridle.conf
   pkill hypridle
   hypridle &!
   
