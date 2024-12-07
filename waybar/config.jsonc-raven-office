@@ -155,7 +155,7 @@ _       __            __                  ______            _____
     },
 
     "temperature": {
-        "thermal-zone": 6,
+        "thermal-zone": 0,
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", "", "", ""],
         "tooltip": false
@@ -171,7 +171,7 @@ _       __            __                  ______            _____
     },
 
     "network#WiFi": {
-        "interface": "wlp0s20f3",
+        "interface": "wlp3s0",
         "format": "{ifname}",
         "format-wifi": "   {essid} ({ipaddr}) ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -184,10 +184,10 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDockSetupNic": {
-        "interface": "enp0s13f0u3u4u4",
-        "format": "SetupNIC ",
+        "interface": "Setup-NIC",
+        "format": "{ifname} ",
         "format-ethernet": "  {ipaddr} ",
-        "format-disconnected": "SetupNIC ", //An empty format will hide the module.
+        "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
@@ -197,7 +197,7 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDock": {
-        "interface": "enp0s13f0u3u4u2",
+        "interface": "ECM-Dock",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -223,7 +223,7 @@ _       __            __                  ______            _____
     },
     
     "network#Buildin": {
-        "interface": "enp2s0",
+        "interface": "Raven-NIC",
         "format": "Build-In ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -277,7 +277,7 @@ _       __            __                  ______            _____
     },
 
     "custom/backup": {
-        "exec": "exec cat /home/daniel/.config/lastest_backup",
+        "exec": "exec cat /home/daniel/.config/latest_backup",
         "format": "Lastest Backup: {} ",
         "interval": "once",
         "on-click": "exec /home/daniel/.dotfiles/scripts/backup_runner.sh backup"

@@ -153,8 +153,8 @@ _       __            __                  ______            _____
     "timeout": 30.5
     },
 
-    "temperature": {
-        "thermal-zone": 6,
+   "temperature": {
+        "thermal-zone": 0,
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", "", "", ""],
         "tooltip": false
@@ -170,7 +170,7 @@ _       __            __                  ______            _____
     },
 
     "network#WiFi": {
-        "interface": "wlp0s20f3",
+        "interface": "wlp3s0",
         "format": "{ifname}",
         "format-wifi": "   {essid} ({ipaddr}) ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -182,8 +182,8 @@ _       __            __                  ______            _____
         "on-click-right": "nm-applet"
     },
 
-    "network#OfficeDockUSB": {
-        "interface": "enp0s13f0u3u4u2",
+    "network#OfficeDockSetupNic": {
+        "interface": "Setup-NIC",
         "format": "{ifname} ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -196,7 +196,7 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDock": {
-        "interface": "enp59s0u2u4",
+        "interface": "ECM-Dock",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -210,7 +210,7 @@ _       __            __                  ______            _____
 
     "network#USBOnTheGo": {
         "interface": "enp0s13f0u1",
-        "format": "USBOnTheGo ",
+        "format": "{ifname}",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
@@ -220,6 +220,21 @@ _       __            __                  ______            _____
         "on-click": "nm-connection-editor",
         "on-click-right": "nm-applet"
     },
+    
+    "network#Buildin": {
+        "interface": "Raven-NIC",
+        "format": "Build-In ",
+        "format-ethernet": "  {ipaddr} ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+ 
+
 
     "custom/wireguard-manager": {
     "exec": "exec ~/.dotfiles/scripts/wireguard-manager.sh -s",
@@ -263,7 +278,7 @@ _       __            __                  ______            _____
     },
 
     "custom/backup": {
-        "exec": "exec cat /home/daniel/.config/lastest_backup",
+        "exec": "exec cat /home/daniel/.config/latest_backup",
         "format": "Lastest Backup: {} ",
         "interval": "once",
         "on-click": "exec /home/daniel/.dotfiles/scripts/backup_runner.sh backup"

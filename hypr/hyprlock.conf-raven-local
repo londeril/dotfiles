@@ -139,7 +139,7 @@ label {
 image {
     monitor =
     path = /home/daniel/.dotfiles/lockscreen.jpg
-    size = 1000
+    size = 1300
     rounding = 10
     border_size = 2
     border_color = rgba(B9A100ff)
