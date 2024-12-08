@@ -10,7 +10,7 @@ sudo virt-install \
   --cdrom /home/daniel/ISOs/Win11_22H2_English_x64v2.iso \
   --disk /home/daniel//ISOs/virtio-win-0.1.262.iso,device=cdrom \
   --graphics spice \
-  --tpm model=tpm-crb \
+  --tpm backend.type=passthrough \
   --machine q35 \
   --network network=default,model=virtio
 
