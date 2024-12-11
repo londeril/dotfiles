@@ -13,12 +13,12 @@ echo "generating adjtime"
 hwclock --systohc
 
 echo "setting hostname"
-echo "raven" >/etc/hostname
+echo "varchi" >/etc/hostname
 
 echo "adding hosts entries"
 echo "127.0.0.1   localhost" >>/etc/hosts
 echo "::1         localhost" >>/etc/hosts
-echo "127.0.1.1   raven.localdomain raven" >>/etc/hosts
+echo "127.0.1.1   varchi.localdomain raven" >>/etc/hosts
 
 echo "Adding user"
 useradd -m -s /bin/zsh -g users daniel
