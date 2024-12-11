@@ -144,7 +144,7 @@ image {
 image {
     monitor = eDP-1
     path = ~/.dotfiles/lockscreen.jpg
-    size = 1000
+    size = 1300
     rounding = 10
     border_size = 2
     border_color = rgba(824439ff)
