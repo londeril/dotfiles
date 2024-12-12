@@ -38,6 +38,7 @@ systemctl enable avahi-daemon
 systemctl enable libvirtd
 systemctl enable fstrim.timer
 systemctl enable grub-btrfsd
+systemctl enable btrfs-scrub@-.timer
 #systemctl enable nftables
 
 cp -r /root/dotfiles /home/daniel/.dotfiles
