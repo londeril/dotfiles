@@ -5,6 +5,7 @@ echo "Starting Bootstrap"
 pacstrap -K /mnt \
   base \
   linux \
+  mpv \
   freerdp \
   dmidecode \
   dosfstools \
