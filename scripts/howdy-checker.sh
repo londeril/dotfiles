@@ -35,6 +35,17 @@ check_suspend)
   fi
   ;;
 
+set_suspend_timed_suspend)
+  if [ "$(cat /sys/class/power_supply/AC0/online)" = "0" ]; then
+    echo "1" >/tmp/suspend
+    loginctl lock-session
+    sleep 3
+    systemctl suspend
+  else
+    echo "running on AC - will not suspend"
+  fi
+  ;;
+
 set_suspend_suspend)
   echo "1" >/tmp/suspend
   loginctl lock-session

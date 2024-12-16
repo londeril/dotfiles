@@ -23,5 +23,5 @@ listener {
 
 listener {
     timeout = 900                                 # 7Nmin
-    on-timeout = /home/daniel/.dotfiles/scripts/howdy-checker.sh set_suspend_suspend                # suspend machine
+    on-timeout = /home/daniel/.dotfiles/scripts/howdy-checker.sh set_suspend_timed_suspend   # suspend machine
 }
