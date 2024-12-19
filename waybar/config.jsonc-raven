@@ -51,6 +51,7 @@ _       __            __                  ______            _____
         "custom/right5to6",
         "network#WiFi",
         "network#Buildin",
+        "network#HomeDock",
         "custom/right4to5",
         "custom/netreset",
         "custom/right3to4",
@@ -184,6 +185,19 @@ _       __            __                  ______            _____
         "interface": "Setup-NIC",
         "format": "{ifname} ",
         "format-ethernet": "  {ipaddr} ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+    
+    "network#HomeDock": {
+        "interface": "Home-Dock",
+        "format": "{ifname} ",
+        "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",

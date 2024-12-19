@@ -53,6 +53,7 @@ _       __            __                  ______            _____
         "network#OfficeDock",
         "network#USBOnTheGo",
         "network#OfficeDockUSB",
+        "network#HomeDock",
         "custom/right4to5",
         "custom/netreset",
         "custom/right3to4",
@@ -184,6 +185,19 @@ _       __            __                  ______            _____
 
     "network#OfficeDockUSB": {
         "interface": "enp0s13f0u3u4u2",
+        "format": "{ifname} ",
+        "format-ethernet": "  {ipaddr} ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-applet"
+    },
+
+    "network#HomeDock": {
+        "interface": "Home-Dock",
         "format": "{ifname} ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
