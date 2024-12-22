@@ -6,6 +6,8 @@ pacstrap -K /mnt \
   base \
   linux \
   mpv \
+  baobab \
+  pavucontrol \
   freerdp \
   dmidecode \
   dosfstools \
