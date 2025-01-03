@@ -13,7 +13,7 @@
 case "$1" in
 set_suspend)
   echo "1" >/tmp/suspend
-  loginctl lock-session
+  #loginctl lock-session
   ;;
 remove_suspend)
   echo "0" >/tmp/suspend
