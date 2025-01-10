@@ -3,8 +3,8 @@
 
 MOUNT="/mnt/ecm"
 WG_MANAGER="~/.dotfiles/scripts/wireguard-manager.sh"
-STATUS_MOUNTED_STR='Office: Mounted'
-STATUS_UNMOUNTED_STR='Office: Unmounted'
+STATUS_MOUNTED_STR='Mounted 󰱓 '
+STATUS_UNMOUNTED_STR='Unmounted 󰅛 '
 
 function status() {
   #check if //int.ecmacom.ch is mounted return the status of the grep command

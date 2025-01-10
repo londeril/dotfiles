@@ -2,8 +2,8 @@
 # this script will toggle the wireguard tunnel $TUNNEL. or print it's status
 
 TUNNEL="office"
-STATUS_CONNECTED_STR='WG-Office: Connected'
-STATUS_DISCONNECTED_STR='WG-Office: Disconnected'
+STATUS_CONNECTED_STR='Connected  '
+STATUS_DISCONNECTED_STR='Disconnected  '
 
 function status_wireguard() {
   nmcli -t -f GENERAL.STATE connection show "$TUNNEL" | grep -q "activated" >/dev/null 2>&1
