@@ -1,0 +1,36 @@
+MenuBar=Disabled
+
+[ContextMenu]
+ShowCopyMoveMenu=true
+ShowCopyToOtherSplitView=false
+ShowMoveToOtherSplitView=false
+
+
+
+[General]
+GlobalViewProps=false
+RememberOpenedTabs=false
+ShowFullPath=true
+ShowSpaceInfo=false
+Version=202
+ViewPropsTimestamp=2025,1,2,13,52,31.646
+
+[IconsMode]
+PreviewSize=80
+
+[Icons]
+Theme=Newaita-reborn-dark
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,avif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,heif,imagethumbnail,jpegthumbnail,jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,gdk-pixbuf-thumbnailer
+
+[Search]
+Location=Everywhere

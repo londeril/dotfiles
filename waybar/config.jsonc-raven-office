@@ -184,7 +184,7 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDockSetupNic": {
-        "interface": "Setup-NIC",
+        "interface": "SetupNIC",
         "format": "{ifname} ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -197,7 +197,7 @@ _       __            __                  ______            _____
     },
 
     "network#OfficeDock": {
-        "interface": "ECM-Dock",
+        "interface": "ECMDock",
         "format": "{ifname}",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
@@ -223,7 +223,7 @@ _       __            __                  ______            _____
     },
     
     "network#Buildin": {
-        "interface": "Raven-NIC",
+        "interface": "RavenNIC",
         "format": "Build-In ",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.

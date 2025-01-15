@@ -16,13 +16,16 @@ group {
 general {
     gaps_in = 4
     gaps_out = 4
-    border_size = 2
+    border_size = 4 
     # Single Color for active window
     # col.active_border = rgba(ffffffee)
     # Color Gradient for active window
+    
+    # light red-ish to dark red-ish
+    col.active_border =  rgba(DD3B20FF) rgba(980000FF) 20deg
 
     # light brown to dark brown
-    col.active_border = rgba(583B19FF) rgba(FEDFA2FF) 20deg
+    #col.active_border = rgba(583B19FF) rgba(FEDFA2FF) 20deg
     
     #darkblue to lightblue
     #col.active_border = rgba(0d73ccff) rgba(074642FF) 20deg
@@ -43,7 +46,10 @@ general {
     #col.inactive_border = rgba(233477ff)
 
     # reddish to blackish
-    col.inactive_border = rgba(6A3000ff) rgba(080300ff) 20deg
+    #col.inactive_border = rgba(6A3000ff) rgba(080300ff) 20deg
+    
+    # reddish to dark red-ish
+    col.inactive_border = rgba(76231Dff) rgba(3c110eff) 20deg
 
     layout = dwindle
 
