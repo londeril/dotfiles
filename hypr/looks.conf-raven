@@ -22,7 +22,7 @@ general {
     # Color Gradient for active window
     
     # light red-ish to dark red-ish
-    col.active_border =  rgba(DD3B20FF) rgba(980000FF) 20deg
+    col.active_border =  rgba(DD3B20FF) rgba(f4a84eff) 20deg
 
     # light brown to dark brown
     #col.active_border = rgba(583B19FF) rgba(FEDFA2FF) 20deg
