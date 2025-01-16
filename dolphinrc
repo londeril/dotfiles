@@ -5,8 +5,6 @@ ShowCopyMoveMenu=true
 ShowCopyToOtherSplitView=false
 ShowMoveToOtherSplitView=false
 
-
-
 [General]
 GlobalViewProps=false
 RememberOpenedTabs=false
@@ -15,11 +13,11 @@ ShowSpaceInfo=false
 Version=202
 ViewPropsTimestamp=2025,1,2,13,52,31.646
 
+[Icons]
+Theme=Newaita-reborn-yellow-dark
+
 [IconsMode]
 PreviewSize=80
-
-[Icons]
-Theme=Newaita-reborn-dark
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
@@ -30,7 +28,7 @@ MenuBar=Disabled
 ToolBarsMovable=Disabled
 
 [PreviewSettings]
-Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,avif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,heif,imagethumbnail,jpegthumbnail,jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,gdk-pixbuf-thumbnailer
+Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,avif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,heif,imagethumbnail,jpegthumbnail,jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,textthumbnail,gdk-pixbuf-thumbnailer,gsf-office
 
 [Search]
 Location=Everywhere

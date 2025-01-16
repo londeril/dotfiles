@@ -29,8 +29,7 @@ case "$1" in
 backup)
   echo "Starting Backup run"
   if server_check; then
-    #backup
-    #exec /home/daniel/.dotfiles/scripts/launch.sh
+    backup
     # wait for user to press a key to close
     read -n 1 -s -r -p "Run completed - press any key to close this window"
   else
@@ -43,7 +42,7 @@ backup)
       read -n 1 -s -r -p "Run completed - press any key to close this window"
     else
       echo "server still not reachable, giving up"
-      read -n 1 -s -r -p "Run completed - press any key to close this window"
+      read -n 1 -s -r -p "Run failed - press any key to close this window"
       exit 1
     fi
   fi

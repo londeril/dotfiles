@@ -292,7 +292,7 @@ _       __            __                  ______            _____
         "exec": "exec cat /home/daniel/.config/latest_backup",
         "format": "Lastest Backup: {} ",
         "interval": "once",
-        "on-click": "exec /home/daniel/.dotfiles/scripts/backup_runner.sh backup"
+        "on-click": "exec kitty -e sh -c '/home/daniel/.dotfiles/scripts/backup_runner.sh backup'"
 
       },
    "custom/powermenu" : {
