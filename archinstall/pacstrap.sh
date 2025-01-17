@@ -9,6 +9,7 @@ pacstrap -K /mnt \
   baobab \
   pavucontrol \
   freerdp \
+  hyprpolkitagent \
   dmidecode \
   dosfstools \
   file-roller \
@@ -16,7 +17,8 @@ pacstrap -K /mnt \
   swtpm \
   gvfs-smb \
   imagemagick \
-  eog \
+  okular \
+  gwenview \
   gnome-disk-utility \
   distrobox \
   podman \
@@ -24,7 +26,6 @@ pacstrap -K /mnt \
   spice-gtk \
   xdg-desktop-portal-hyprland \
   xdg-desktop-portal-gtk \
-  gnome-system-monitor \
   gnome-calculator \
   seahorse \
   wireguard-tools \
@@ -36,8 +37,6 @@ pacstrap -K /mnt \
   noto-fonts-emoji \
   linux-zen \
   brightnessctl \
-  polkit-gnome \
-  polkit-kde-agent \
   qt5ct \
   qt6ct \
   inotify-tools \
@@ -84,24 +83,23 @@ pacstrap -K /mnt \
   less \
   amd-ucode \
   remmina \
-  firefox \
   btop \
   virt-manager \
   btrfs-progs \
   grub-btrfs \
   cryptsetup \
   htop \
+  radeontop \
   pacman-contrib \
   pkgfile \
   reflector \
   terminus-font \
-  tmux \
   pipewire-jack \
   alsa-utils \
-  ly \
   xorg \
-  nautilus \
   nerd-fonts \
+  dolphin \
+  ark \
   hyprland \
   hyprpaper \
   hyprlock \
@@ -110,5 +108,4 @@ pacstrap -K /mnt \
   dunst \
   rofi-wayland \
   kitty \
-  nemo \
   virt-viewer
