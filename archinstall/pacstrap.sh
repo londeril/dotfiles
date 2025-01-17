@@ -110,4 +110,6 @@ pacstrap -K /mnt \
   kitty \
   virt-viewer \
   isoimagewriter \
-  partitionmanager
+  partitionmanager \
+  kvantum \
+  archlinux-xdg-menu
