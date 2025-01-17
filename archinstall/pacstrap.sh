@@ -108,4 +108,6 @@ pacstrap -K /mnt \
   dunst \
   rofi-wayland \
   kitty \
-  virt-viewer
+  virt-viewer \
+  isoimagewriter \
+  partitionmanager
