@@ -17,7 +17,7 @@ check_location() {
 
 # let's see if and which external monitor is connected
 
-if hyprctl monitors | grep -q "Samsung Electric Company C34H89x H4ZR302295"; then
+if hyprctl monitors | grep -q "Samsung Electric Company C34H89x"; then
   OFFICE=true
 else
   OFFICE=false
@@ -32,7 +32,7 @@ case $1 in
   # bail before everything breaks
 
   if [ $OFFICE == "false" ]; then
-    echo -u critical -t 0 "Not at the Office?" "wanted to dock without being anywhere near a dock... which is... silly..."
+    notify-send -u critical -t 0 "Not at the Office?" "wanted to dock without being anywhere near a dock... which is... silly..."
     exit 1
   fi
 

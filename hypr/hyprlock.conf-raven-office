@@ -18,7 +18,7 @@ background {
 }
 
 input-field {
-    monitor = Samsung Electric Company C34H89x H4ZR302295
+    monitor = Samsung Electric Company C34H89x
     size = 250, 50
     outline_thickness = 3
     dots_size = 0.33 # Scale of input-field height, 0.2 - 0.8
@@ -77,7 +77,7 @@ label {
 
 # uptime
 label {
-    monitor = Samsung Electric Company C34H89x H4ZR302295
+    monitor = Samsung Electric Company C34H89x
     text = cmd[update:1000] echo "<b> "$(uptime -p )" </b>"
     color = $color12
     font_size = 24
@@ -89,7 +89,7 @@ label {
 
 # pending updates
 label {
-    monitor = Samsung Electric Company C34H89x H4ZR302295
+    monitor = Samsung Electric Company C34H89x
     text = cmd[update:0] echo "<b> pending updates: "$(checkupdates | wc -l)" </b>"
     color = $color12
     font_size = 24
@@ -101,7 +101,7 @@ label {
 
 # public IPv4 address
 label {
-    monitor = Samsung Electric Company C34H89x H4ZR302295
+    monitor = Samsung Electric Company C34H89x
     text = cmd[update:0] echo "<b> public ipv4: "$(~/.dotfiles/scripts/net.sh publicip)" </b>"
     color = $color12
     font_size = 24
@@ -113,7 +113,7 @@ label {
 
 #  IPv4 netinfo
 label {
-    monitor = Samsung Electric Company C34H89x H4ZR302295
+    monitor = Samsung Electric Company C34H89x
     text = cmd[update:0] echo "<b> route: "$(~/.dotfiles/scripts/net.sh gateway)" dns: "$(~/.dotfiles/scripts/net.sh dns)" </b>"
     color = $color12
     font_size = 24
@@ -125,7 +125,7 @@ label {
 
 # Landscape Pics on ultrawide
 image {
-    monitor = Samsung Electric Company C34H89x H4ZR302295
+    monitor = Samsung Electric Company C34H89x
     path = ~/.dotfiles/lockscreen.jpg
     size = 1300
     rounding = 10

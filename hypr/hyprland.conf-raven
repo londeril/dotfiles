@@ -22,6 +22,7 @@ xwayland {
 
 # set the office ultrawide to 100Hz
 monitor=desc:Samsung Electric Company C34H89x H4ZR302295,3440x1440@100,auto,1
+monitor=desc:Samsung Electric Company C34H89x H1AK500000,3440x1440@100,auto,1
 
 # LGTV
 monitor=desc:LG Electronics LG TV SSCR2 0x01010101,2560x1440@60,auto,1
