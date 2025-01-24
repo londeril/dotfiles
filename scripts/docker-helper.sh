@@ -4,7 +4,7 @@
 
 
 check_location() {
-  if hyprctl monitors | grep -q "Samsung Electric Company C34H89x H1AK500000"; then
+  if hyprctl monitors | grep -q "Samsung Electric Company C34H89x H4ZR302295"; then
     echo "office"
   elif hyprctl monitors | grep -q "BenQ SW2700 M6J01353SL0"; then
     echo "home"
@@ -17,7 +17,7 @@ check_location() {
 
 # let's see if and which external monitor is connected
 
-if hyprctl monitors | grep -q "Samsung Electric Company C34H89x H1AK500000"; then
+if hyprctl monitors | grep -q "Samsung Electric Company C34H89x H4ZR302295"; then
   OFFICE=true
 else
   OFFICE=false
@@ -43,7 +43,7 @@ case $1 in
   # move all desktops from the internal screen to the big screen
   # Define monitor descriptions
 #  MONITOR1="desc:HP Inc. HP E243i 6CM82505J0"
-  MONITOR2="desc:Samsung Electric Company C34H89x H1AK500000"
+  MONITOR2="desc:Samsung Electric Company C34H89x H4ZR302295"
 
   # Get all workspace IDs
   workspaces=$(hyprctl workspaces -j | jq -r '.[].id')
