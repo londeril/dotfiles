@@ -8,7 +8,7 @@ STATUS_UNMOUNTED_STR='{"text":"Unmounted","class":"disconnected","alt":"unmounte
 
 function status() {
   #check if //int.ecmacom.ch is mounted return the status of the grep command
-  mount | grep -q "192.168.253.101" >/dev/null 2>&1
+  mount | grep -q "192.168.253.102" >/dev/null 2>&1
   return $?
 }
 
