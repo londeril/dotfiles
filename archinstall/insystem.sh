@@ -88,7 +88,7 @@ sudo pacman -Syu sublime-text
 
 #insync
 echo "getting needed packages from the AUR"
-yay -S 1password clipse waypaper anydesk-bin pcloud-drive nccm-git spotify morgen-bin todoist-appimage snapper-support btrfs-assistant hyprshot swayosd-git
+yay -S 1password clipse waypaper pacseek anydesk-bin pcloud-drive nccm-git spotify morgen-bin todoist-appimage snapper-support btrfs-assistant hyprshot swayosd-git
 
 #echo "deploying nccm wrapper"
 #sudo mv /usr/bin/nccm /usr/bin/nccm-bin
