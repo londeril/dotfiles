@@ -31,6 +31,7 @@ backup)
   if server_check; then
     backup
     # wait for user to press a key to close
+    cowsay -f tux "I'm done!"
     read -n 1 -s -r -p "Run completed - press any key to close this window"
   else
     echo "Server not reachable. trying to bring VPN up"
@@ -39,6 +40,7 @@ backup)
       echo "Server reachable, running backup"
       backup
       vpn_disconnect
+      cowsay -f tux "I'm done!"
       read -n 1 -s -r -p "Run completed - press any key to close this window"
     else
       echo "server still not reachable, giving up"
