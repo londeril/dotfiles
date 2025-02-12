@@ -59,6 +59,7 @@ _       __            __                  ______            _____
         "group/net",
         "custom/right2to3",
         "group/soundbl",
+        "custom/swaync",
         "custom/right1to2",
         "custom/powermenu"
     ],
@@ -297,6 +298,13 @@ _       __            __                  ______            _____
         "interval": 30,
         "tooltip": false
     },
+
+    "custom/swaync": {
+        "format": "󱀁  ",
+        "tooltip": false,
+        "on-click": "exec swaync-client -t",
+    },
+
 
     "tray": {
         "icon-size": 18,

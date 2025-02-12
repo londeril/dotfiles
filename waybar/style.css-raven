@@ -136,6 +136,7 @@ tooltip {
 #battery,
 #clock,
 #custom-powermenu,
+#custom-swaync,
 #custom-netreset,
 #custom-wireguard-manager,
 #window,
@@ -219,7 +220,8 @@ tooltip {
 
 #backlight,
 #pulseaudio,
-#bluetooth {
+#bluetooth,
+#custom-swaync {
     background: @color2;
     color: @fgcolor2;
 
