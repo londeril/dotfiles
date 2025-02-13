@@ -17,7 +17,19 @@
   font-family: "Lato";
   color: @noti-fg;
 }
+/* Uncomment to enable specific urgency colors */
+ .low {
+ background: yellow;
+}
 
+.normal {
+  background: green;
+}
+
+.critical {
+  border: 5px solid @noti-urgent;
+  background: red;
+}
 .notification-row {
   outline: none;
 }
@@ -34,20 +46,6 @@
   box-shadow: none;
   padding: 0;
 }
-
-/* Uncomment to enable specific urgency colors */
-/* .low {
-  background: yellow;
-}
-
-.normal {
-  background: green;
-} */
-
-.critical {
-  border: 1px solid @noti-urgent;
-}
-
 
 .notification-content {
   background: transparent;
