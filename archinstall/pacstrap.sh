@@ -77,6 +77,7 @@ pacstrap -K /mnt \
   obsidian \
   sudo \
   base-devel \
+  inetutils \
   networkmanager \
   grub \
   efibootmgr \
