@@ -44,8 +44,7 @@
     "label",
     "buttons-grid",
     "mpris",
-    "volume",
-    "backlight",
+    "title",
     "dnd",
     "notifications"
   ],
@@ -54,10 +53,6 @@
       "text": "Notifications",
       "clear-all-button": true,
       "button-text": " 󰎟 "
-    },
-    "backlight": {
-      "label": "",
-      "device": "amdgpu_bl1"
     },
     "dnd": {
       "text": "Do not disturb"
