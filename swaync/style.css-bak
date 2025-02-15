@@ -1,0 +1,23 @@
+@define-color color1 #FEDFA2;
+@define-color color2 #E5C68C;
+@define-color color3 #CCAE77;
+@define-color color4 #B39662;
+@define-color color5 #9A7E4D;
+@define-color color6 #816638;
+@define-color color7 #684E23;
+@define-color color8 #5F421C;
+@define-color color9 #583B19;
+
+@define-color fgcolor1 #000000;
+@define-color fgcolor2 #1A1A1A;
+@define-color fgcolor3 #333333;
+@define-color fgcolor4 #FFFFFF;
+@define-color fgcolor5 #FFFFFF;
+@define-color fgcolor6 #FFFFFF;
+@define-color fgcolor7 #FFFFFF;
+@define-color fgcolor8 #FFFFFF;
+@define-color fgcolor9 #FFFFFF;
+
+
+@import 'themes/nova-dark/notifications.css';
+@import 'themes/nova-dark/central_control.css';

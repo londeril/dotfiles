@@ -16,9 +16,9 @@
   "notification-body-image-height": 160,
   "notification-body-image-width": 200,
 
-  "timeout": 4,
-  "timeout-low": 2,
-  "timeout-critical": 6,
+  "timeout": 10,
+  "timeout-low": 10,
+  "timeout-critical": 100,
   
   "fit-to-screen": false,
   "keyboard-shortcuts": true,
@@ -41,7 +41,6 @@
     }
   },
   "widgets": [
-    "label",
     "buttons-grid",
     "mpris",
     "volume",
@@ -77,26 +76,26 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": " ",
+          "label": "󰕿",
           "command": "amixer set Master toggle"
         },
         {
-          "label": "",
-          "command": "amixer set Capture toggle"
+          "label": "󰒍",
+          "command": "kitty -e nccm"
         },
         {
-          "label": " ",
+          "label": "",
+          "command": "/home/daniel/.dotfiles/scripts/wifitoggel.sh"
+        },
+        {
+          "label": "󰛳",
           "command": "nm-connection-editor"
         },
         {
           "label": "󰂯",
           "command": "blueman-manager"
-        },
-        {
-          "label": "󰏘",
-          "command": "nwg-look"
         }
-        
+                
       ]
     }
   }
