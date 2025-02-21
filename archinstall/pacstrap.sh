@@ -78,6 +78,7 @@ pacstrap -K /mnt \
   sudo \
   base-devel \
   inetutils \
+  zsh-syntax-highlighting \
   networkmanager \
   grub \
   efibootmgr \
