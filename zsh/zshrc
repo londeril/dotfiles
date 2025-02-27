@@ -84,11 +84,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 
 
-# User configuration
+# User configuratioTn
 AGNOSTER_DIR_BG='#f4a84e'
 AGNOSTER_CONTEXT_BG='#DD3B20'
 
-
+export LS_COLORS="di=38;2;244;168;78:ln=38;2;221;59;32"
 
 
 # export MANPATH="/usr/local/man:$MANPATH"
