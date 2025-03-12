@@ -2,22 +2,27 @@
 # this script will run a backup of the user folder excluding temparary and cloud data
 
 backup() {
-  pkexec restic -r sftp:daniel@172.16.3.10:/mnt/backup/RavenBackup backup / --password-file="/home/daniel/.RavenBackup" --exclude-file="/home/daniel/.dotfiles/raven-excludes.restic"
+  pkexec restic -r sftp:daniel@172.16.0.150:/mnt/backup/RavenBackup backup / --password-file="/home/daniel/.RavenBackup" --exclude-file="/home/daniel/.dotfiles/raven-excludes.restic"
+  #pkexec restic -r sftp:daniel@172.16.3.10:/mnt/backup/RavenBackup backup / --password-file="/home/daniel/.RavenBackup" --exclude-file="/home/daniel/.dotfiles/raven-excludes.restic"
   CURRENTDATE=$(date "+%d. %b. %T")
   echo "$CURRENTDATE" >/home/daniel/.config/latest_backup
   echo "backup run done"
+
 }
 
 vpn_connect() {
-  nmcli connection up home
+  nmcli connection up office
+  #nmcli connection up home
+
 }
 
 vpn_disconnect() {
-  nmcli connection down home
+  nmcli connection down office
+  #nmcli connection down home
 }
 
 server_check() {
-  if ping -c 1 -W 1 172.16.3.10 &>/dev/null; then
+  if ping -c 1 -W 1 172.16.0.150 &>/dev/null; then
     return 0
   else
     return 1
@@ -50,7 +55,7 @@ backup)
   fi
   ;;
 snapshots)
-  restic -r sftp:daniel@172.16.3.10:/mnt/backup/RavenBackup snapshots --password-file /home/daniel/.RavenBackup
+  restic -r sftp:daniel@172.16.0.150:/mnt/backup/RavenBackup snapshots --password-file /home/daniel/.RavenBackup
   ;;
 *)
   echo "Usage: backup-runner backup|snapshots"
