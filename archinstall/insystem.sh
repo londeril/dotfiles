@@ -88,7 +88,7 @@ sudo pacman -Syu sublime-text
 
 #insync
 echo "getting needed packages from the AUR"
-yay -S 1password clipse waypaper pacseek anydesk-bin pcloud-drive nccm-git spotify morgen-bin todoist-appimage snapper-support btrfs-assistant hyprshot swayosd-git
+yay -S 1password clipse waypaper pacseek anydesk-bin pcloud-drive nccm-git spotify morgen-bin todoist-appimage snapper-support btrfs-assistant hyprshot swayosd-git 1password-cli
 
 #echo "deploying nccm wrapper"
 #sudo mv /usr/bin/nccm /usr/bin/nccm-bin
@@ -100,6 +100,7 @@ flatpak install \
   com.rtosta.zapzap \
   io.github.flattool.Warehouse \
   com.tomjwatson.Emote \
+  org.remmina.Remmina \
   -y
 
 #echo "setting default browser to firefox"

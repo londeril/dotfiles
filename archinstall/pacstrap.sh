@@ -66,6 +66,7 @@ pacstrap -K /mnt \
   powerline-fonts \
   neovim \
   git \
+  eog \
   curl \
   wget \
   zsh \
@@ -84,7 +85,6 @@ pacstrap -K /mnt \
   efibootmgr \
   less \
   amd-ucode \
-  remmina \
   btop \
   virt-manager \
   btrfs-progs \
