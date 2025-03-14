@@ -75,7 +75,6 @@ pacstrap -K /mnt \
   flatpak \
   hunspell-de \
   thunderbird \
-  obsidian \
   sudo \
   base-devel \
   inetutils \

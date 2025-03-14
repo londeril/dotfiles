@@ -101,6 +101,9 @@ flatpak install \
   io.github.flattool.Warehouse \
   com.tomjwatson.Emote \
   org.remmina.Remmina \
+  com.usebottles.bottles \
+  com.todoist.Todoist \
+  md.obsidian.Obsidian \
   -y
 
 #echo "setting default browser to firefox"
