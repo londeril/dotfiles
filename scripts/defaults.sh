@@ -4,8 +4,8 @@
 # define the apps
 apps=(
   "zen-browser"
-  "todoist"
-  "obsidian"
+  "flatpak run com.todoist.Todoist"
+  "md.obsidian.Obsidian"
   "thunderbird"
   "flatpak run com.rtosta.zapzap"
 )

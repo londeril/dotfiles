@@ -78,11 +78,15 @@ plugins=(
   	rbenv
   	ruby
   	npm
-  	zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
+
+
+
 
 # User configuratioTn
 AGNOSTER_DIR_BG='#f4a84e'
