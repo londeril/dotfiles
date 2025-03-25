@@ -1,0 +1,44 @@
+# ----------------------------------------------------- 
+# Hyprland Window rules Stub - to be sourced by config files
+# ----------------------------------------------------- 
+#windowrule = tile,^(Brave-browser)$
+# Example windowrule v1
+# windowrule = float, ^(kitty)$
+# Example windowrule v2
+# windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+# See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+
+windowrulev2 = move cursor -50% -50%, initialTitle: Quick Access — 1Password
+windowrulev2 = float, class: org.gnome.Calculator
+windowrulev2 = move cursor -50% -50%, class: org.gnome.Calculator
+windowrulev2 = float, class: org.kde.kcalc
+windowrulev2 = move cursor -50% -50%, class: org.kde.kcalc
+windowrulev2 = float, class: org.kde.polkit-kde-authentication-agent-1
+windowrulev2 = move cursor -50% -50%, class: org.kde.polkit-kde-authentication-agent-1
+windowrulev2 = float, initialTitle: anydesk
+windowrulev2 = move cursor -50% -50%, initialTitle: anydesk
+windowrulev2 = float, initialTitle: Edit Item
+windowrulev2 = move cursor -50% -50%, initialTitle: rofi
+
+windowrulev2 = float,class:(clipse) 
+windowrulev2 = size 622 652,class:(clipse)
+
+windowrulev2 = noblur,class:(kitty)
+
+windowrulev2 = float, initialTitle: (Editing)(.*)
+
+
+# move apps to workspaces
+windowrulev2 = workspace 3 silent,class:^(thunderbird)$
+windowrulev2 = workspace 3 silent,class:^(com.rtosta.zapzap)$
+windowrulev2 = workspace 2,silent,class:^(zen)$
+windowrulev2 = workspace 1,silent,class:^(Todoist)$
+windowrulev2 = workspace 1,silent,class:^(obsidian)$
+
+# float remmina windows
+windowrulev2 = float,class:^(org.remmina.Remmina)$
+windowrulev2 = float,initialTitle:^(org.remmina.Remmina)$
+
+# flating window for sawyimg
+windowrulev2 = float,class:^(swayimg)$
+
