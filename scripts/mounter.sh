@@ -4,6 +4,7 @@
 MOUNT="/mnt/ecm"
 MOUNT1="/mnt/erlenhof/allgemein"
 MOUNT2="/mnt/erlenhof/werkstaetten"
+MOUNT3="/mnt/erlenhof/verwaltung/"
 WG_MANAGER="~/.dotfiles/scripts/wireguard-manager.sh"
 STATUS_MOUNTED_STR='{"text":"Mounted","class":"connected","alt":"mounted"}'
 STATUS_UNMOUNTED_STR='{"text":"Unmounted","class":"disconnected","alt":"unmounted"}'
@@ -12,6 +13,7 @@ function local_mount() {
   mount $MOUNT
   mount $MOUNT1
   mount $MOUNT2
+  mount $MOUNT3
 
 }
 
@@ -19,6 +21,7 @@ function local_umount() {
   umount $MOUNT
   umount $MOUNT1
   umount $MOUNT2
+  umount $MOUNT3
 
 }
 
