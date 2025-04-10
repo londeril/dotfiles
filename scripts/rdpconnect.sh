@@ -4,7 +4,7 @@
 source ~/Data/LinuxConfigShare/rdpconnect.sh
 
 PASSWORD=$(
-  op item get "$SECRETLOOKUP" --vault $VAULT --format=json | jq -r '.fields[] | select(.type=="CONCEALED").value'
+  op item get "$SECRETLOOKUP" --account $ACCOUNT --vault $VAULT --format=json | jq -r '.fields[] | select(.type=="CONCEALED").value'
 )
 
 echo $SECRETLOOKUP

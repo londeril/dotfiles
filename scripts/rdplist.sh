@@ -4,7 +4,7 @@
 # Array of RDPs - maybe you'll find a way to do this in one file in the feature
 
 options=(
-  "serl-mgmt-02"
+  "serl-mgmt-03"
   "duresco-vbr1"
   "duresco-vbo1"
   "jumphost3genua"
@@ -51,6 +51,7 @@ options=(
   "sct-mgmt-01"
   "sct-rdsh-01-ecm.tester"
   "cloud-vbr-01"
+  "serl-rdsh-02-d.mueller"
 )
 
 selected=$(printf '%s\n' "${options[@]}" | dmenu -l 10 -i -p "Which RDP Session?")
