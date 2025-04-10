@@ -136,19 +136,19 @@ label {
 
 
 # Put a picture of choice here. Default is the current wallpaper
-image {
-    monitor =
-    path = /home/daniel/.dotfiles/lockscreen.jpg
-    size = 1300
-    rounding = 10
-    border_size = 2
-    border_color = rgba(B9A100ff)
-    rotate = 0
-    reload_time = 10
-    reload_cmd = /home/daniel/.dotfiles/scripts/randomPic_landscape.sh
-    #reload_cmd = 
-    position = 0, 0
-    halign = center
-    valign = center
-}
+#image {
+#    monitor =
+#    path = /home/daniel/.dotfiles/lockscreen.jpg
+#    size = 1300
+#    rounding = 10
+#    border_size = 2
+#    border_color = rgba(B9A100ff)
+#    rotate = 0
+#    reload_time = 10
+#    reload_cmd = /home/daniel/.dotfiles/scripts/randomPic_landscape.sh
+#    #reload_cmd = 
+#    position = 0, 0
+#    halign = center
+#    valign = center
+#}
 

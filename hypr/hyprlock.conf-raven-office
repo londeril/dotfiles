@@ -132,8 +132,8 @@ image {
     border_color = rgba(824439ff)
     rotate = 0
     reload_time = 10
-    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
-    #reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
+#    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
+ #   reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
     position = 0, 0
     halign = center
     valign = center
@@ -149,8 +149,8 @@ image {
     border_color = rgba(824439ff)
     rotate = 0
     reload_time = 10
-    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
-    #reload_cmd = ~/.dotfiles/scripts/randomPic_portrait.sh
+#    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
+#    reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
     position = 0, 0
     halign = center
     valign = center
