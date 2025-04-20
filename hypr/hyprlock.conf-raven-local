@@ -145,8 +145,7 @@ image {
     border_color = rgba(B9A100ff)
     rotate = 0
     reload_time = 10
-    #reload_cmd = /home/daniel/.dotfiles/scripts/randomPic_landscape.sh
-    #reload_cmd = 
+    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
     position = 0, 0
     halign = center
     valign = center

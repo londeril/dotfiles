@@ -47,7 +47,10 @@ options=(
   "sct-rdsh-01-ecm.tester"
   "cloud-vbr-01"
   "serl-rdsh-02-d.mueller"
+  "serl-rdsh-01-d.mueller"
   "serl-vbo-02"
+  "serl-rdsh-01"
+  "serl-rdcb-01"
 )
 
 selected=$(printf '%s\n' "${options[@]}" | dmenu -l 10 -i -p "Which RDP Session?")
