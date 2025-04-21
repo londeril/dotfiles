@@ -249,7 +249,7 @@ _       __            __                  ______            _____
 
    
     "custom/wireguard-manager": {
-    "exec": "exec ~/.dotfiles/scripts/wireguard-manager.sh -s",
+    "exec": "exec ~/.dotfiles/scripts/wireguard-manager.sh --any",
     "format": "{icon}", 
     "format-icons": {
         "connected": "<span color=\"#50fa7b\"> 󱎚 WG</span>", /*🔒🔓*/
