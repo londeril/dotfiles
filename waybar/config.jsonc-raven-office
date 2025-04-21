@@ -244,7 +244,7 @@ _       __            __                  ______            _____
         "disconnected": "󱙱 WG",
     },
     "interval": "once",
-    "on-click": "~/.dotfiles/scripts/wireguard-manager.sh -t && pkill -SIGRTMIN+1 waybar",
+    "on-click": "~/.dotfiles/scripts/wglist.sh -t && pkill -SIGRTMIN+1 waybar",
     "return-type": "json",
     "signal": 1,
     },
