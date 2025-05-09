@@ -17,7 +17,7 @@ ViewPropsTimestamp=2025,1,2,13,52,31.646
 Theme=Newaita-reborn-yellow-dark
 
 [IconsMode]
-PreviewSize=80
+PreviewSize=96
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
@@ -28,6 +28,3 @@ MenuBar=Disabled
 
 [PreviewSettings]
 Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,avif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,heif,imagethumbnail,jpegthumbnail,jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,textthumbnail,gdk-pixbuf-thumbnailer,gsf-office
-
-[Search]
-What=Content
