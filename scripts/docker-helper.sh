@@ -158,6 +158,9 @@ case $1 in
   # waypaper restore
   waypaper --restore
 
+  # reload waybar
+  ~/.dotfiles/scripts/launch.sh
+
   ;;
 *)
   echo "usage: --dock --undock"

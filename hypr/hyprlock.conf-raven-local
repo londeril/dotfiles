@@ -74,7 +74,7 @@ label {
 # #    valign = bottom
 # #}
 #
-# # uptime
+# uptime
 label {
     monitor =
     text = cmd[update:0] echo "<b> "$(uptime -p )" </b>"
