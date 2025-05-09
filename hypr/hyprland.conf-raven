@@ -18,7 +18,7 @@ xwayland {
 # autodetect first all monitors and use it's preferred resolution.
 # change scalig to 1 - this should work for all external displays
 # set the 24" office display to portrait
-#monitor=desc:HP Inc. HP E243i 6CM82505J0,preferred,auto,1,transform,1
+monitor=desc:HP Inc. HP E243i 6CM82505J0,preferred,0x0,1,transform,1
 
 # set the office ultrawide to 100Hz
 monitor=desc:Samsung Electric Company C34H89x H4ZR302295,3440x1440@100,auto,1
@@ -31,6 +31,8 @@ monitor=desc:Philips Consumer Electronics Company 34B2U6603 UK02509029162,3440x1
 # set the 10Bit photo monitor to 10bit
 monitor=desc:BNQ BenQ SW2700 M6J01353SL0,2560x1440@60,auto,1,bitdepth,10
 #monitor=DP-1,addreserved,0,0,200,0
+
+
  
 # default rule to catch new/unknown monitors with prefered resolution
 monitor=,prefered,auto,1

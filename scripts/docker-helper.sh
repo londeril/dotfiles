@@ -47,12 +47,12 @@ case $1 in
   fi
 
   # enable the external monitor(s)
-#  hyprctl keyword monitor desc:HP Inc. HP E243i 6CM82505J0,prefered, 0x0,1,transform,1 >/dev/null
+  hyprctl keyword monitor desc:HP Inc. HP E243i 6CM82505J0,prefered, 0x0,1,transform,1 >/dev/null
   hyprctl keyword monitor desc:Philips Consumer Electronics Company 34B2U6603 UK02509029162,3440x1440@120.0,auto,1,bitdepth,10 >/dev/null
 
   # move all desktops from the internal screen to the big screen
   # Define monitor descriptions
-#  MONITOR1="desc:HP Inc. HP E243i 6CM82505J0"
+  MONITOR1="desc:HP Inc. HP E243i 6CM82505J0"
   MONITOR2="desc:Philips Consumer Electronics Company 34B2U6603 UK02509029162"
 
   # Get all workspace IDs
@@ -63,11 +63,14 @@ case $1 in
     hyprctl dispatch moveworkspacetomonitor $ws $MONITOR2 >/dev/null
   done
 
+  # move workspace 1 to MONITOR1
+  hyprctl dispatch moveworkspacetomonitor 1 desc:HP Inc. HP E243i 6CM82505J0
+
   # Move workspace one to internal display
-  hyprctl dispatch moveworkspacetomonitor 1 eDP-1 >/dev/null
+  #hyprctl dispatch moveworkspacetomonitor 1 eDP-1 >/dev/null
 
   # all is setup - disbale the internal display
-  # hyprctl keyword monitor desc:Sharp Corporation 0x14F7,disable >/dev/null
+  hyprctl keyword monitor eDP-1,disable >/dev/null
   #
   # all is setup - change scaling on eDP-1
   # hyprctl keyword monitor eDP-1,prefered,0x0,1.25
@@ -75,12 +78,6 @@ case $1 in
   # change waybar config to office
   rm /home/daniel/.config/waybar/config.jsonc
   ln -s /home/daniel/.dotfiles/waybar/config.jsonc-raven-office /home/daniel/.config/waybar/config.jsonc
-
-  # reload waybar
-  ~/.dotfiles/scripts/launch.sh
-
-  # since we are docked and we no longer rely on microsoft share point B$, we want to mount the local file share
-  ~/.dotfiles/scripts/mounter.sh -t && pkill -SIGRTMIN+1 waybar
 
   # swap hyprlock config to the office one
   rm /home/daniel/.config/hypr/hyprlock.conf
@@ -94,6 +91,13 @@ case $1 in
 
   # reload wallpapers
   waypaper --restore
+
+  # since we are docked and we no longer rely on microsoft share point B$, we want to mount the local file share
+  sleep 5
+  ~/.dotfiles/scripts/mounter.sh -t && pkill -SIGRTMIN+1 waybar
+
+  # reload waybar
+  ~/.dotfiles/scripts/launch.sh
 
   ;;
 --undock)
@@ -115,7 +119,7 @@ case $1 in
   fi
 
   # enable internal screen
-  #hyprctl keyword monitor desc:Sharp Corporation 0x14F7,prefered,auto,1 >/dev/null
+  hyprctl keyword monitor eDP-1,prefered,auto,1 >/dev/null
 
   # set scaling of internal Monitor to 1
   # hyprctl keyword monitor eDP-1,prefered,auto,1
