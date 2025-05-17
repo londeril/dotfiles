@@ -11,6 +11,7 @@ rsync -av /home/daniel/Masters/ daniel@172.16.3.10:/mnt/storage/DashwoodStore/Ph
 
 # mirror Video RAW to Backup Disk on Arandur
 rsync -av /home/daniel/Videos/RAW_Footage/ daniel@172.16.3.10:/mnt/backup/RAW_Footage/
+rsync -av /home/daniel/Videos/BlackmagicCloudMedia/ daniel@172.16.3.10:/mnt/backup/BlackmagicCloudMedia/
 
 # mirror CryptStore Darktable Settings to DashwoodStore Darktable Settings
 #rsync -avz /run/media/daniel/CryptStore/Darktable/ daniel@172.16.3.10:/mnt/storage/DashwoodStore/Darktable/ --delete --progress

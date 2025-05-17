@@ -11,13 +11,13 @@ backup() {
 }
 
 vpn_connect() {
-  nmcli connection up office
+  nmcli connection up colobale
   #nmcli connection up home
 
 }
 
 vpn_disconnect() {
-  nmcli connection down office
+  nmcli connection down colobale
   #nmcli connection down home
 }
 
