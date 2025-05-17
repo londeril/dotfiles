@@ -14,7 +14,7 @@ _       __            __                  ______            _____
 */
 {
     "layer": "top",
-    "output": ["DP-10"],
+    "output": ["HDMI-A-1"],
     "position": "top",
     "mod": "dock",
     "exclusive": true,
