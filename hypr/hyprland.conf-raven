@@ -32,6 +32,8 @@ monitor=desc:BNQ BenQ SW2700 M6J01353SL0,2560x1440@60,3440x0,1,bitdepth,10
 #monitor=DP-1,addreserved,0,0,200,0
 
 
+# workspace layout
+workspace=10,persistent:true
  
 # default rule to catch new/unknown monitors with prefered resolution
 monitor=,prefered,auto,1

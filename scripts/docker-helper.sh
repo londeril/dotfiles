@@ -66,6 +66,9 @@ case $1 in
   # move workspace 1 to MONITOR1
   hyprctl dispatch moveworkspacetomonitor 1 desc:HP Inc. HP E243i 6CM82505J0
 
+  # move workspace 2 to MONITOR1
+  hyprctl dispatch moveworkspacetomonitor 2 desc:HP Inc. HP E243i 6CM82505J0
+
   # Move workspace one to internal display
   #hyprctl dispatch moveworkspacetomonitor 1 eDP-1 >/dev/null
 
