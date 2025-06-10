@@ -3,7 +3,7 @@
 
 MOUNT="/mnt/ecm"
 MOUNT1="/mnt/erlenhof/allgemein"
-MOUNT2="/mnt/erlenhof/werkstaetten"
+MOUNT2="/mnt/erlenhof/homedir"
 MOUNT3="/mnt/erlenhof/verwaltung/"
 WG_MANAGER="~/.dotfiles/scripts/wireguard-manager.sh"
 STATUS_MOUNTED_STR='{"text":"Mounted","class":"connected","alt":"mounted"}'

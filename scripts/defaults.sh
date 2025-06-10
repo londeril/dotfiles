@@ -8,6 +8,7 @@ apps=(
   "md.obsidian.Obsidian"
   "thunderbird"
   "flatpak run com.rtosta.zapzap"
+  "kitty --class=remlauncher --directory /home/daniel/.dotfiles/scripts/"
 )
 
 # open all apps from the apps array

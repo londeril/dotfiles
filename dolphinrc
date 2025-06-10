@@ -16,9 +16,6 @@ ViewPropsTimestamp=2025,1,2,13,52,31.646
 [Icons]
 Theme=Newaita-reborn-yellow-dark
 
-[IconsMode]
-PreviewSize=80
-
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=22
