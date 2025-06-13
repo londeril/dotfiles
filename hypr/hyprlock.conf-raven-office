@@ -141,36 +141,36 @@ image {
 }
 
 # Portrait Pics HP
-image {
-    monitor = HP Inc. HP E243i 6CM82505J0
-    path = ~/.dotfiles/lockscreen.jpg
-    size = 1100
-    rounding = 10
-    border_size = 2
-    border_color = rgba(824439ff)
-    rotate = 0
-    reload_time = 10
-    reload_cmd = find ~/Pictures/PortraitSaver/ -type f | shuf -n 1
- #   reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
-    position = 0, 0
-    halign = center
-    valign = center
-}
-
-# Smaller landscape pics on eDP-1 
 #image {
-#    monitor = eDP-1
+#    monitor = HP Inc. HP E243i 6CM82505J0
 #    path = ~/.dotfiles/lockscreen.jpg
-#    size = 1300
+#    size = 1100
 #    rounding = 10
 #    border_size = 2
 #    border_color = rgba(824439ff)
 #    rotate = 0
 #    reload_time = 10
-#    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
-#    reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
+#    reload_cmd = find ~/Pictures/PortraitSaver/ -type f | shuf -n 1
+ #   reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
 #    position = 0, 0
 #    halign = center
 #    valign = center
 #}
+
+# Smaller landscape pics on eDP-1 
+image {
+    monitor = eDP-1
+    path = ~/.dotfiles/lockscreen.jpg
+    size = 1300
+    rounding = 10
+    border_size = 2
+    border_color = rgba(824439ff)
+    rotate = 0
+    reload_time = 10
+    reload_cmd = find ~/Pictures/LandscapeSaver/ -type f | shuf -n 1
+    reload_cmd = ~/.dotfiles/scripts/randomPic_landscape.sh
+    position = 0, 0
+    halign = center
+    valign = center
+}
 
