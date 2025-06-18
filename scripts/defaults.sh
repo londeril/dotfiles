@@ -8,7 +8,6 @@ apps=(
   "md.obsidian.Obsidian"
   "thunderbird"
   "flatpak run com.rtosta.zapzap"
-  "kitty --class=remlauncher --directory /home/daniel/.dotfiles/scripts/"
   "kitty --class=floater --hold sh -c 'cowsay -f small "weeeeeeeeeeeeeeee"'"
 )
 

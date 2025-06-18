@@ -47,12 +47,13 @@ case $1 in
   fi
 
   # enable the external monitor(s)
-#  hyprctl keyword monitor desc:HP Inc. HP E243i 6CM82505J0,prefered, 0x0,1,transform,1 >/dev/null
-  hyprctl keyword monitor desc:Philips Consumer Electronics Company 34B2U6603 UK02509029162,3440x1440@120.0,auto,1,bitdepth,10 >/dev/null
+  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,disable >/dev/null
+  hyprctl keyword monitor desc:Philips Consumer Electronics Company 34B2U6603 UK02509029162,3440x1440@120.0,2560x1440,1,bitdepth,10 >/dev/null
+  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,3440x1440@60,2560x0,1 >/dev/null
 
   # move all desktops from the internal screen to the big screen
   # Define monitor descriptions
- # MONITOR1="desc:HP Inc. HP E243i 6CM82505J0"
+  MONITOR1="desc:Samsung Electric Company C34H89x H4ZR302295"
   MONITOR2="desc:Philips Consumer Electronics Company 34B2U6603 UK02509029162"
 
   # Get all workspace IDs
@@ -64,20 +65,20 @@ case $1 in
   done
 
   # move workspace 1 to MONITOR1
-  # hyprctl dispatch moveworkspacetomonitor 1 desc:HP Inc. HP E243i 6CM82505J0
-  hyprctl dispatch moveworkspacetomonitor 1 eDP-1 
+  hyprctl dispatch moveworkspacetomonitor 1 desc:Samsung Electric Company C34H89x H4ZR302295
+  #hyprctl dispatch moveworkspacetomonitor 1 eDP-1 
 
 
   # move workspace 2 to MONITOR1
-  # hyprctl dispatch moveworkspacetomonitor 2 desc:HP Inc. HP E243i 6CM82505J0
-  hyprctl dispatch moveworkspacetomonitor 2 eDP-1
+  hyprctl dispatch moveworkspacetomonitor 2 desc:Samsung Electric Company C34H89x H4ZR302295
+  #hyprctl dispatch moveworkspacetomonitor 2 eDP-1
 
 
   # Move workspace one to internal display
   #hyprctl dispatch moveworkspacetomonitor 1 eDP-1 >/dev/null
 
   # all is setup - disbale the internal display
-#  hyprctl keyword monitor eDP-1,disable >/dev/null
+  hyprctl keyword monitor eDP-1,disable >/dev/null
   #
   # all is setup - change scaling on eDP-1
   # hyprctl keyword monitor eDP-1,prefered,0x0,1.25
@@ -188,7 +189,7 @@ case $1 in
   # hyprctl keyword monitor eDP-1,prefered,auto,1
 
   # Define monitor descriptions
-#  INTMONITOR="desc:BOE 0x0C8E"
+  INTMONITOR="desc:BOE 0x0C8E"
 
   # Get all workspace IDs
   workspaces=$(hyprctl workspaces -j | jq -r '.[].id')
