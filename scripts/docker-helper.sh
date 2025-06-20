@@ -47,13 +47,13 @@ case $1 in
   fi
 
   # enable the external monitor(s)
-  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,disable >/dev/null
-  hyprctl keyword monitor desc:Philips Consumer Electronics Company 34B2U6603 UK02509029162,3440x1440@120.0,2560x1440,1,bitdepth,10 >/dev/null
-  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,3440x1440@60,2560x0,1 >/dev/null
+#  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,disable >/dev/null
+#  hyprctl keyword monitor desc:Philips Consumer Electronics Company 34B2U6603 UK02509029162,3440x1440@120.0,2560x1440,1,bitdepth,10 >/dev/null
+#  hyprctl keyword monitor desc:Samsung Electric Company C34H89x H4ZR302295,3440x1440@60,2560x0,1 >/dev/null
 
   # move all desktops from the internal screen to the big screen
   # Define monitor descriptions
-  MONITOR1="desc:Samsung Electric Company C34H89x H4ZR302295"
+  MONITOR1="desc:Philips Consumer Electronics Company PHL24E1N1300A UHB2449008840"
   MONITOR2="desc:Philips Consumer Electronics Company 34B2U6603 UK02509029162"
 
   # Get all workspace IDs
@@ -65,12 +65,12 @@ case $1 in
   done
 
   # move workspace 1 to MONITOR1
-  hyprctl dispatch moveworkspacetomonitor 1 desc:Samsung Electric Company C34H89x H4ZR302295
+  hyprctl dispatch moveworkspacetomonitor 1  $MONITOR1
   #hyprctl dispatch moveworkspacetomonitor 1 eDP-1 
 
 
   # move workspace 2 to MONITOR1
-  hyprctl dispatch moveworkspacetomonitor 2 desc:Samsung Electric Company C34H89x H4ZR302295
+#  hyprctl dispatch moveworkspacetomonitor 2 desc:Samsung Electric Company C34H89x H4ZR302295
   #hyprctl dispatch moveworkspacetomonitor 2 eDP-1
 
 
@@ -78,7 +78,7 @@ case $1 in
   #hyprctl dispatch moveworkspacetomonitor 1 eDP-1 >/dev/null
 
   # all is setup - disbale the internal display
-  hyprctl keyword monitor eDP-1,disable >/dev/null
+#  hyprctl keyword monitor eDP-1,disable >/dev/null
   #
   # all is setup - change scaling on eDP-1
   # hyprctl keyword monitor eDP-1,prefered,0x0,1.25
@@ -183,7 +183,7 @@ case $1 in
   fi
 
   # enable internal screen
-  hyprctl keyword monitor eDP-1,prefered,auto,1 >/dev/null
+#  hyprctl keyword monitor eDP-1,prefered,auto,1 >/dev/null
 
   # set scaling of internal Monitor to 1
   # hyprctl keyword monitor eDP-1,prefered,auto,1
