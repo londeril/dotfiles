@@ -14,7 +14,7 @@ _       __            __                  ______            _____
 */
 {
     "layer": "top",
-    "output": ["DP-5", "DP-8", "DP-9", "DP-2"],
+    "output": ["DP-6", "DP-8", "DP-9", "DP-2"],
     "position": "top",
     "mod": "dock",
     "exclusive": true,
@@ -49,11 +49,10 @@ _       __            __                  ______            _____
         "custom/wireguard-manager",
         "custom/mounter",
         "custom/right5to6",
-        "network#WiFi",
         "network#OfficeDock",
-        "network#USBOnTheGo",
         "network#OfficeDockSetupNic",
         "network#Buildin",
+        "network#WiFi",
         "custom/right4to5",
         "custom/netreset",
         "custom/right3to4",
@@ -200,7 +199,7 @@ _       __            __                  ______            _____
     "network#OfficeDock": {
         "interface": "ECMDock",
         "format": "{ifname}",
-        "format-ethernet": "  {ipaddr} ",
+        "format": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
@@ -225,12 +224,11 @@ _       __            __                  ______            _____
     
     "network#Buildin": {
         "interface": "RavenNIC",
-        "format": "Build-In ",
+        "format": "Build-In",
         "format-ethernet": "  {ipaddr} ",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname}",
         "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": "nm-connection-editor",
         "on-click-right": "nm-applet"

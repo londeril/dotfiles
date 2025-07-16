@@ -1,7 +1,7 @@
 #!/bin/bash
 # this script will mount, unmount and check the status of $MOUNT
 
-MOUNT="/mnt/ecm"
+#MOUNT="/mnt/ecm"
 MOUNT1="/mnt/erlenhof/allgemein"
 MOUNT2="/mnt/erlenhof/homedir"
 MOUNT3="/mnt/erlenhof/verwaltung/"
@@ -10,7 +10,7 @@ STATUS_MOUNTED_STR='{"text":"Mounted","class":"connected","alt":"mounted"}'
 STATUS_UNMOUNTED_STR='{"text":"Unmounted","class":"disconnected","alt":"unmounted"}'
 
 function local_mount() {
-  mount $MOUNT
+  # mount $MOUNT
   mount $MOUNT1
   mount $MOUNT2
   mount $MOUNT3
@@ -18,7 +18,7 @@ function local_mount() {
 }
 
 function local_umount() {
-  umount $MOUNT
+  #umount $MOUNT
   umount $MOUNT1
   umount $MOUNT2
   umount $MOUNT3
@@ -27,7 +27,7 @@ function local_umount() {
 
 function status() {
   #check if //int.ecmacom.ch is mounted return the status of the grep command
-  mount | grep -q "192.168.253.102" >/dev/null 2>&1
+  mount | grep -q "172.17.10.100" >/dev/null 2>&1
   return $?
 }
 
