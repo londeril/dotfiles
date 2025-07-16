@@ -27,7 +27,7 @@ function local_umount() {
 
 function status() {
   #check if //int.ecmacom.ch is mounted return the status of the grep command
-  mount | grep -q "172.17.10.100" >/dev/null 2>&1
+  mount | grep -q "Verwaltung" >/dev/null 2>&1
   return $?
 }
 
