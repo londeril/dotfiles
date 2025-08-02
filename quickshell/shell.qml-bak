@@ -1,0 +1,49 @@
+import Quickshell
+import Quickshell.Io
+import QtQuick
+import Quickshell.Wayland
+
+PanelWindow {
+  id: bar
+  //WlrLayershell.layer: WlrLayer.Top
+  
+  anchors {
+    bottom: true 
+  }
+
+  implicitHeight: bar.mouseOver ? 30 : 5
+  
+  property bool mouseOver: false
+
+  MouseArea {
+    anchors.fill: parent
+    hoverEnabled: true
+    onEntered: bar.mouseOver = true
+    onExited: bar.mouseOver = false
+  }
+
+  Behavior on height {
+    NumberAnimation { duration: 150 }
+  }
+
+  Text {
+    id: clock
+    anchors.centerIn: parent
+
+    Process {
+      id: dateProc
+      command: ["date","+%d. %b. %k:%M"] 
+      running: true
+      stdout: StdioCollector {
+        onStreamFinished: clock.text = this.text
+      }
+    }
+
+    Timer {
+      interval: 1000
+      running: true
+      repeat: true
+      onTriggered: dateProc.running = true
+    }
+  }
+}

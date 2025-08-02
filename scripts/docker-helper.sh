@@ -119,24 +119,24 @@ case $1 in
   # move all desktops from the internal screen to the big screen
   # Define monitor descriptions
   MONITOR1="desc:BNQ BenQ SW2700 M6J01353SL0"
-  MONITOR2="desc:Samsung Electric Company C34H89x H4ZR302295"
+  #MONITOR2="desc:Samsung Electric Company C34H89x H4ZR302295"
 
   # Get all workspace IDs
   workspaces=$(hyprctl workspaces -j | jq -r '.[].id')
 
-  # Move all other workspaces to MONITOR2
+  # Move all other workspaces to MONITOR1
   for ws in $workspaces; do
-    hyprctl dispatch moveworkspacetomonitor $ws $MONITOR2 >/dev/null
+    hyprctl dispatch moveworkspacetomonitor $ws $MONITOR1 >/dev/null
   done
 
   # move workspace 1 to MONITOR1
-  hyprctl dispatch moveworkspacetomonitor 1 $MONITOR1
+  #hyprctl dispatch moveworkspacetomonitor 1 $MONITOR1
 
   # Move workspace one to internal display
   #hyprctl dispatch moveworkspacetomonitor 1 eDP-1 >/dev/null
 
   # all is setup - disbale the internal display
-  hyprctl keyword monitor eDP-1,disable >/dev/null
+  #hyprctl keyword monitor eDP-1,disable >/dev/null
   #
   # all is setup - change scaling on eDP-1
   # hyprctl keyword monitor eDP-1,prefered,0x0,1.25
@@ -189,7 +189,7 @@ case $1 in
   # hyprctl keyword monitor eDP-1,prefered,auto,1
 
   # Define monitor descriptions
-  INTMONITOR="desc:BOE 0x0C8E"
+  #INTMONITOR="desc:BOE 0x0C8E"
 
   # Get all workspace IDs
   workspaces=$(hyprctl workspaces -j | jq -r '.[].id')
