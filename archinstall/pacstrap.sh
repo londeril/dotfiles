@@ -106,11 +106,12 @@ pacstrap -K /mnt \
   hyprlock \
   hypridle \
   waybar \
-  dunst \
   rofi-wayland \
   kitty \
   virt-viewer \
   isoimagewriter \
   partitionmanager \
   kvantum \
-  archlinux-xdg-menu
+  archlinux-xdg-menu \
+  swaync \
+  swayimg 

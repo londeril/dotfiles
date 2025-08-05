@@ -12,49 +12,30 @@ mkdir ~/Data
 echo "making sure nothing is in the way for symlinks"
 
 echo "copy configs in place and symlinking them"
-rm ~/.config/hypr/hyprland.conf
+rm -rf ~/.config/hypr
 mkdir ~/.config/hypr
 ln -s ~/.dotfiles/hypr/hyprland.conf-nova ~/.config/hypr/hyprland.conf
 ln -s ~/.dotfiles/hypr/hypridle.conf-nova ~/.config/hypr/hypridle.conf
 ln -s ~/.dotfiles/hypr/hyprlock.conf-nova ~/.config/hypr/hyprlock.conf
 ln -s ~/.dotfiles/hypr/hyprpaper.conf-nova ~/.config/hypr/hyprpaper.conf
+rm ~/.zshrc
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
-rm -r ~/.config/kitty
+rm -rf ~/.config/kitty
 ln -s ~/.dotfiles/kitty ~/.config/
+rm -rf ~ /.config/waybar
 mkdir ~/.config/waybar
 ln -s ~/.dotfiles/waybar/config.jsonc-nova ~/.config/waybar/config.jsonc
 ln -s ~/.dotfiles/waybar/style.css-nova ~/.config/waybar/style.css
 ln -s ~/.dotfiles/dolphinrc ~/.config/
-#ln -s ~/.dotfiles/icons ~/.icons
-ln -s ~/.dotfiles/waybar/style.css-nova ~/.config/waybar/style.css
-#ln -s ~/.dotfiles/icons ~/.icons
 ln -s ~/.dotfiles/themes ~/.themes
 ln -s ~/.dotfiles/ranger ~/.config/
-ln -s ~/.dotfiles/dunst ~/.config/
 ln -s ~/.dotfiles/rofi ~/.config/
+ln -s ~/.dotfiles/swaync ~/.config/
 ln -s ~/.dotfiles/nvim ~/.config/
 ln -s ~/.dotfiles/user-dirs.dirs ~/.config/
 rm -r ~/.config/clipse
 ln -s ~/.dotfiles/clipse/custom_theme.json ~/.config/clipse/
-
-echo "install oh-my-zsh"
-cp oh-my-zsh.tar.gz ~/
-cd
-tar xfvz oh-my-zsh.tar.gz
-rm oh-my-zsh.tar.gz
-cd .oh-my-zsh/themes
-rm agnoster.zsh-theme
-ln -s ~/.dotfiles/zsh/agnoster.zsh-theme ./
-
-#echo "copy Gradience themes"
-#cp ~/.dotfiles/Gradience/blueish.json ~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/
-
-#sudo ln -s ~/.dotfiles/hypr/hyprlaunch.sh /usr/bin/hyprlaunch
-
-#echo "copy fonts"
-# cp fonts
-#fc-cache -fv
-
+ 
 echo "symlinking some scripts to path"
 sudo ln -s /home/daniel/.dotfiles/scripts/backup_runner.sh /usr/bin/backup-runner
 sudo ln -s /home/daniel/.dotfiles/scripts/dotfiles.sh /usr/bin/dot
@@ -88,7 +69,7 @@ sudo pacman -Syu sublime-text
 
 #insync
 echo "getting needed packages from the AUR"
-yay -S 1password clipse waypaper pacseek anydesk-bin pcloud-drive nccm-git spotify morgen-bin todoist-appimage snapper-support btrfs-assistant hyprshot swayosd-git 1password-cli
+yay -S 1password clipse waypaper pacseek anydesk-bin oh-my-zsh zsh-syntax-highlighting zsh-autocomplete zsh-autosuggestions pcloud-drive nccm-git spotify snapper-support btrfs-assistant hyprshot swayosd-git 1password-cli zen-browser-bin
 
 #echo "deploying nccm wrapper"
 #sudo mv /usr/bin/nccm /usr/bin/nccm-bin
@@ -100,14 +81,15 @@ flatpak install \
   com.rtosta.zapzap \
   io.github.flattool.Warehouse \
   com.tomjwatson.Emote \
-  org.remmina.Remmina \
   com.usebottles.bottles \
   com.todoist.Todoist \
   md.obsidian.Obsidian \
+  com.rustdesk.RustDesk \
+  md.obsidian.Obsidian 
   -y
 
 #echo "setting default browser to firefox"
-xdg-settings set default-web-browser firefox.desktop
+xdg-settings set default-web-browser zen-browser.desktop
 
 # set sane gnome defaults
 echo "setting gnome defaults"
@@ -158,8 +140,6 @@ echo "enabling and starting user services"
 systemctl --user --now enable pipewire-pulse
 systemctl --user --now enable wireplumber
 
-#echo "don't forget the following items:"
-#echo "Gradience - set blueish Theme"
 
 echo "configuring snapper"
 sudo umount /.snapshots
