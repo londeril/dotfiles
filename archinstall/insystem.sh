@@ -22,7 +22,7 @@ rm ~/.zshrc
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 rm -rf ~/.config/kitty
 ln -s ~/.dotfiles/kitty ~/.config/
-rm -rf ~ /.config/waybar
+rm -rf ~/.config/waybar
 mkdir ~/.config/waybar
 ln -s ~/.dotfiles/waybar/config.jsonc-nova ~/.config/waybar/config.jsonc
 ln -s ~/.dotfiles/waybar/style.css-nova ~/.config/waybar/style.css
@@ -35,7 +35,7 @@ ln -s ~/.dotfiles/nvim ~/.config/
 ln -s ~/.dotfiles/user-dirs.dirs ~/.config/
 rm -r ~/.config/clipse
 ln -s ~/.dotfiles/clipse/custom_theme.json ~/.config/clipse/
- 
+
 echo "symlinking some scripts to path"
 sudo ln -s /home/daniel/.dotfiles/scripts/backup_runner.sh /usr/bin/backup-runner
 sudo ln -s /home/daniel/.dotfiles/scripts/dotfiles.sh /usr/bin/dot
@@ -85,8 +85,8 @@ flatpak install \
   com.todoist.Todoist \
   md.obsidian.Obsidian \
   com.rustdesk.RustDesk \
-  md.obsidian.Obsidian 
-  -y
+  md.obsidian.Obsidian
+-y
 
 #echo "setting default browser to firefox"
 xdg-settings set default-web-browser zen-browser.desktop
@@ -139,7 +139,6 @@ gsettings set org.gnome.nautilus.icon-view captions "['size', 'type', 'none']"
 echo "enabling and starting user services"
 systemctl --user --now enable pipewire-pulse
 systemctl --user --now enable wireplumber
-
 
 echo "configuring snapper"
 sudo umount /.snapshots
