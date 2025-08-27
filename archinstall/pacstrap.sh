@@ -36,6 +36,7 @@ pacstrap -K /mnt \
   rsync \
   noto-fonts-emoji \
   linux-zen \
+  satty \
   brightnessctl \
   qt5ct \
   qt6ct \

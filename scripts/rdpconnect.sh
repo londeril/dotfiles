@@ -1,7 +1,7 @@
 #!/bin/bash
 # this script will connect to RDP Servers using the supplied args
 
-source ~/Data/LinuxConfigShare/rdpconnect.sh
+source ~/.sharedConfig/rdpconnect.sh
 
 PASSWORD=$(
   op item get "$SECRETLOOKUP" --account $ACCOUNT --vault $VAULT --format=json | jq -r '.fields[] | select(.type=="CONCEALED").value'
